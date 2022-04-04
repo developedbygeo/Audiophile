@@ -2,7 +2,9 @@ import styled from 'styled-components/macro';
 
 import { devices } from '../../shared/breakpoints';
 import { flexMixin, opacityMixin } from '../../shared/mixins';
-import { interactAndHover, showActive } from '../../shared/styles/interactive.styles';
+import { interactAndHover } from '../../shared/styles/interactive.styles';
+
+// TODO add active mixin
 
 const StyledHeader = styled.header`
   padding-inline: 5%;
