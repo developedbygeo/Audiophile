@@ -21,9 +21,11 @@ const StyledCategories = styled.section`
   a {
     ${flexMixin('center', 'center', 'row')};
     gap: 1rem;
+    padding: 1rem;
     ${interactAndHover};
     span {
       color: rgba(${({ theme }) => theme.colors.black}, 0.5);
+      font-weight: 400;
     }
     @media (hover: hover) {
       &:hover {
