@@ -1,7 +1,13 @@
-import Landing from '../components/Landing/Landing';
+import Hero from '../components/Landing/Hero';
+import Categories from '../components/Landing/Categories';
 
 const Home = () => {
-  return <Landing />;
+  return (
+    <>
+      <Hero />
+      <Categories />
+    </>
+  );
 };
 
 export default Home;
