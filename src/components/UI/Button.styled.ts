@@ -16,8 +16,8 @@ export const UnstyledButton = styled.button<BaseProps>`
 
 export const CtaButton = styled.button<BaseProps>`
   ${resetDefaults}
-  width: 7rem;
-  height: 7em;
+  width: 25rem;
+  height: 7rem;
   color: rgb(${({ theme }) => theme.colors.white});
   background: rgb(${({ theme }) => theme.colors.brand});
   font-weight: ${({ theme }) => theme.typography.weights.heading};
