@@ -8,7 +8,6 @@ export const interactCta = css`
   }
   @media (hover: hover) {
     &:hover {
-      transform: scale(1.05);
       background: rgb(${({ theme }) => theme.colors.accent});
     }
   }
@@ -19,7 +18,7 @@ export const colorInteract = css`
   position: relative;
   @media (hover: hover) {
     &:hover {
-      color: ${({ theme }) => theme.colors.brand};
+      color: ${({ theme }) => theme.colors.accent};
     }
   }
 `;
@@ -33,10 +32,10 @@ export const interactAndHover = css`
       left: 0%;
       bottom: -0.4rem;
       width: 100%;
-      height: 0.15rem;
+      height: 0.25rem;
       transform-origin: right;
       transform: scaleX(0);
-      background: rgb(${({ theme }) => theme.colors.brand});
+      background: rgb(${({ theme }) => theme.colors.accent});
       transition: transform 350ms ease;
     }
     &:hover {
