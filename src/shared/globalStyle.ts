@@ -64,7 +64,6 @@ main{
     position: relative;
     min-height: 90vh;
     width: 100vw;
-    margin: auto;
     background: transparent;
     overflow-x: hidden;
     /* TODO add suspense/lazy loading/content-loader */
@@ -73,7 +72,8 @@ main{
       height: 100%;
     }
     &>section{
-      min-height: 100vh;
+      min-height: 90vh;
+      padding-inline: 10%;
       width: 100%;
     }
 
