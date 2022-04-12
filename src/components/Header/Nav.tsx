@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import StyledNav from './Nav.styled';
 
 import { BaseProps } from '../../shared/models/props.model';
 
 const Nav = ({ className }: BaseProps) => {
   return (
-    <nav className={className}>
+    <StyledNav className={className}>
       <div className="link-wrapper">
         <NavLink to="/headphones" className={({ isActive }) => (isActive ? 'active' : '')}>
           HEADPHONES
@@ -17,7 +18,7 @@ const Nav = ({ className }: BaseProps) => {
           EARPHONES
         </NavLink>
       </div>
-    </nav>
+    </StyledNav>
   );
 };
 
