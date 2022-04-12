@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { GoThreeBars, GoX } from 'react-icons/go';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import useWindow from '../../hooks/useWindow';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-import StyledHeader from './Header.styled';
+import { StyledHeader } from './Header.styled';
 import Nav from './Nav';
 import { UnstyledButton } from '../UI/Button.styled';
 
@@ -35,10 +36,13 @@ const Header = () => {
 
   return (
     <StyledHeader>
+      {shouldButtonRender}
       <Link to="/home" aria-label="Return to home">
         <Logo className="logo" role="img" aria-label="logo" />
       </Link>
-      {shouldButtonRender}
+      <UnstyledButton className="cart" title="Toggle Cart">
+        <AiOutlineShoppingCart />
+      </UnstyledButton>
       {width < 768 ? navIsEnabled && <Nav className={navClass} /> : <Nav className={navClass} />}
     </StyledHeader>
   );
