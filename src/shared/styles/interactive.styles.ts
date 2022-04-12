@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components/macro';
 
 export const interactCta = css`
   transition: all 100ms ease;
@@ -18,7 +18,16 @@ export const colorInteract = css`
   position: relative;
   @media (hover: hover) {
     &:hover {
-      color: ${({ theme }) => theme.colors.accent};
+      color: rgb(${({ theme }) => theme.colors.accent});
+    }
+  }
+`;
+
+export const interactNav = css`
+  transition: all 100ms ease;
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(${({ theme }) => theme.colors.brand});
     }
   }
 `;
