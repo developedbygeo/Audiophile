@@ -7,7 +7,6 @@ import { elevationThree } from '../../shared/styles/shadows.styles';
 
 export const UnstyledButton = styled.button<BaseProps>`
   ${resetDefaults};
-  /* ${interactCta}; */
   height: 5rem;
   width: 5rem;
   padding-block: 1rem;
