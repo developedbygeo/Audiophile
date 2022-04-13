@@ -12,6 +12,7 @@ declare module 'styled-components' {
     colors: {
       mainBg: string;
       silver: string;
+      extraGrayish: string;
       brand: string;
       accent: string;
       white: string;
