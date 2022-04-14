@@ -20,6 +20,10 @@ import yx1Mobile from '../assets/home/mobile/image-earphones-yx1.jpg';
 import yx1Tablet from '../assets/home/tablet/image-earphones-yx1.jpg';
 import yx1Desktop from '../assets/home/desktop/image-earphones-yx1.jpg';
 
+import bestGearMobile from '../assets/shared/mobile/image-best-gear.jpg';
+import bestGearTablet from '../assets/shared/tablet/image-best-gear.jpg';
+import bestGearDesktop from '../assets/shared/desktop/image-best-gear.jpg';
+
 export const landing = [landingMobile, landingTablet, landingDesktop];
 
 export const thumbnails = [
@@ -33,3 +37,5 @@ export const zx9 = [zx9Mobile, zx9Tablet, zx9Desktop];
 export const zx7 = [zx7Mobile, zx7Tablet, zx7Desktop];
 
 export const yx1 = [yx1Mobile, yx1Tablet, yx1Desktop];
+
+export const bestGear = [bestGearMobile, bestGearTablet, bestGearDesktop];
