@@ -1,7 +1,13 @@
 import useWindowWidth from '../../hooks/useWindow';
 
-import { BigContainer, SmallerContainer } from './Featured.styled';
-import { Card } from '../UI/Card.styled';
+import {
+  BigContainer,
+  SmallerContainer,
+  FeaturedText,
+  EarphonesContainer,
+  Zx9Image,
+  SecondaryFeaturedBtn
+} from './Featured.styled';
 import { Description, BigHeading } from '../UI/Text.styled';
 import { CtaButton } from '../UI/Button.styled';
 
@@ -13,7 +19,7 @@ const Featured = () => {
     <>
       <BigContainer as="article">
         <div>
-          <div className="zx9-cont" role="img" />
+          <Zx9Image role="img" />
           <BigHeading>ZX9 SPEAKER</BigHeading>
           {isNotMobile && (
             <Description>
@@ -27,14 +33,14 @@ const Featured = () => {
       </BigContainer>
       <SmallerContainer as="article" className="zx7-home">
         <BigHeading>ZX7 SPEAKER</BigHeading>
-        <CtaButton role="link">SEE PRODUCT</CtaButton>
+        <SecondaryFeaturedBtn role="link">SEE PRODUCT</SecondaryFeaturedBtn>
       </SmallerContainer>
       <SmallerContainer as="article" className="yx1">
-        <div className="yx1-cont" />
-        <Card className="text">
+        <EarphonesContainer />
+        <FeaturedText>
           <BigHeading>YX1 EARPHONES</BigHeading>
-          <CtaButton role="link">SEE PRODUCT</CtaButton>
-        </Card>
+          <SecondaryFeaturedBtn role="link">SEE PRODUCT</SecondaryFeaturedBtn>
+        </FeaturedText>
       </SmallerContainer>
     </>
   );
