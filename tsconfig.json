@@ -20,9 +20,10 @@
     "incremental": true,
     "sourceMap": true,
     "declaration": true,
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "baseUrl": "src"
   },
   "exclude": ["node_modules", "build", "scripts", "acceptance-tests", "webpack", "jest", "src/setupTests.ts"],
-  "include": ["src/**/*"],
+  "include": ["src"],
   "types": ["typePatches", "react", "react-dom"]
 }
