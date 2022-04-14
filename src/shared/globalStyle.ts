@@ -71,6 +71,7 @@ main{
       width: 100%;
       height: 100%;
     }
+    /* TODO get rid of this and work on a component-basis */
     &>section{
       min-height: 90vh;
       padding-inline: 10%;
