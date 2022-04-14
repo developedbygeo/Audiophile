@@ -14,11 +14,35 @@ export const interactCta = css`
 `;
 
 export const colorInteract = css`
-  transition: all 100ms ease-in-out;
+  transition: all 100ms ease;
   position: relative;
   @media (hover: hover) {
     &:hover {
       color: rgb(${({ theme }) => theme.colors.accent});
+    }
+  }
+`;
+
+export const secondaryColorInteract = css`
+  transition: all 100ms ease;
+  background: transparent;
+  color: rgb(${({ theme }) => theme.colors.black});
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(${({ theme }) => theme.colors.white});
+      background: rgb(${({ theme }) => theme.colors.black});
+    }
+  }
+`;
+
+export const tertiaryColorInteract = css`
+  transition: all 100ms ease;
+  background: rgb(${({ theme }) => theme.colors.black});
+  color: rgb(${({ theme }) => theme.colors.white});
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(${({ theme }) => theme.colors.white});
+      background: rgb(${({ theme }) => theme.colors.davysGray});
     }
   }
 `;
