@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 
-import { devices } from '../../shared/breakpoints';
-import { landing } from '../../shared/images';
-import { flexMixin } from '../../shared/mixins';
+import { devices } from 'shared/breakpoints';
+import { landing } from 'shared/images';
+import { flexMixin } from 'shared/mixins';
 
 const StyledHero = styled.section`
   background: url(${landing[0]}) no-repeat center;

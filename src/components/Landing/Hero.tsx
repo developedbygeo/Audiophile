@@ -1,6 +1,6 @@
+import { CtaButton } from 'components/UI/Button.styled';
+import { Description, BigHeading, MediumHeading } from 'components/UI/Text.styled';
 import StyledHero from './Hero.styled';
-import { CtaButton } from '../UI/Button.styled';
-import { Description, BigHeading, MediumHeading } from '../UI/Text.styled';
 
 const Hero = () => {
   return (

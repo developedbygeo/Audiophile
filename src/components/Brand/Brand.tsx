@@ -1,5 +1,5 @@
+import { BigHeading, Description } from 'components/UI/Text.styled';
 import { StyledBrand, BrandImage, BrandText } from './Brand.styled';
-import { BigHeading, Description } from '../UI/Text.styled';
 
 const Brand = () => {
   return (

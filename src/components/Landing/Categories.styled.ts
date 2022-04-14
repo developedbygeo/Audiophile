@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 
-import { flexMixin } from '../../shared/mixins';
-import { colorInteract, interactAndHover } from '../../shared/styles/interactive.styles';
-import { Card } from '../UI/Card.styled';
+import { flexMixin } from 'shared/mixins';
+import { colorInteract, interactAndHover } from 'shared/styles/interactive.styles';
+import { Card } from 'components/UI/Card.styled';
 
 export const StyledCategories = styled.section`
   background: rgb(${({ theme }) => theme.colors.white});

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { flexMixin, opacityMixin } from '../../shared/mixins';
-import { interactAndHover } from '../../shared/styles/interactive.styles';
+import { flexMixin, opacityMixin } from 'shared/mixins';
+import { interactAndHover } from 'shared/styles/interactive.styles';
 
 const StyledNav = styled.nav`
   &.mobile-nav {

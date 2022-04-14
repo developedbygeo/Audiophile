@@ -1,5 +1,7 @@
-import useWindowWidth from '../../hooks/useWindow';
+import useWindowWidth from 'hooks/useWindow';
 
+import { Description, BigHeading } from 'components/UI/Text.styled';
+import { CtaButton } from 'components/UI/Button.styled';
 import {
   BigContainer,
   SmallerContainer,
@@ -8,8 +10,6 @@ import {
   Zx9Image,
   SecondaryFeaturedBtn
 } from './Featured.styled';
-import { Description, BigHeading } from '../UI/Text.styled';
-import { CtaButton } from '../UI/Button.styled';
 
 const Featured = () => {
   const width = useWindowWidth();

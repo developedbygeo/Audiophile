@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { resetDefaults } from '../../shared/mixins';
-import { BaseProps } from '../../shared/models/props.model';
-import { interactCta } from '../../shared/styles/interactive.styles';
-import { elevationThree } from '../../shared/styles/shadows.styles';
+import { resetDefaults } from 'shared/mixins';
+import { BaseProps } from 'shared/models/props.model';
+import { interactCta } from 'shared/styles/interactive.styles';
+import { elevationThree } from 'shared/styles/shadows.styles';
 
 export const UnstyledButton = styled.button<BaseProps>`
   ${resetDefaults};

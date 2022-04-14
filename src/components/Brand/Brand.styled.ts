@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 
-import { LargeSimpleContainer } from '../UI/Container.styled';
-import { flexMixin } from '../../shared/mixins';
-import { bestGear } from '../../shared/images';
-import { devices } from '../../shared/breakpoints';
+import { bestGear } from 'shared/images';
+import { devices } from 'shared/breakpoints';
+import { flexMixin } from 'shared/mixins';
+import { LargeSimpleContainer } from 'components/UI/Container.styled';
 
 export const StyledBrand = styled(LargeSimpleContainer)`
   ${flexMixin('flex-start', 'center', 'column')};

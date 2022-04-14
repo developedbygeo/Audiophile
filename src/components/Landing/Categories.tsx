@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { IoChevronForwardSharp } from 'react-icons/io5';
-import { thumbnails } from '../../shared/images';
 
-import { MediumHeading } from '../UI/Text.styled';
+import { thumbnails } from 'shared/images';
+import { MediumHeading } from 'components/UI/Text.styled';
 
 import { StyledCategories, CategoryCard, ImageWrapper } from './Categories.styled';
 

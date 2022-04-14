@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import StyledNav from './Nav.styled';
 
-import { BaseProps } from '../../shared/models/props.model';
+import { BaseProps } from 'shared/models/props.model';
+import StyledNav from './Nav.styled';
 
 const Nav = ({ className }: BaseProps) => {
   return (

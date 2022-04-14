@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 
-import { devices } from '../../shared/breakpoints';
-import { flexMixin } from '../../shared/mixins';
-import { interactNav } from '../../shared/styles/interactive.styles';
+import { devices } from 'shared/breakpoints';
+import { flexMixin } from 'shared/mixins';
+import { interactNav } from 'shared/styles/interactive.styles';
 
 // TODO add active mixin
 

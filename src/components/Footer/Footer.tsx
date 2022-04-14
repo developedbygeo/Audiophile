@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom';
 
 import { BsInstagram } from 'react-icons/bs';
 import { ImFacebook2, ImTwitter } from 'react-icons/im';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo } from 'assets/logo.svg';
 
 import { StyledFooter, StyledLinks, FooterDescription, Copyright, Social } from './Footer.styled';
-// import { Description } from '../UI/Text.styled';
 
 const Footer = () => {
   return (

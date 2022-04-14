@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { GoThreeBars, GoX } from 'react-icons/go';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import useWindow from '../../hooks/useWindow';
+import useWindow from 'hooks/useWindow';
 
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo } from 'assets/logo.svg';
+import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledHeader } from './Header.styled';
 import Nav from './Nav';
-import { UnstyledButton } from '../UI/Button.styled';
 
 const Header = () => {
   const width = useWindow();

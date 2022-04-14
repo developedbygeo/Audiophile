@@ -1,7 +1,7 @@
-import Hero from '../components/Landing/Hero';
-import Categories from '../components/Landing/Categories';
-import Featured from '../components/Landing/Featured';
-import Brand from '../components/Brand/Brand';
+import Hero from 'components/Landing/Hero';
+import Categories from 'components/Landing/Categories';
+import Featured from 'components/Landing/Featured';
+import Brand from 'components/Brand/Brand';
 
 const Home = () => {
   return (

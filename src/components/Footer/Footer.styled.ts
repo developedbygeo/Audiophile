@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 
-import { LargeSimpleContainer } from '../UI/Container.styled';
-import { Description } from '../UI/Text.styled';
-import { flexMixin } from '../../shared/mixins';
-import { interactNav, interactAndHover } from '../../shared/styles/interactive.styles';
+import { LargeSimpleContainer } from 'components/UI/Container.styled';
+import { Description } from 'components/UI/Text.styled';
+import { flexMixin } from 'shared/mixins';
+import { interactNav, interactAndHover } from 'shared/styles/interactive.styles';
 
 export const StyledFooter = styled(LargeSimpleContainer)`
   ${flexMixin('space-evenly', 'center', 'column')};

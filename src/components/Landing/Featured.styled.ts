@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro';
 
-import { LargeSimpleContainer } from '../UI/Container.styled';
-import { flexMixin } from '../../shared/mixins';
-import { devices } from '../../shared/breakpoints';
-import { elevationOne } from '../../shared/styles/shadows.styles';
-import { tertiaryColorInteract, secondaryColorInteract } from '../../shared/styles/interactive.styles';
+import { LargeSimpleContainer } from 'components/UI/Container.styled';
+import { flexMixin } from 'shared/mixins';
+import { devices } from 'shared/breakpoints';
+import { elevationOne } from 'shared/styles/shadows.styles';
+import { tertiaryColorInteract, secondaryColorInteract } from 'shared/styles/interactive.styles';
 
-import { zx9 as zx9Images, zx7 as zx7Images, yx1 as yx1Images } from '../../shared/images';
-import { CtaButton } from '../UI/Button.styled';
+import { zx9 as zx9Images, zx7 as zx7Images, yx1 as yx1Images } from 'shared/images';
+import { CtaButton } from 'components/UI/Button.styled';
 
 export const BigContainer = styled(LargeSimpleContainer)`
   position: relative;
