@@ -1,20 +1,19 @@
 import { Link } from 'react-router-dom';
 import { IoChevronForwardSharp } from 'react-icons/io5';
-import { Card } from '../UI/Card.styled';
 import { thumbnails } from '../../shared/images';
 
 import { MediumHeading } from '../UI/Text.styled';
 
-import StyledCategories from './Categories.styled';
+import { StyledCategories, CategoryCard, ImageWrapper } from './Categories.styled';
 
 const Categories = () => {
   return (
     <StyledCategories>
       {thumbnails.map(({ path, alt, id }) => (
-        <Card as="article" key={id} className="category">
-          <div className="floating-img-wrapper">
+        <CategoryCard key={id}>
+          <ImageWrapper>
             <img src={path} alt="sample category thumbnail" />
-          </div>
+          </ImageWrapper>
           <div className="text-wrapper">
             <MediumHeading as="h1">{alt}</MediumHeading>
           </div>
@@ -24,7 +23,7 @@ const Categories = () => {
               <IoChevronForwardSharp />
             </Link>
           </div>
-        </Card>
+        </CategoryCard>
       ))}
     </StyledCategories>
   );
