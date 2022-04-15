@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { resetDefaults } from 'shared/mixins';
 import { BaseProps } from 'shared/models/props.model';
 import { interactCta } from 'shared/styles/interactive.styles';
-import { elevationThree } from 'shared/styles/shadows.styles';
+import { elevationOne } from 'shared/styles/shadows.styles';
 
 export const UnstyledButton = styled.button<BaseProps>`
   ${resetDefaults};
@@ -22,5 +22,5 @@ export const CtaButton = styled.button<BaseProps>`
   font-weight: ${({ theme }) => theme.typography.weights.heading};
   letter-spacing: 0.125rem;
   ${interactCta}
-  ${elevationThree}
+  ${elevationOne}
 `;
