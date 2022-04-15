@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { devices } from './breakpoints';
+import { gridMixin } from './mixins';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -66,6 +67,8 @@ main{
     width: 100vw;
     background: transparent;
     overflow-x: hidden;
+    ${gridMixin('1fr', 'auto')};
+    gap: 5vh;
     /* TODO add suspense/lazy loading/content-loader */
     &>svg{
       width: 100%;
