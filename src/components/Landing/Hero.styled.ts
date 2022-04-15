@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import { devices } from 'shared/breakpoints';
 import { landing } from 'shared/images';
 import { flexMixin } from 'shared/mixins';
+import { elevationThree } from 'shared/styles/shadows.styles';
 
 const StyledHero = styled.section`
   background: url(${landing[0]}) no-repeat center;
@@ -41,6 +42,9 @@ const StyledHero = styled.section`
   }
   .cta-wrapper {
     margin-top: 3vh;
+    button {
+      ${elevationThree};
+    }
   }
 `;
 
