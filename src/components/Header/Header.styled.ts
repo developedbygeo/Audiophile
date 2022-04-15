@@ -10,7 +10,6 @@ export const StyledHeader = styled.header`
   padding-inline: 5%;
   ${flexMixin('space-between', 'center', 'row')};
   background: rgb(${({ theme }) => theme.colors.black});
-  border-bottom: 0.2rem solid rgba(${({ theme }) => theme.colors.white}, 0.15);
 
   .menu,
   .cart {
