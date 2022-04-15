@@ -116,8 +116,8 @@ export const Zx9Image = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 140%;
-    height: 140%;
+    width: 200%;
+    height: 200%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
@@ -127,8 +127,8 @@ export const Zx9Image = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 170%;
-    height: 170%;
+    width: 175%;
+    height: 175%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
