@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { GoThreeBars, GoX } from 'react-icons/go';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import useWindow from 'hooks/useWindow';
 
+import { GoThreeBars, GoX } from 'react-icons/go';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ReactComponent as Logo } from 'assets/logo.svg';
+
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledHeader } from './Header.styled';
+import MobileNav from './MobileNav';
 import Nav from './Nav';
 
 const Header = () => {
@@ -43,7 +45,7 @@ const Header = () => {
       <UnstyledButton className="cart" title="Toggle Cart">
         <AiOutlineShoppingCart />
       </UnstyledButton>
-      {width < 768 ? navIsEnabled && <Nav className={navClass} /> : <Nav className={navClass} />}
+      {width < 768 ? navIsEnabled && <MobileNav /> : <Nav className={navClass} />}
     </StyledHeader>
   );
 };
