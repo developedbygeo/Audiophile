@@ -1,11 +1,12 @@
 import useWindowWidth from 'hooks/useWindow';
-// import useImage from 'hooks/useImage';
+import useImage from 'hooks/useImage';
 import { derivedViewport } from 'utils/utilities';
 
 import { ProductType } from 'shared/models/product.model';
 
 import { Description, MediumHeading, SmallSubheading } from 'components/UI/Text.styled';
 import { CtaButton } from 'components/UI/Button.styled';
+import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
 
 type ProductProps = {
   product: ProductType;
@@ -14,19 +15,22 @@ type ProductProps = {
 const ProductPreview = ({ product }: ProductProps) => {
   const width = useWindowWidth();
   const viewport = derivedViewport(width);
-
-  const imageName = product.categoryImage[viewport].slice(8);
+  const productImage = useImage(product.categoryImage[viewport]);
 
   return (
-    <article>
-      <div className="img-wrapper">
-        <img src={`images/${imageName}`} alt={product.name} />
-      </div>
-      {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
-      <MediumHeading as="h2">{product.name}</MediumHeading>
-      <Description>{product.description}</Description>
+    <StyledPreview as="article">
+      {productImage && (
+        <StyledImageCont>
+          <img src={productImage} alt={product.name} />
+        </StyledImageCont>
+      )}
+      <StyledText>
+        {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
+        <MediumHeading as="h2">{product.name}</MediumHeading>
+        <Description>{product.description}</Description>
+      </StyledText>
       <CtaButton role="link">SEE PRODUCT</CtaButton>
-    </article>
+    </StyledPreview>
   );
 };
 
