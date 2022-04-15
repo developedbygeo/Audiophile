@@ -1,20 +1,21 @@
-import useSelectedProduct from 'hooks/useSelectedProduct';
+import useSelectedProducts from 'hooks/useSelectedProducts';
 
 import ProductPreview from 'components/Product/ProductPreview';
+import { StyledProducts } from './Products.styled';
 
 type ProductsProps = {
   category: string;
 };
 
 const Products = ({ category }: ProductsProps) => {
-  const selectedCategory = useSelectedProduct(category);
+  const selectedCategory = useSelectedProducts(category);
 
   return (
-    <section>
+    <StyledProducts>
       {selectedCategory.map((product) => (
         <ProductPreview key={product.id} product={product} />
       ))}
-    </section>
+    </StyledProducts>
   );
 };
 
