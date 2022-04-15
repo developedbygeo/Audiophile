@@ -43,4 +43,28 @@ const StyledNav = styled.nav`
   }
 `;
 
+export const StyledMobileNav = styled.nav`
+  position: absolute;
+  width: 100%;
+  height: 20vh;
+  top: 10vh;
+  right: 0;
+  z-index: 9;
+  background: rgb(${({ theme }) => theme.colors.white});
+
+  section {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    & > div {
+      width: 30vw;
+    }
+  }
+
+  img {
+    width: 10rem;
+  }
+`;
+
 export default StyledNav;
