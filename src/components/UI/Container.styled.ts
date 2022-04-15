@@ -10,5 +10,4 @@ export const LargeSimpleContainer = styled(Container)`
   height: 100vh;
   width: 90%;
   border-radius: 2rem;
-  margin-top: 10vh;
 `;
