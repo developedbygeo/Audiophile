@@ -65,7 +65,7 @@ main{
     position: relative;
     min-height: 90vh;
     width: 100vw;
-    background: transparent;
+    background: #fff;
     overflow-x: hidden;
     ${gridMixin('1fr', 'auto')};
     gap: 5vh;
