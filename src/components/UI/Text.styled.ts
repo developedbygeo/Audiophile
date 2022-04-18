@@ -1,4 +1,27 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
+
+type FontProps = {
+  weight?: string;
+};
+
+const bold = css`
+  font-weight: ${({ theme }) => theme.typography.weights.heading};
+`;
+
+const subheading = css`
+  font-weight: ${({ theme }) => theme.typography.weights.subheading};
+`;
+
+const normal = css`
+  font-weight: ${({ theme }) => theme.typography.weights.body};
+`;
+
+const getWeight = (props: FontProps) => {
+  if (props.weight === 'bold') return bold;
+  if (props.weight === 'subheading') return subheading;
+  if (props.weight === 'normal') return normal;
+  return '';
+};
 
 export const Description = styled.p`
   font-size: 1.8rem;
@@ -7,6 +30,7 @@ export const Description = styled.p`
   line-height: 1.4;
   letter-spacing: 0.2rem;
   font-weight: 300;
+  ${getWeight};
 `;
 
 export const BigHeading = styled.h1`
@@ -15,12 +39,14 @@ export const BigHeading = styled.h1`
   text-transform: uppercase;
   text-align: center;
   margin: 0rem 0rem 1rem 0rem;
+  ${getWeight};
 `;
 
 export const MediumHeading = styled.h2`
   font-size: 3rem;
   text-transform: uppercase;
   margin-block: 1rem;
+  ${getWeight};
 `;
 
 export const SmallSubheading = styled.h4`
@@ -29,4 +55,5 @@ export const SmallSubheading = styled.h4`
   font-weight: ${({ theme }) => theme.typography.weights.subheading};
   color: rgb(${({ theme }) => theme.colors.accent});
   letter-spacing: 0.15rem;
+  ${getWeight};
 `;
