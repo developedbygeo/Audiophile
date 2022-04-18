@@ -4,12 +4,12 @@ import { flexMixin } from 'shared/mixins';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { NavLink } from 'react-router-dom';
 import { ctaStyling, baseCtaButtonStyling } from 'shared/styles/button.styles';
+import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledPreview = styled(LargeSimpleContainer)`
   background: transparent;
   ${flexMixin('space-between', 'center', 'column')};
   height: auto;
-  margin-bottom: 5vh;
   width: 100%;
   padding-inline: 5%;
   gap: 2vh;
@@ -47,8 +47,7 @@ export const StyledText = styled.div`
   }
 
   .desc {
-    color: rgba(${({ theme }) => theme.colors.black}, 0.65);
-    line-height: 1.75;
+    ${grayDescription};
   }
 `;
 
