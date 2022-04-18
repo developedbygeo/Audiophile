@@ -1,8 +1,15 @@
 import styled from 'styled-components/macro';
 
 import { gridMixin } from 'shared/mixins';
+import { grayDescription } from 'components/UI/Text.styled';
 import { UnstyledButton } from 'components/UI/Button.styled';
-import { StyledImageCont, StyledText } from './ProductPreview.styled';
+import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
+
+export const DetailsContainer = styled(StyledPreview)`
+  .desc {
+    ${grayDescription};
+  }
+`;
 
 export const ProductImageCont = styled(StyledImageCont)`
   img {
@@ -32,11 +39,12 @@ export const PriceTag = styled.p`
 
 export const ProductActions = styled.div`
   ${gridMixin('repeat(2, 1fr)', '1fr')};
+  margin-top: 2vh;
   width: 100%;
 
   & > div,
   button {
-    height: 100%;
+    height: 7vh;
     width: 100%;
   }
 `;
@@ -47,7 +55,7 @@ export const GoBackButton = styled(UnstyledButton)`
   text-align: left;
   padding-inline: 0;
   transition: all 100ms ease;
-  color: rgba(${({ theme }) => theme.colors.black}, 0.5);
+  color: rgba(${({ theme }) => theme.colors.black}, 0.6);
   font-weight: 400;
 
   @media (hover: hover) {
