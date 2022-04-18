@@ -5,8 +5,7 @@ import { derivedViewport } from 'utils/utilities';
 import { ProductType } from 'shared/models/product.model';
 
 import { Description, MediumHeading, SmallSubheading } from 'components/UI/Text.styled';
-import { CtaButton } from 'components/UI/Button.styled';
-import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
+import { StyledPreview, StyledImageCont, StyledText, ProductLink } from './ProductPreview.styled';
 
 type ProductProps = {
   product: ProductType;
@@ -27,9 +26,9 @@ const ProductPreview = ({ product }: ProductProps) => {
       <StyledText>
         {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
         <MediumHeading as="h2">{product.name}</MediumHeading>
-        <Description>{product.description}</Description>
+        <Description className="desc">{product.description}</Description>
       </StyledText>
-      <CtaButton role="link">SEE PRODUCT</CtaButton>
+      <ProductLink to={`/products/${product.slug}`}>SEE PRODUCT</ProductLink>
     </StyledPreview>
   );
 };
