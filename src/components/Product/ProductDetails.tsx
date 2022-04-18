@@ -10,8 +10,8 @@ import { ProductType } from 'shared/models/product.model';
 import QuantityInput from 'components/UI/QuantityInput/Input';
 import { Description, MediumHeading, SmallSubheading } from 'components/UI/Text.styled';
 import { CtaButton } from 'components/UI/Button.styled';
-import { StyledPreview as StyledProduct } from './ProductPreview.styled';
 import {
+  DetailsContainer,
   ProductImageCont,
   ProductText,
   PriceTag,
@@ -51,7 +51,7 @@ const ProductDetails = ({ product }: DetailsProps) => {
   return (
     <>
       <ScrollTop />
-      <StyledProduct as="section">
+      <DetailsContainer as="section">
         <GoBackButton onClick={goBackHandler}>Go Back</GoBackButton>
         <ProductImageCont>
           <img src={productImage} alt={product.name} />
@@ -66,7 +66,7 @@ const ProductDetails = ({ product }: DetailsProps) => {
           <QuantityInput onDecrement={decrementHandler} onIncrement={incrementHandler} quantity={quantity} />
           <CtaButton>ADD TO CART</CtaButton>
         </ProductActions>
-      </StyledProduct>
+      </DetailsContainer>
     </>
   );
 };
