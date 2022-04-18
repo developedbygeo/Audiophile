@@ -23,6 +23,11 @@ const getWeight = (props: FontProps) => {
   return '';
 };
 
+export const grayDescription = css`
+  color: rgba(${({ theme }) => theme.colors.black}, 0.5);
+  line-height: 1.75;
+`;
+
 export const Description = styled.p`
   font-size: 1.8rem;
   font-weight: ${({ theme }) => theme.typography.weights.body};
