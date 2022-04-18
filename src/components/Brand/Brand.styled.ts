@@ -57,7 +57,7 @@ export const BrandText = styled.div`
   }
 
   p {
-    color: rgba(${({ theme }) => theme.colors.black}, 0.5);
+    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
     font-weight: 400;
   }
 
