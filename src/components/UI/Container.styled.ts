@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const LargeSimpleContainer = styled(Container)`
   height: 100vh;
+  padding-top: 2vh;
   width: 90%;
   border-radius: 2rem;
 `;
