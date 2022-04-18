@@ -14,10 +14,16 @@ export const StyledHeader = styled.header`
   .menu,
   .cart {
     color: rgb(${({ theme }) => theme.colors.white});
+    ${flexMixin('flex-start', 'center', 'row')};
+    padding: 0;
     ${interactNav};
     svg {
       transform: scale(1.5);
     }
+  }
+
+  & > .cart {
+    justify-content: flex-end;
   }
 
   & > .menu {
@@ -25,6 +31,9 @@ export const StyledHeader = styled.header`
     @media ${devices.tablet} {
       display: none;
     }
+  }
+  .logo-wrapper {
+    ${flexMixin('center', 'center', 'row')};
   }
   .logo {
     transform: scale(0.75);
