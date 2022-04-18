@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { flexMixin, opacityMixin } from 'shared/mixins';
 import { interactAndHover } from 'shared/styles/interactive.styles';
 
+// TODO implement StyledNav for desktop/tablet
 const StyledNav = styled.nav`
-  &.mobile-nav {
+  /* &.mobile-nav {
     position: absolute;
     right: 0;
     top: 0;
@@ -40,7 +41,7 @@ const StyledNav = styled.nav`
         font-size: 2.5rem;
       }
     }
-  }
+  } */
 `;
 
 export const StyledMobileNav = styled.nav`
@@ -56,10 +57,15 @@ export const StyledMobileNav = styled.nav`
     flex-direction: row;
     justify-content: space-evenly;
     gap: 1rem;
+    box-shadow: 0px 12px 14px 4px rgba(0, 0, 0, 0.5);
 
     & > div {
       width: 30vw;
     }
+  }
+
+  h1 {
+    font-size: 1.8rem;
   }
 
   img {
