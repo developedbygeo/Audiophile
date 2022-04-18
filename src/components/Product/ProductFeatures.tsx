@@ -1,19 +1,36 @@
+/* eslint-disable react/no-array-index-key */
 import { MediumHeading, Description } from 'components/UI/Text.styled';
-import { LargeSimpleContainer } from 'components/UI/Container.styled';
-import { FeaturesType } from 'shared/models/product.model';
+import { FeaturesType, IncludedType } from 'shared/models/product.model';
+import { FeaturesContainer, StyledList, Included, Quantity, Unit } from './ProductFeatures.styled';
 
 type FeatureProps = {
   features: FeaturesType;
+  included: IncludedType;
 };
 
-const ProductFeatures = ({ features }: FeatureProps) => {
+const ProductFeatures = ({ features, included }: FeatureProps) => {
   return (
-    <LargeSimpleContainer as="article">
-      <MediumHeading as="h4" weight="bold">
-        Features
-      </MediumHeading>
-      <Description>{features}</Description>
-    </LargeSimpleContainer>
+    <FeaturesContainer as="article">
+      <article>
+        <MediumHeading as="h4" weight="bold">
+          Features
+        </MediumHeading>
+        <Description className="desc">{features}</Description>
+      </article>
+      <article>
+        <MediumHeading as="h4" weight="bold">
+          IN THE BOX
+        </MediumHeading>
+        <StyledList>
+          {included.map((piece, index) => (
+            <Included key={index}>
+              <Quantity>{piece.quantity}x</Quantity>
+              <Unit>{piece.item}</Unit>
+            </Included>
+          ))}
+        </StyledList>
+      </article>
+    </FeaturesContainer>
   );
 };
 
