@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <StyledHeader>
       {shouldButtonRender}
-      <Link to="/home" aria-label="Return to home">
+      <Link className="logo-wrapper" to="/home" aria-label="Return to home">
         <Logo className="logo" role="img" aria-label="logo" />
       </Link>
       <UnstyledButton className="cart" title="Toggle Cart">
