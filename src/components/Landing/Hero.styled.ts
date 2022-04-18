@@ -6,6 +6,9 @@ import { flexMixin } from 'shared/mixins';
 import { elevationThree } from 'shared/styles/shadows.styles';
 
 const StyledHero = styled.section`
+  min-height: 90vh;
+  padding-inline: 10%;
+  width: 100%;
   background: url(${landing[0]}) no-repeat center;
   background-size: cover;
 
