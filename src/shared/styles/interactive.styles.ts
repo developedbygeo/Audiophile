@@ -4,7 +4,7 @@ export const interactCta = css`
   transition: all 100ms ease;
 
   &:active {
-    box-shadow: inset 0px 9px 14px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 9px 14px 5px rgba(0, 0, 0, 0.15);
   }
   @media (hover: hover) {
     &:hover {
