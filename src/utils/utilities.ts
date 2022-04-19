@@ -15,3 +15,7 @@ export const getOrdinal = (n: number) => {
   if (formatted in ordinalLookup) return ordinalLookup[formatted as keyof typeof ordinalLookup];
   return '';
 };
+
+export const getImagePath = (partialPath: string, sliceCount: number = 8) => {
+  return `images/${partialPath.slice(sliceCount)}`;
+};
