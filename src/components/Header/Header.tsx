@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import useWindow from 'hooks/useWindow';
 
 import { GoThreeBars, GoX } from 'react-icons/go';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 
+import CartButton from 'components/UI/CartButton';
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledHeader } from './Header.styled';
 import MobileNav from './MobileNav';
@@ -42,9 +42,7 @@ const Header = () => {
       <Link className="logo-wrapper" to="/home" aria-label="Return to home">
         <Logo className="logo" role="img" aria-label="logo" />
       </Link>
-      <UnstyledButton className="cart" title="Toggle Cart">
-        <AiOutlineShoppingCart />
-      </UnstyledButton>
+      <CartButton />
       {width < 768 ? navIsEnabled && <MobileNav /> : <Nav className={navClass} />}
     </StyledHeader>
   );
