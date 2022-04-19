@@ -30,6 +30,7 @@
     "no-param-reassign": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
+    "react/no-array-index-key": "off",
     // TODO fix this when setting up the store
     "import/no-cycle": "off"
   }
