@@ -62,6 +62,10 @@ export const GoBackButton = styled(UnstyledButton)`
   @media (hover: hover) {
     &:hover {
       color: rgba(${({ theme }) => theme.colors.black}, 1);
+      text-decoration: underline;
     }
+  }
+  &:active {
+    transform: scale(0.98);
   }
 `;
