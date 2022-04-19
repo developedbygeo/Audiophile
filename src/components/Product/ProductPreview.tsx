@@ -1,6 +1,5 @@
 import useWindowWidth from 'hooks/useWindow';
-import useImage from 'hooks/useImage';
-import { derivedViewport } from 'utils/utilities';
+import { derivedViewport, getImagePath } from 'utils/utilities';
 
 import { ProductType } from 'shared/models/product.model';
 
@@ -14,15 +13,13 @@ type ProductProps = {
 const ProductPreview = ({ product }: ProductProps) => {
   const width = useWindowWidth();
   const viewport = derivedViewport(width);
-  const productImage = useImage(product.categoryImage[viewport]);
+  const productImage = getImagePath(product.categoryImage[viewport]);
 
   return (
     <StyledPreview as="article">
-      {productImage && (
-        <StyledImageCont>
-          <img src={productImage} alt={product.name} />
-        </StyledImageCont>
-      )}
+      <StyledImageCont>
+        <img src={productImage} alt={product.name} />
+      </StyledImageCont>
       <StyledText>
         {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
         <MediumHeading as="h2">{product.name}</MediumHeading>
