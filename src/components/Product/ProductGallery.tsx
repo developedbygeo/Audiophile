@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import useWindowWidth from 'hooks/useWindow';
 
-import { derivedViewport, getOrdinal } from 'utils/utilities';
+import { derivedViewport, getImagePath, getOrdinal } from 'utils/utilities';
 import { GalleryType } from 'shared/models/product.model';
 import { StyledGallery, ImageContainer, GalleryImage } from './ProductGallery.styled';
 
@@ -18,8 +18,7 @@ const ProductGallery = ({ gallery, productTitle }: ProductGalleryProps) => {
     <StyledGallery>
       {Object.keys(gallery).map((key, index) => {
         const ordinal = getOrdinal(index);
-        const formattedPath = gallery[ordinal as keyof GalleryType][viewport].slice(8);
-        const image = `images/${formattedPath}`;
+        const image = getImagePath(gallery[ordinal as keyof GalleryType][viewport]);
 
         return (
           <ImageContainer key={index}>
