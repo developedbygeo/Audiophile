@@ -11,11 +11,11 @@ export const StyledHeader = styled.header`
   ${flexMixin('space-between', 'center', 'row')};
   background: rgb(${({ theme }) => theme.colors.black});
 
-  .menu,
-  .cart {
+  .menu {
     color: rgb(${({ theme }) => theme.colors.white});
-    ${flexMixin('flex-start', 'center', 'row')};
     padding: 0;
+    transform: scale(1.1);
+    ${flexMixin('flex-start', 'center', 'row')};
     ${interactNav};
     svg {
       transform: scale(1.5);
