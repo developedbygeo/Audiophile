@@ -68,7 +68,7 @@ main{
     background: #fff;
     overflow-x: hidden;
     ${gridMixin('1fr', 'auto')};
-    gap: 5vh;
+    gap: 10vh;
     /* TODO add suspense/lazy loading/content-loader */
     &>svg{
       width: 100%;
