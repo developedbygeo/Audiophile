@@ -4,6 +4,7 @@ import { useAppSelector } from 'app/hooks';
 import ProductDetails from 'components/Product/ProductDetails';
 import ProductFeatures from 'components/Product/ProductFeatures';
 import ProductGallery from 'components/Product/ProductGallery';
+import SimilarProducts from 'components/Product/SimilarProducts';
 
 const Details = () => {
   const { pathname } = useLocation();
@@ -18,6 +19,7 @@ const Details = () => {
       <ProductDetails product={product} />
       <ProductFeatures features={product.features} included={product.includes} />
       <ProductGallery gallery={product.gallery} productTitle={product.name} />
+      <SimilarProducts products={product.others} />
     </>
   );
 };
