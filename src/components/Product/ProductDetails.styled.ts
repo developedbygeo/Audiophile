@@ -54,6 +54,7 @@ export const GoBackButton = styled(UnstyledButton)`
   align-self: flex-start;
   text-align: left;
   padding-inline: 0;
+  letter-spacing: 0.175rem;
   transition: all 100ms ease;
   color: rgba(${({ theme }) => theme.colors.black}, 0.6);
   font-weight: 400;
