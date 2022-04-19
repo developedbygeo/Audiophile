@@ -27,9 +27,10 @@ const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
+      const priceCharge = newItem.price * action.payload.quantity;
       const doesProductExist = state.products.find((product) => product.id === newItem.id);
-      state.totalCost += newItem.price;
-      state.totalQuantity += 1;
+      state.totalCost += priceCharge;
+      state.totalQuantity += action.payload.quantity;
       if (!doesProductExist) {
         state.products.push({
           ...newItem,
@@ -37,8 +38,8 @@ const cartSlice = createSlice({
           quantity: 1
         });
       } else {
-        doesProductExist.quantity += 1;
-        doesProductExist.price += newItem.price;
+        doesProductExist.quantity += action.payload.quantity;
+        doesProductExist.price += priceCharge;
       }
     },
     removeProduct: (state, action: PayloadAction<number>) => {
