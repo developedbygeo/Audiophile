@@ -19,3 +19,8 @@ export const getOrdinal = (n: number) => {
 export const getImagePath = (partialPath: string, sliceCount: number = 8) => {
   return `images/${partialPath.slice(sliceCount)}`;
 };
+
+export const getCartImage = (productName: string) => {
+  const formattedName = productName.toLowerCase().replace(/\s+/g, '-');
+  return `/images/cart/image-${formattedName}.jpg`;
+};
