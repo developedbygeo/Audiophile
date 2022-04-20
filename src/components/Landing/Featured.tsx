@@ -1,14 +1,13 @@
 import useWindowWidth from 'hooks/useWindow';
 
 import { Description, BigHeading } from 'components/UI/Text.styled';
-import { CtaButton } from 'components/UI/Button.styled';
+import { ProductLink } from 'components/UI/Button.styled';
 import {
   BigContainer,
   SmallerContainer,
   FeaturedText,
   EarphonesContainer,
-  Zx9Image,
-  SecondaryFeaturedBtn
+  Zx9Image
 } from './Featured.styled';
 
 const Featured = () => {
@@ -26,20 +25,24 @@ const Featured = () => {
               Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
             </Description>
           )}
-          <CtaButton role="link" className="zx9-btn">
+          <ProductLink to="/products/zx9-speaker" className="zx9-btn">
             SEE PRODUCT
-          </CtaButton>
+          </ProductLink>
         </div>
       </BigContainer>
       <SmallerContainer as="article" className="zx7-home">
         <BigHeading>ZX7 SPEAKER</BigHeading>
-        <SecondaryFeaturedBtn role="link">SEE PRODUCT</SecondaryFeaturedBtn>
+        <ProductLink to="/products/zx7-speaker" look="secondary">
+          SEE PRODUCT
+        </ProductLink>
       </SmallerContainer>
       <SmallerContainer as="article" className="yx1">
         <EarphonesContainer />
         <FeaturedText>
           <BigHeading>YX1 EARPHONES</BigHeading>
-          <SecondaryFeaturedBtn role="link">SEE PRODUCT</SecondaryFeaturedBtn>
+          <ProductLink to="/products/yx1-earphones" look="secondary">
+            SEE PRODUCT
+          </ProductLink>
         </FeaturedText>
       </SmallerContainer>
     </>
