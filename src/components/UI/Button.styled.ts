@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-import { resetDefaults } from 'shared/mixins';
-import { BaseProps } from 'shared/models/props.model';
+import { NavLink } from 'react-router-dom';
+import { resetDefaults, flexMixin } from 'shared/mixins';
+import { baseCtaButtonStyling, ctaStyling, secondaryStyling } from 'shared/styles/button.styles';
+import { BaseProps, LinkProps } from 'shared/models/props.model';
 import { interactCta } from 'shared/styles/interactive.styles';
 import { elevationOne } from 'shared/styles/shadows.styles';
 
@@ -23,4 +25,15 @@ export const CtaButton = styled.button<BaseProps>`
   letter-spacing: 0.125rem;
   ${interactCta}
   ${elevationOne}
+`;
+
+const getLinkStyling = (props: LinkProps) => {
+  if (props.look === 'secondary') return secondaryStyling;
+  return ctaStyling;
+};
+
+export const ProductLink = styled(NavLink)`
+  ${baseCtaButtonStyling};
+  ${getLinkStyling};
+  ${flexMixin('center', 'center', 'row')};
 `;
