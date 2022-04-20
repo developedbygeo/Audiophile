@@ -2,8 +2,9 @@ import styled from 'styled-components/macro';
 
 import { Container } from 'components/UI/Container.styled';
 import { flexMixin } from 'shared/mixins';
+import { ProductLink } from 'components/UI/Button.styled';
 import { StyledGallery } from './ProductGallery.styled';
-import { ProductLink, StyledImageCont } from './ProductPreview.styled';
+import { StyledImageCont } from './ProductPreview.styled';
 
 export const StyledSimilar = styled(StyledGallery)`
   gap: 3vh;
@@ -13,7 +14,7 @@ export const StyledSimilar = styled(StyledGallery)`
 
   ul {
     ${flexMixin('flex-start', 'center', 'column')};
-    gap: 10vh;
+    gap: 5vh;
   }
 `;
 
