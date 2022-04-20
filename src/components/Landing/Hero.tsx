@@ -1,4 +1,4 @@
-import { CtaButton } from 'components/UI/Button.styled';
+import { ProductLink } from 'components/UI/Button.styled';
 import { Description, BigHeading, MediumHeading } from 'components/UI/Text.styled';
 import StyledHero from './Hero.styled';
 
@@ -16,7 +16,7 @@ const Hero = () => {
         </Description>
       </div>
       <div className="cta-wrapper">
-        <CtaButton>SEE PRODUCT</CtaButton>
+        <ProductLink to="/products/xx99-mark-one-headphones">SEE PRODUCT</ProductLink>
       </div>
     </StyledHero>
   );
