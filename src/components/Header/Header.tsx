@@ -5,11 +5,11 @@ import useWindow from 'hooks/useWindow';
 import { GoThreeBars, GoX } from 'react-icons/go';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 
-import CartButton from 'components/UI/CartButton';
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledHeader } from './Header.styled';
 import MobileNav from './MobileNav';
 import Nav from './Nav';
+import CartButton from './CartButton';
 
 const Header = () => {
   const width = useWindow();
