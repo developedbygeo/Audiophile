@@ -4,7 +4,8 @@ import { derivedViewport, getImagePath } from 'utils/utilities';
 import { ProductType } from 'shared/models/product.model';
 
 import { Description, MediumHeading, SmallSubheading } from 'components/UI/Text.styled';
-import { StyledPreview, StyledImageCont, StyledText, ProductLink } from './ProductPreview.styled';
+import { ProductLink } from 'components/UI/Button.styled';
+import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
 
 type ProductProps = {
   product: ProductType;
