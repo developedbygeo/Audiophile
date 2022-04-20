@@ -4,11 +4,9 @@ import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { flexMixin } from 'shared/mixins';
 import { devices } from 'shared/breakpoints';
 import { elevationOne } from 'shared/styles/shadows.styles';
-import { secondaryColorInteract, tertiaryColorInteract } from 'shared/styles/interactive.styles';
+import { tertiaryColorInteract } from 'shared/styles/interactive.styles';
 
 import { zx9 as zx9Images, zx7 as zx7Images, yx1 as yx1Images } from 'shared/images';
-import { CtaButton } from 'components/UI/Button.styled';
-import { secondaryStyling } from 'shared/styles/button.styles';
 
 export const BigContainer = styled(LargeSimpleContainer)`
   position: relative;
@@ -100,11 +98,6 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
       border-radius: 2rem;
     }
   }
-`;
-
-export const SecondaryFeaturedBtn = styled(CtaButton)`
-  ${secondaryStyling}
-  ${secondaryColorInteract};
 `;
 
 export const Zx9Image = styled.div`
