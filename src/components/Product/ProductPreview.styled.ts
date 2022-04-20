@@ -2,8 +2,6 @@ import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
-import { NavLink } from 'react-router-dom';
-import { ctaStyling, baseCtaButtonStyling } from 'shared/styles/button.styles';
 import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledPreview = styled(LargeSimpleContainer)`
@@ -49,10 +47,4 @@ export const StyledText = styled.div`
   .desc {
     ${grayDescription};
   }
-`;
-
-export const ProductLink = styled(NavLink)`
-  ${baseCtaButtonStyling};
-  ${ctaStyling};
-  ${flexMixin('center', 'center', 'row')};
 `;
