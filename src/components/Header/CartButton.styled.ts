@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
 import { interactNav } from 'shared/styles/interactive.styles';
-import { UnstyledButton } from './Button.styled';
+import { UnstyledButton } from 'components/UI/Button.styled';
 
 export const StyledCartButton = styled(UnstyledButton)`
   position: relative;
