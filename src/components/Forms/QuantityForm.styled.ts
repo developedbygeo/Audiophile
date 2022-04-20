@@ -11,6 +11,7 @@ export const StyledQuantity = styled.div`
   padding: 1rem;
   max-width: 20vh;
   border-radius: 0.5rem;
+  transition: all 250ms ease;
   ${flexMixin('space-between', 'center', 'row')};
 
   input {
