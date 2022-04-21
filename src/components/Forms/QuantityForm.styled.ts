@@ -26,7 +26,9 @@ export const StyledQuantity = styled.div`
     font-size: 2.25rem;
     font-weight: 700;
     padding: 0.25rem;
+    height: 80%;
     width: 20%;
+    ${flexMixin('center', 'center', 'column')};
     border-radius: 50%;
     transition: all 100ms ease;
     border: none;
