@@ -4,10 +4,18 @@ import { flexMixin } from 'shared/mixins';
 import { StyledImageCont } from 'components/Product/ProductPreview.styled';
 
 export const StyledReview = styled.div`
-  min-height: 70vh;
+  min-height: 40vh;
+  padding: 1rem;
+  ${flexMixin('space-between', 'flex-start', 'column')};
+
+  & > button {
+    height: 6rem;
+    width: 100%;
+  }
 `;
 
 export const ReviewHeader = styled.div`
+  width: 100%;
   ${flexMixin('space-between', 'center', 'row')};
   height: 7vh;
 
@@ -17,12 +25,12 @@ export const ReviewHeader = styled.div`
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin: 0;
   }
   button {
     ${flexMixin('center', 'flex-end', 'column')};
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     padding-block: 5%;
     text-decoration: underline;
@@ -31,9 +39,11 @@ export const ReviewHeader = styled.div`
 `;
 
 export const CartList = styled.ul`
-  max-height: 50vh;
+  width: 100%;
+  max-height: 60vh;
   overflow-y: auto;
-  ${flexMixin('space-evenly', 'center', 'column')};
+  ${flexMixin('flex-start', 'center', 'column')};
+  gap: 2rem;
 `;
 
 export const CartItem = styled.li`
@@ -76,5 +86,18 @@ export const CartItemQuantity = styled.div`
         color: rgb(${({ theme }) => theme.colors.brand});
       }
     }
+  }
+`;
+
+export const CartPrice = styled.div`
+  width: 100%;
+  ${flexMixin('space-between', 'center', 'row')};
+  h2 {
+    font-size: 2rem;
+    font-weight: ${({ theme }) => theme.typography.weights.body};
+    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
+  }
+  h3 {
+    font-size: 2.4rem;
   }
 `;
