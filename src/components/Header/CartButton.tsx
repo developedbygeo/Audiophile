@@ -16,7 +16,11 @@ const CartButton = () => {
     setIsCartOpen((prevState) => !prevState);
   };
 
-  const ModalDialogue = !totalQuantity ? <NoItems onDisable={cartHandler} /> : <CartReview />;
+  const ModalDialogue = !totalQuantity ? (
+    <NoItems onDisable={cartHandler} />
+  ) : (
+    <CartReview onDisable={cartHandler} />
+  );
 
   return (
     <>
