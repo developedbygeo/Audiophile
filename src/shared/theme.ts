@@ -14,7 +14,7 @@ const myTheme: DefaultTheme = {
     silver: '241, 241, 241' || '#f1f1f1',
     extraGrayish: '216, 216, 216' || '#d8d8d8',
     brand: '216, 125, 74' || '#d87d4a',
-    accent: '251, 175, 133' || '#fbaf85',
+    accent: '250, 150, 97' || '#fa9661',
     black: '0, 0, 0' || '#000000',
     smokeyBlack: '16, 16, 16' || '#101010',
     davysGray: '76, 76, 76' || '#4c4c4c',
