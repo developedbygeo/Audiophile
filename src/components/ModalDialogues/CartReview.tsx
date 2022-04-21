@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { getCartImage } from 'utils/utilities';
 import { CartItem as ICartItem, addProduct, removeProduct, resetCart } from 'features/cartSlice';
 
+import { ModalBackdropProps as DialogueProps } from 'shared/models/props.model';
+
 import { BigHeading } from 'components/UI/Text.styled';
 import { GoBackButton as TextButton } from 'components/Product/ProductDetails.styled';
-import { UnstyledButton } from 'components/UI/Button.styled';
+import { UnstyledButton, CtaButton } from 'components/UI/Button.styled';
 import {
   StyledReview,
   ReviewHeader,
@@ -12,12 +15,14 @@ import {
   CartItem,
   CartItemText,
   CartImageCont,
-  CartItemQuantity
+  CartItemQuantity,
+  CartPrice
 } from './CartReview.styled';
 
-const CartReview = () => {
+const CartReview = ({ onDisable }: DialogueProps) => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { products, totalQuantity } = useAppSelector((state) => state.cart);
+  const { products, totalQuantity, totalCost } = useAppSelector((state) => state.cart);
 
   const incrementHandler = (dispatchInfo: ICartItem) => {
     dispatch(addProduct(dispatchInfo));
@@ -29,6 +34,11 @@ const CartReview = () => {
 
   const removeAllHandler = () => {
     dispatch(resetCart());
+  };
+
+  const checkoutHandler = () => {
+    navigate('/checkout');
+    onDisable();
   };
 
   return (
@@ -50,7 +60,7 @@ const CartReview = () => {
               </CartImageCont>
               <CartItemText>
                 <h4>{name}</h4>
-                <p>$ {price}</p>
+                <p>$ {price.toLocaleString()}</p>
               </CartItemText>
               <CartItemQuantity>
                 <UnstyledButton onClick={() => decrementHandler(id)} type="button">
@@ -65,6 +75,15 @@ const CartReview = () => {
           );
         })}
       </CartList>
+      <CartPrice>
+        <BigHeading as="h2">TOTAL</BigHeading>
+        <BigHeading as="h3" weight="bold">
+          $ {totalCost.toLocaleString()}
+        </BigHeading>
+      </CartPrice>
+      <CtaButton onClick={checkoutHandler} role="link">
+        CHECKOUT
+      </CtaButton>
     </StyledReview>
   );
 };
