@@ -27,18 +27,17 @@ const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
-      const priceCharge = newItem.price * action.payload.quantity;
+      const priceCharge = newItem.price * newItem.quantity;
       const doesProductExist = state.products.find((product) => product.id === newItem.id);
       state.totalCost += priceCharge;
-      state.totalQuantity += action.payload.quantity;
+      state.totalQuantity += newItem.quantity;
       if (!doesProductExist) {
         state.products.push({
           ...newItem,
-          price: newItem.price,
-          quantity: 1
+          price: priceCharge
         });
       } else {
-        doesProductExist.quantity += action.payload.quantity;
+        doesProductExist.quantity += newItem.quantity;
         doesProductExist.price += priceCharge;
       }
     },
@@ -51,8 +50,9 @@ const cartSlice = createSlice({
       if (productToRemove.quantity === 1) {
         state.products = state.products.filter((item) => item.id !== productId);
       } else {
+        const singleProductPrice = productToRemove.price / productToRemove.quantity;
         productToRemove.quantity -= 1;
-        productToRemove.price *= productToRemove.quantity;
+        productToRemove.price = productToRemove.quantity * singleProductPrice;
       }
     },
     setCheckout: (state, action: PayloadAction<boolean>) => {
