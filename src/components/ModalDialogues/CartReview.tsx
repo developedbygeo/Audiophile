@@ -1,23 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { getCartImage } from 'utils/utilities';
 import { CartItem as ICartItem, addProduct, removeProduct, resetCart } from 'features/cartSlice';
 
 import { ModalBackdropProps as DialogueProps } from 'shared/models/props.model';
 
 import { BigHeading } from 'components/UI/Text.styled';
 import { GoBackButton as TextButton } from 'components/Product/ProductDetails.styled';
-import { UnstyledButton, CtaButton } from 'components/UI/Button.styled';
-import {
-  StyledReview,
-  ReviewHeader,
-  CartList,
-  CartItem,
-  CartItemText,
-  CartImageCont,
-  CartItemQuantity,
-  CartPrice
-} from './CartReview.styled';
+import CartItem from 'components/Cart/CartItem';
+import CartActions from 'components/Cart/CartActions';
+import { StyledReview, ReviewHeader, CartList } from './CartReview.styled';
 
 const CartReview = ({ onDisable }: DialogueProps) => {
   const navigate = useNavigate();
@@ -49,41 +40,21 @@ const CartReview = ({ onDisable }: DialogueProps) => {
       </ReviewHeader>
       <CartList>
         {products.map(({ name, price, id, quantity }) => {
-          const individualProductPrice = +price / +quantity;
-          const productImage = getCartImage(name);
-          const detailsToDispatch = { name, price: individualProductPrice, id, quantity: 1 };
-
           return (
-            <CartItem key={id}>
-              <CartImageCont>
-                <img src={productImage} alt={name} />
-              </CartImageCont>
-              <CartItemText>
-                <h4>{name}</h4>
-                <p>$ {price.toLocaleString()}</p>
-              </CartItemText>
-              <CartItemQuantity>
-                <UnstyledButton onClick={() => decrementHandler(id)} type="button">
-                  -
-                </UnstyledButton>
-                <span>{quantity}</span>
-                <UnstyledButton onClick={() => incrementHandler(detailsToDispatch)} type="button">
-                  +
-                </UnstyledButton>
-              </CartItemQuantity>
-            </CartItem>
+            <CartItem
+              isCartView
+              name={name}
+              price={price}
+              id={id}
+              quantity={quantity}
+              key={id}
+              onDecrement={decrementHandler}
+              onIncrement={incrementHandler}
+            />
           );
         })}
       </CartList>
-      <CartPrice>
-        <BigHeading as="h2">TOTAL</BigHeading>
-        <BigHeading as="h3" weight="bold">
-          $ {totalCost.toLocaleString()}
-        </BigHeading>
-      </CartPrice>
-      <CtaButton onClick={checkoutHandler} role="link">
-        CHECKOUT
-      </CtaButton>
+      <CartActions cost={totalCost} onCheckout={checkoutHandler} />
     </StyledReview>
   );
 };
