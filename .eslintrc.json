@@ -31,6 +31,7 @@
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
     "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
     // TODO fix this when setting up the store
     "import/no-cycle": "off"
   }
