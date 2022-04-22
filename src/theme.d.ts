@@ -20,6 +20,8 @@ declare module 'styled-components' {
       smokeyBlack: string;
       davysGray: string;
       spanishGray: string;
+      inputGray: string;
+      ctaRed: string;
     };
   }
 }
