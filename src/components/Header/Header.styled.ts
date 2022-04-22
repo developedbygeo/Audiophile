@@ -7,7 +7,7 @@ import { interactNav } from 'shared/styles/interactive.styles';
 // TODO add active mixin
 
 export const StyledHeader = styled.header`
-  padding-inline: 5%;
+  padding-inline: 6%;
   ${flexMixin('space-between', 'center', 'row')};
   background: rgb(${({ theme }) => theme.colors.black});
 
