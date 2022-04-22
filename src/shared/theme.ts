@@ -18,7 +18,9 @@ const myTheme: DefaultTheme = {
     black: '0, 0, 0' || '#000000',
     smokeyBlack: '16, 16, 16' || '#101010',
     davysGray: '76, 76, 76' || '#4c4c4c',
-    spanishGray: '151, 151, 151' || '#979797'
+    spanishGray: '151, 151, 151' || '#979797',
+    inputGray: '207, 207, 207' || '#cfcfcf',
+    ctaRed: '205, 44, 44' || '#cd2c2c'
   }
 };
 
