@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 import { flexMixin } from 'shared/mixins';
 
 export const StyledReview = styled.div`
-  min-height: 40vh;
+  min-height: 55vh;
   padding: 1rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
 
