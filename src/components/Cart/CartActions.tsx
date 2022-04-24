@@ -4,11 +4,12 @@ import { CartPrice } from './CartActions.styled';
 
 type ActionProps = {
   cost: number;
-  onCheckout: () => void;
+  onCheckout?: () => void;
   children?: React.ReactNode;
+  isPay?: boolean;
 };
 
-const CartActions = ({ children, cost, onCheckout }: ActionProps) => {
+const CartActions = ({ children, cost, onCheckout, isPay }: ActionProps) => {
   return (
     <>
       <CartPrice>
@@ -16,10 +17,10 @@ const CartActions = ({ children, cost, onCheckout }: ActionProps) => {
         <BigHeading as="h3" weight="bold">
           $ {cost.toLocaleString()}
         </BigHeading>
-        {children}
       </CartPrice>
+      {children}
       <CtaButton onClick={onCheckout} role="link">
-        CHECKOUT
+        {isPay ? 'CONTINUE & PAY' : 'CHECKOUT'}
       </CtaButton>
     </>
   );
