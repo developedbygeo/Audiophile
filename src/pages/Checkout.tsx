@@ -5,8 +5,9 @@ import { PageBackground } from 'components/Forms/Checkout.styled';
 const Checkout = () => {
   return (
     <PageBackground>
-      <CheckoutForm />
-      <CheckoutSummary />
+      <CheckoutForm>
+        <CheckoutSummary />
+      </CheckoutForm>
     </PageBackground>
   );
 };
