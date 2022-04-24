@@ -24,3 +24,13 @@ export const getCartImage = (productName: string) => {
   const formattedName = productName.toLowerCase().replace(/\s+/g, '-');
   return `/images/cart/image-${formattedName}.jpg`;
 };
+
+export const getVatValue = (cost: number) => {
+  return Math.ceil((cost * 0.2) / 10) * 10;
+};
+
+export const getShippingCost = (cost: number) => {
+  const maxEvaluation = Math.max(50, cost * 10) / 1000;
+  const ceiling = Math.ceil(maxEvaluation * 10);
+  return Math.min(ceiling, 1000).toLocaleString();
+};
