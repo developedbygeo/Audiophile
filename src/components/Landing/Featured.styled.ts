@@ -32,7 +32,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
     ${tertiaryColorInteract};
   }
 
-  & > div {
+  &.featured > div {
     width: 100%;
     height: 100%;
     padding-block: 5vh;
