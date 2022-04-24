@@ -16,7 +16,7 @@ const Featured = () => {
 
   return (
     <>
-      <BigContainer as="article">
+      <BigContainer className="featured" as="article">
         <div>
           <Zx9Image role="img" />
           <BigHeading>ZX9 SPEAKER</BigHeading>
