@@ -2,15 +2,52 @@ import { v4 as uuid } from 'uuid';
 
 const checkoutData = {
   billing: [
-    { field: 'Name', placeholder: 'Alexei Ward', type: 'text', id: uuid() },
-    { field: 'Email Address', placeholder: 'alexeiward@mail.com', type: 'email', id: uuid() },
-    { field: 'Phone Number', placeholder: '+1 202-555-0136', type: 'text', id: uuid() }
+    {
+      field: 'Name',
+      fieldName: 'name',
+      placeholder: 'Alexei Ward',
+      type: 'text',
+      id: uuid(),
+      validation: '^[a-zA-Z]*$'
+    },
+    {
+      field: 'Email Address',
+      fieldName: 'email',
+      placeholder: 'alexeiward@mail.com',
+      type: 'email',
+      id: uuid(),
+      validation: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$'
+    },
+    {
+      field: 'Phone Number',
+      fieldName: 'phone',
+
+      placeholder: '1 202 555 0136',
+      type: 'text',
+      id: uuid(),
+      validation: '^[0-9]+$'
+    }
   ],
   shipping: [
-    { field: 'Your Address', placeholder: '1137 Williams Avenue', type: 'text', id: uuid() },
-    { field: 'Zip Code', placeholder: '10001', type: 'text', id: uuid() },
-    { field: 'City', placeholder: 'New York', id: uuid() },
-    { field: 'Country', placeholder: 'United States', id: uuid() }
+    {
+      field: 'Your Address',
+      fieldName: 'address',
+
+      placeholder: '1137 Williams Avenue',
+      type: 'text',
+      id: uuid(),
+      validation: '^[a-zA-Z0-9\\s]+$'
+    },
+    {
+      field: 'Zip Code',
+      fieldName: 'zip',
+      placeholder: '10001',
+      type: 'text',
+      id: uuid(),
+      validation: '^[0-9]+$'
+    },
+    { field: 'City', fieldName: 'city', placeholder: 'New York', id: uuid(), validation: '[a-zA-Z\\s]+' },
+    { field: 'Country', placeholder: 'United States', id: uuid(), validation: '[a-zA-Z]+' }
   ]
 };
 
