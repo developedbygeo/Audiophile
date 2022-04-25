@@ -1,3 +1,4 @@
+import { useAppSelector } from 'app/hooks';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import GlobalStyle from 'shared/globalStyle';
@@ -17,6 +18,7 @@ import Footer from 'components/Footer/Footer';
 function App() {
   const { pathname } = useLocation();
   const isCheckout = pathname === '/checkout';
+  const { totalCost } = useAppSelector((state) => state.cart);
   return (
     <>
       <GlobalStyle />
@@ -29,7 +31,7 @@ function App() {
           <Route path="headphones" element={<Headphones />} />
           <Route path="earphones" element={<Earphones />} />
           <Route path="products/:id" element={<Details />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout" element={totalCost ? <Checkout /> : <Navigate to="/" />} />
         </Routes>
         {!isCheckout && (
           <>
