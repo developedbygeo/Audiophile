@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// TODO finish this component
-import { useAppSelector } from 'app/hooks';
+import { useEffect } from 'react';
+import { useAppSelector, useAppDispatch } from 'app/hooks';
+import { setShipping } from 'features/cartSlice';
 import { getVatValue, getShippingCost } from 'utils/utilities';
 
 import CartActions from 'components/Cart/CartActions';
@@ -10,12 +10,17 @@ import { BigHeading } from 'components/UI/Text.styled';
 import { SummaryList, PriceBreakdown, GrandTotal } from './CheckoutSummary.styled';
 
 const CheckoutSummary = () => {
-  const { products, totalQuantity, totalCost } = useAppSelector((state) => state.cart);
+  const { products, totalCost } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   const vatValue = getVatValue(totalCost);
   const shippingValue = getShippingCost(totalCost);
 
   const grandTotal = totalCost + +vatValue;
+
+  useEffect(() => {
+    dispatch(setShipping(+shippingValue));
+  }, [dispatch, shippingValue]);
 
   return (
     <SummaryList as="ul">
