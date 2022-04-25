@@ -59,10 +59,6 @@ export const FormSection = styled.div`
   gap: 2rem;
   padding-block: 3vh;
 
-  label {
-    font-weight: ${({ theme }) => theme.typography.weights.heading};
-  }
-
   &.shipping-section {
     h2 {
       margin-bottom: 2rem;
@@ -74,6 +70,18 @@ export const InputContainer = styled.div`
   ${flexMixin('space-between', 'flex-start', 'column')};
   gap: 1.5rem;
   width: 100%;
+
+  &.error {
+    label {
+      color: rgb(${({ theme }) => theme.colors.ctaRed});
+    }
+    & p {
+      color: rgb(${({ theme }) => theme.colors.ctaRed});
+    }
+    & input {
+      border: 0.25rem solid rgb(${({ theme }) => theme.colors.ctaRed});
+    }
+  }
 `;
 
 export const InputField = styled.input`
@@ -84,16 +92,6 @@ export const InputField = styled.input`
   outline: none;
   border-radius: 0.75rem;
   border: 0.125rem solid rgb(${({ theme }) => theme.colors.inputGray});
-
-  &.error {
-    border: 0.175rem solid rgb(${({ theme }) => theme.colors.ctaRed});
-    & ~ div > label {
-      color: rgb(${({ theme }) => theme.colors.ctaRed});
-    }
-    & ~ p {
-      color: rgb(${({ theme }) => theme.colors.ctaRed});
-    }
-  }
 
   @media (hover: hover) {
     &:hover {
@@ -112,5 +110,19 @@ export const InputField = styled.input`
     color: rgb(${({ theme }) => theme.colors.black});
     border: 0.17rem solid rgb(${({ theme }) => theme.colors.brand});
     caret-color: rgb(${({ theme }) => theme.colors.brand});
+  }
+`;
+
+export const LabelContainer = styled.div`
+  ${flexMixin('space-between', 'center', 'row')};
+  width: 100%;
+
+  label {
+    font-weight: ${({ theme }) => theme.typography.weights.heading};
+  }
+
+  p {
+    font-weight: ${({ theme }) => theme.typography.weights.subheading};
+    letter-spacing: initial;
   }
 `;
