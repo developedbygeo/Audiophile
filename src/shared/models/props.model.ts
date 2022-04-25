@@ -15,7 +15,7 @@ export type ModalOverlayProps = {
 };
 
 export type ModalBackdropProps = {
-  onDisable: () => void;
+  onDisable?: () => void;
 };
 
 export type ModalDivProps = {
