@@ -32,7 +32,6 @@ const checkoutData = {
     {
       field: 'Your Address',
       fieldName: 'address',
-
       placeholder: '1137 Williams Avenue',
       type: 'text',
       id: uuid(),
@@ -47,7 +46,13 @@ const checkoutData = {
       validation: '^[0-9]+$'
     },
     { field: 'City', fieldName: 'city', placeholder: 'New York', id: uuid(), validation: '[a-zA-Z\\s]+' },
-    { field: 'Country', placeholder: 'United States', id: uuid(), validation: '[a-zA-Z]+' }
+    {
+      field: 'Country',
+      fieldName: 'country',
+      placeholder: 'United States',
+      id: uuid(),
+      validation: '[a-zA-Z]+'
+    }
   ]
 };
 
