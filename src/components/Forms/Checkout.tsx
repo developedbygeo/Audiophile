@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import Modal from 'components/UI/Modal';
@@ -7,7 +7,7 @@ import Success from 'components/ModalDialogues/Success';
 
 import checkoutData from 'utils/checkoutData';
 import { BigHeading, MediumHeading } from 'components/UI/Text.styled';
-import { StyledCheckout, FormSection, InputContainer, InputField } from './Checkout.styled';
+import { StyledCheckout, FormSection, InputContainer, LabelContainer, InputField } from './Checkout.styled';
 
 type FormProps = {
   children: React.ReactNode;
@@ -24,10 +24,9 @@ interface IFormInputs {
   country: string;
 }
 
-const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
-
 const CheckoutForm = ({ children }: FormProps) => {
   const [isPaid, setIsPaid] = useState(false);
+  // const navigate = useNavigate();
 
   const {
     register,
@@ -35,53 +34,76 @@ const CheckoutForm = ({ children }: FormProps) => {
     formState: { errors }
   } = useForm<IFormInputs>();
 
-  const paidHandler = () => setIsPaid((prevState) => !prevState);
-
+  const submitHandler: SubmitHandler<IFormInputs> = () => {
+    setIsPaid(true);
+  };
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(submitHandler)}>
         <StyledCheckout as="section">
           <BigHeading>Checkout</BigHeading>
-
-          {/* TODO separate components */}
           <FormSection className="billing-section">
             <MediumHeading as="h2">Billing Details</MediumHeading>
-            {checkoutData.billing.map(({ field, fieldName, id, type, placeholder, validation }) => (
-              <InputContainer key={id} className={errors[fieldName as FieldNameType] && 'error'}>
-                <label htmlFor={id}>{field}</label>
-                <InputField
-                  {...register(fieldName as FieldNameType, {
-                    required: 'Required',
-                    pattern: {
-                      value: new RegExp(validation),
-                      message: `Invalid ${field.toLowerCase()}`
-                    },
-                    validate: (value) => new RegExp(validation).test(value)
-                  })}
-                  type={type}
-                  id={id}
-                  placeholder={placeholder}
-                />
-                {errors[fieldName as FieldNameType] && <p>Incorrect {field}</p>}
-              </InputContainer>
-            ))}
+            {checkoutData.billing.map(({ field, fieldName, id, type, placeholder, validation }) => {
+              const fieldIdentifier = fieldName.toLowerCase();
+
+              return (
+                <InputContainer key={id} className={errors[fieldName as FieldNameType] && 'error'}>
+                  <LabelContainer>
+                    <label htmlFor={id}>{field}</label>
+                    {errors[fieldName as FieldNameType] && <p>Incorrect {fieldIdentifier} field</p>}
+                  </LabelContainer>
+                  <InputField
+                    {...register(fieldName as FieldNameType, {
+                      required: 'Required',
+                      pattern: {
+                        value: new RegExp(validation),
+                        message: `Invalid ${fieldIdentifier}`
+                      },
+                      validate: (value) => new RegExp(validation).test(value)
+                    })}
+                    type={type}
+                    id={id}
+                    placeholder={placeholder}
+                  />
+                </InputContainer>
+              );
+            })}
           </FormSection>
-          {/* TODO separate components */}
           <FormSection className="shipping-section">
             <MediumHeading as="h2">Shipping Info</MediumHeading>
-            {checkoutData.shipping.map(({ field, id, type, placeholder, validation }) => (
-              <InputContainer key={id}>
-                <InputField type={type} id={id} placeholder={placeholder} pattern={validation} required />
-                <label htmlFor={id}>{field}</label>
-              </InputContainer>
-            ))}
+            {checkoutData.shipping.map(({ field, fieldName, id, type, placeholder, validation }) => {
+              const fieldIdentifier = fieldName.toLowerCase();
+
+              return (
+                <InputContainer key={id} className={errors[fieldName as FieldNameType] && 'error'}>
+                  <LabelContainer>
+                    <label htmlFor={id}>{field}</label>
+                    {errors[fieldName as FieldNameType] && <p>Incorrect {fieldIdentifier}</p>}
+                  </LabelContainer>
+                  <InputField
+                    {...register(fieldName as FieldNameType, {
+                      required: true,
+                      pattern: {
+                        value: new RegExp(validation),
+                        message: `Invalid ${fieldIdentifier}`
+                      },
+                      validate: (value) => new RegExp(validation).test(value)
+                    })}
+                    type={type}
+                    id={id}
+                    placeholder={placeholder}
+                  />
+                </InputContainer>
+              );
+            })}
           </FormSection>
         </StyledCheckout>
         {children}
       </form>
       {isPaid && (
-        <Modal onDisable={paidHandler}>
-          <Success onDisable={paidHandler} />
+        <Modal>
+          <Success />
         </Modal>
       )}
     </>
