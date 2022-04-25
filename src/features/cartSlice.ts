@@ -11,6 +11,7 @@ export interface CartState {
   products: CartItem[];
   totalQuantity: number;
   totalCost: number;
+  shipping: number;
   isCheckedOut: boolean;
 }
 
@@ -18,6 +19,7 @@ const cartInitial: CartState = {
   products: [],
   totalQuantity: 0,
   totalCost: 0,
+  shipping: 0,
   isCheckedOut: false
 };
 
@@ -58,10 +60,13 @@ const cartSlice = createSlice({
     setCheckout: (state, action: PayloadAction<boolean>) => {
       state.isCheckedOut = action.payload;
     },
+    setShipping: (state, action: PayloadAction<number>) => {
+      state.shipping = action.payload;
+    },
     resetCart: () => cartInitial
   }
 });
 
-export const { addProduct, removeProduct, setCheckout, resetCart } = cartSlice.actions;
+export const { addProduct, removeProduct, setCheckout, setShipping, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
