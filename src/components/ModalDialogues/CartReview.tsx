@@ -29,7 +29,7 @@ const CartReview = ({ onDisable }: DialogueProps) => {
 
   const checkoutHandler = () => {
     navigate('/checkout');
-    onDisable();
+    if (onDisable) onDisable();
   };
 
   return (
