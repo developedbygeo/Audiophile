@@ -9,8 +9,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { StyledCartButton } from './CartButton.styled';
 
 const CartButton = () => {
-  const { totalQuantity } = useAppSelector((state) => state.cart);
+  const { totalQuantity, isCheckedOut } = useAppSelector((state) => state.cart);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const shouldQuantityRender = totalQuantity > 0 && !isCheckedOut && <span>{totalQuantity}</span>;
 
   const cartHandler = () => {
     setIsCartOpen((prevState) => !prevState);
@@ -26,7 +28,7 @@ const CartButton = () => {
     <>
       <StyledCartButton onClick={cartHandler}>
         <AiOutlineShoppingCart />
-        {totalQuantity > 0 && <span>{totalQuantity}</span>}
+        {shouldQuantityRender}
       </StyledCartButton>
       {isCartOpen && <Modal onDisable={cartHandler}>{ModalDialogue}</Modal>}
     </>
