@@ -1,3 +1,9 @@
+import { AllProductsType, ProductType } from 'shared/models/product.model';
+
+type SpecificItem = {
+  (arr: AllProductsType, id: number): ProductType;
+};
+
 export const derivedViewport = (width: number) => {
   if (width < 768) return 'mobile';
   if (width >= 768 && width < 1024) return 'tablet';
@@ -23,6 +29,10 @@ export const getImagePath = (partialPath: string, sliceCount: number = 8) => {
 export const getCartImage = (productName: string) => {
   const formattedName = productName.toLowerCase().replace(/\s+/g, '-');
   return `/images/cart/image-${formattedName}.jpg`;
+};
+
+export const getSpecificItem: SpecificItem = (arr, id) => {
+  return arr.filter((item) => item.id === id)[0];
 };
 
 export const getVatValue = (cost: number) => {
