@@ -8,7 +8,7 @@ const checkoutData = {
       placeholder: 'Alexei Ward',
       type: 'text',
       id: uuid(),
-      validation: '^[a-zA-Z]*$'
+      validation: '^[a-zA-Z\\s]*$'
     },
     {
       field: 'Email Address',
