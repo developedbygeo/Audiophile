@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from 'app/hooks';
 import { setCheckout } from 'features/cartSlice';
-// import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import Modal from 'components/UI/Modal';
@@ -26,10 +25,11 @@ interface IFormInputs {
   country: string;
 }
 
+// TODO could use useNavigate here
+
 const CheckoutForm = ({ children }: FormProps) => {
   const dispatch = useAppDispatch();
-  const [isPaid, setIsPaid] = useState(false);
-  // const navigate = useNavigate();
+  const [isOrderPaid, setIsOrderPaid] = useState(false);
 
   const {
     register,
@@ -37,11 +37,11 @@ const CheckoutForm = ({ children }: FormProps) => {
     formState: { errors }
   } = useForm<IFormInputs>();
 
-  const disableViewHandler = () => setIsPaid((prevState) => !prevState);
+  const disableViewHandler = () => setIsOrderPaid((prevState) => !prevState);
 
   // toggles success modal view and sets isCheckedOut to true to hide quantity in cart button - success dispatches the cart reset
   const submitHandler: SubmitHandler<IFormInputs> = () => {
-    setIsPaid(true);
+    setIsOrderPaid(true);
     dispatch(setCheckout(true));
   };
   return (
@@ -108,7 +108,7 @@ const CheckoutForm = ({ children }: FormProps) => {
         </StyledCheckout>
         {children}
       </form>
-      {isPaid && (
+      {isOrderPaid && (
         <Modal>
           <Success onDisable={disableViewHandler} />
         </Modal>
