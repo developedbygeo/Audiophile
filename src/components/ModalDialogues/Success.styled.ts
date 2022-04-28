@@ -2,6 +2,14 @@ import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
 import { CartItemText } from 'components/Cart/CartItem.styled';
+import { Description, grayDescription } from 'components/UI/Text.styled';
+import { StyledImageCont } from 'components/Product/ProductPreview.styled';
+
+import { StyledReview } from './CartReview.styled';
+
+export const SuccessContainer = styled(StyledReview)`
+  gap: 1.5rem;
+`;
 
 export const Checkmark = styled.div`
   height: 10vh;
@@ -32,7 +40,7 @@ export const SuccessText = styled.article`
 
 export const SuccessSummary = styled.article`
   ${flexMixin('center', 'center', 'column')};
-  padding: 1rem;
+  background: rgb(${({ theme }) => theme.colors.silver});
   .price {
     background: rgb(${({ theme }) => theme.colors.black});
     flex: 0.5;
@@ -43,7 +51,7 @@ export const SuccessQuantity = styled.div`
   ${flexMixin('center', 'center', 'column')};
 
   p {
-    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
+    ${grayDescription};
     font-weight: ${({ theme }) => theme.typography.weights.heading};
   }
 `;
@@ -53,7 +61,6 @@ export const SuccessItem = styled.div`
   padding: 5rem 2rem;
   flex: 1;
   ${flexMixin('space-between', 'center', 'row')};
-  background: rgb(${({ theme }) => theme.colors.silver});
 
   & > div {
     ${flexMixin('center', 'center', 'column')};
@@ -72,6 +79,12 @@ export const SuccessItem = styled.div`
   }
 `;
 
+export const SuccessItemImageCont = styled(StyledImageCont)`
+  img {
+    width: 20vw;
+  }
+`;
+
 export const SuccessItemText = styled(CartItemText)`
   h4 {
     font-size: 2rem;
@@ -81,5 +94,30 @@ export const SuccessItemText = styled(CartItemText)`
   p {
     text-align: left;
     align-self: flex-start;
+  }
+`;
+
+export const AdditionalItemsText = styled(Description)`
+  padding: 0.5rem 1rem 2rem 1rem;
+  font-size: 1.6rem;
+  font-weight: ${({ theme }) => theme.typography.weights.heading};
+  ${grayDescription};
+`;
+
+export const GrandTotal = styled.article`
+  width: 100%;
+  padding: 1.5rem 4rem;
+  ${flexMixin('space-evenly', 'flex-start', 'column')};
+  background: rgb(${({ theme }) => theme.colors.black});
+  border-radius: 0rem 0rem 1rem 1rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 2rem;
+    color: rgba(${({ theme }) => theme.colors.white}, 0.6);
+  }
+  h4 {
+    font-size: 2.8rem;
+    color: rgb(${({ theme }) => theme.colors.white});
   }
 `;
