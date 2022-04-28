@@ -4,6 +4,7 @@ import { bestGear } from 'shared/images';
 import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
+import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledBrand = styled(LargeSimpleContainer)`
   ${flexMixin('flex-start', 'center', 'column')};
@@ -57,7 +58,7 @@ export const BrandText = styled.div`
   }
 
   p {
-    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
+    ${grayDescription};
     font-weight: 400;
   }
 
