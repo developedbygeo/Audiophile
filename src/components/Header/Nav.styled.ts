@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { flexMixin, opacityMixin } from 'shared/mixins';
 import { interactAndHover } from 'shared/styles/interactive.styles';
+import { devices } from 'shared/breakpoints';
 
 // TODO implement StyledNav for desktop/tablet
 const StyledNav = styled.nav`
@@ -54,13 +55,15 @@ export const StyledMobileNav = styled.nav`
   background: rgb(${({ theme }) => theme.colors.white});
 
   section {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    gap: 1rem;
+    gap: 10rem;
     box-shadow: 0px 12px 14px 4px rgba(0, 0, 0, 0.5);
+    padding-block: 10vh;
 
     & > div {
-      width: 30vw;
+      /* width: 30vw; */
+      width: 80%;
     }
   }
 
@@ -69,7 +72,20 @@ export const StyledMobileNav = styled.nav`
   }
 
   img {
-    width: 10rem;
+    width: 15rem;
+  }
+
+  @media ${devices.tablet} {
+    section {
+      flex-direction: row;
+      gap: 1rem;
+      padding-block: 0;
+      padding: 11vh 0 5vh 0;
+
+      & > div {
+        width: 30vw;
+      }
+    }
   }
 `;
 
