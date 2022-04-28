@@ -12,6 +12,7 @@ import { ModalBackdropProps as DialogueProps } from 'shared/models/props.model';
 import { BsCheckLg } from 'react-icons/bs';
 import { BigHeading, Description } from 'components/UI/Text.styled';
 import { StyledImageCont } from 'components/Product/ProductPreview.styled';
+import { CtaButton } from 'components/UI/Button.styled';
 
 import { StyledReview as StyledContainer } from './CartReview.styled';
 import {
@@ -61,9 +62,9 @@ const Success = ({ onDisable }: DialogueProps) => {
           </SuccessQuantity>
         </SuccessItem>
       </SuccessSummary>
-      <button onClick={resetCartHandler} type="button">
-        Hi
-      </button>
+      <CtaButton onClick={resetCartHandler} type="button">
+        Back to Home
+      </CtaButton>
     </StyledContainer>
   );
 };
