@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
 import { StyledImageCont } from 'components/Product/ProductPreview.styled';
+import { grayDescription } from 'components/UI/Text.styled';
 
 export const CartItemContainer = styled.li`
   width: 100%;
@@ -25,7 +26,7 @@ export const CartItemText = styled.div`
 
   p {
     font-weight: ${({ theme }) => theme.typography.weights.heading};
-    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
+    ${grayDescription};
   }
 `;
 
