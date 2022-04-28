@@ -9,6 +9,7 @@ import Headphones from 'pages/Headphones';
 import Earphones from 'pages/Earphones';
 import Details from 'pages/Details';
 import Checkout from 'pages/Checkout';
+import NotFound from 'pages/NotFound';
 
 import Header from 'components/Header/Header';
 import Categories from 'components/Categories/Categories';
@@ -32,6 +33,7 @@ function App() {
           <Route path="earphones" element={<Earphones />} />
           <Route path="products/:id" element={<Details />} />
           <Route path="checkout" element={totalCost ? <Checkout /> : <Navigate to="/" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {!isCheckout && (
           <>
