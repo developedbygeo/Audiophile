@@ -15,7 +15,7 @@ const Header = () => {
   const width = useWindow();
   const { pathname } = useLocation();
   const [navIsEnabled, setNavIsEnabled] = useState(false);
-  const navClass = width < 768 ? 'mobile-nav' : 'desktop-nav';
+  const navClass = width < 1024 ? 'mobile-nav' : 'desktop-nav';
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -30,7 +30,7 @@ const Header = () => {
 
   const buttonContent = !navIsEnabled ? <GoThreeBars /> : <GoX />;
 
-  const shouldButtonRender = width < 768 && (
+  const shouldButtonRender = width < 1024 && (
     <UnstyledButton onClick={navToggleHandler} title="Toggle Menu" className="menu">
       {buttonContent}
     </UnstyledButton>
@@ -43,7 +43,7 @@ const Header = () => {
         <Logo className="logo" role="img" aria-label="logo" />
       </Link>
       <CartButton />
-      {width < 768 ? navIsEnabled && <MobileNav /> : <Nav className={navClass} />}
+      {width < 1024 ? navIsEnabled && <MobileNav /> : <Nav className={navClass} />}
     </StyledHeader>
   );
 };
