@@ -9,7 +9,7 @@ export const StyledCartButton = styled(UnstyledButton)`
   color: rgb(${({ theme }) => theme.colors.white});
   padding: 0;
   transform: scale(1.1);
-  ${flexMixin('flex-start', 'center', 'row')};
+  ${flexMixin('center', 'center', 'row')};
   ${interactNav};
   svg {
     transition: all 100ms ease;
@@ -19,16 +19,17 @@ export const StyledCartButton = styled(UnstyledButton)`
   span {
     transition: all 100ms ease;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0;
+    right: -0.5rem;
     width: auto;
     min-width: 2.2rem;
     height: 2rem;
     border-radius: 50%;
-    right: 0.5rem;
     font-size: 1.4rem;
     font-weight: ${({ theme }) => theme.typography.weights.heading};
     background: rgb(${({ theme }) => theme.colors.smokeyBlack});
     ${flexMixin('center', 'center', 'row')};
+    text-align: center;
   }
   @media (hover: hover) {
     &:hover > span {
