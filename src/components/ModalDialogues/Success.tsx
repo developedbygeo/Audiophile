@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-// TODO finish component;
-
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { resetCart } from 'features/cartSlice';
 import useWindowWidth from 'hooks/useWindow';
@@ -11,23 +7,27 @@ import { ModalBackdropProps as DialogueProps } from 'shared/models/props.model';
 
 import { BsCheckLg } from 'react-icons/bs';
 import { BigHeading, Description } from 'components/UI/Text.styled';
-import { StyledImageCont } from 'components/Product/ProductPreview.styled';
 import { CtaButton } from 'components/UI/Button.styled';
 
-import { StyledReview as StyledContainer } from './CartReview.styled';
 import {
+  SuccessContainer,
   Checkmark,
   SuccessText,
   SuccessItem,
+  SuccessItemImageCont,
   SuccessItemText,
+  SuccessSummary,
   SuccessQuantity,
-  SuccessSummary
+  AdditionalItemsText,
+  GrandTotal
 } from './Success.styled';
 
 const Success = ({ onDisable }: DialogueProps) => {
   const { products, totalCost, shipping } = useAppSelector((state) => state.cart);
+  const aggregateCost = totalCost + shipping;
   const allProducts = useAppSelector((state) => state.products);
   const topProductInCart = products[0];
+  const extraProductsInCart = products.length - 1;
   const productData = getSpecificItem(allProducts, topProductInCart.id);
   const dispatch = useAppDispatch();
   const width = useWindowWidth();
@@ -40,7 +40,7 @@ const Success = ({ onDisable }: DialogueProps) => {
   };
 
   return (
-    <StyledContainer as="section">
+    <SuccessContainer as="section">
       <Checkmark>
         <BsCheckLg />
       </Checkmark>
@@ -50,9 +50,9 @@ const Success = ({ onDisable }: DialogueProps) => {
       </SuccessText>
       <SuccessSummary>
         <SuccessItem>
-          <StyledImageCont>
+          <SuccessItemImageCont>
             <img src={productImage} alt={topProductInCart.name} />
-          </StyledImageCont>
+          </SuccessItemImageCont>
           <SuccessItemText>
             <BigHeading as="h4">{topProductInCart.name}</BigHeading>
             <Description>$ {topProductInCart.price.toLocaleString()}</Description>
@@ -61,11 +61,18 @@ const Success = ({ onDisable }: DialogueProps) => {
             <Description>x{topProductInCart.quantity}</Description>
           </SuccessQuantity>
         </SuccessItem>
+        {products.length > 1 && (
+          <AdditionalItemsText>{`and ${extraProductsInCart} other item(s)`}</AdditionalItemsText>
+        )}
+        <GrandTotal>
+          <BigHeading as="h3">Grand Total</BigHeading>
+          <BigHeading as="h4">$ {aggregateCost.toLocaleString()}</BigHeading>
+        </GrandTotal>
       </SuccessSummary>
       <CtaButton onClick={resetCartHandler} type="button">
         Back to Home
       </CtaButton>
-    </StyledContainer>
+    </SuccessContainer>
   );
 };
 
