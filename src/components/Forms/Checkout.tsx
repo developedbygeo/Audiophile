@@ -25,8 +25,6 @@ interface IFormInputs {
   country: string;
 }
 
-// TODO could use useNavigate here
-
 const CheckoutForm = ({ children }: FormProps) => {
   const dispatch = useAppDispatch();
   const [isOrderPaid, setIsOrderPaid] = useState(false);
