@@ -28,7 +28,7 @@ export const StyledHeader = styled.header`
 
   & > .menu {
     z-index: 10;
-    @media ${devices.tablet} {
+    @media ${devices.laptop} {
       display: none;
     }
   }
