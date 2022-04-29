@@ -5,7 +5,7 @@ import PageBanner from 'components/Header/PageBanner';
 const Earphones = () => (
   <>
     <ScrollTop />
-    <PageBanner page="earphones" />
+    <PageBanner />
     <Products category="earphones" />
   </>
 );
