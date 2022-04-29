@@ -4,16 +4,19 @@ import { devices } from 'shared/breakpoints';
 import { landing } from 'shared/images';
 import { flexMixin } from 'shared/mixins';
 import { elevationThree } from 'shared/styles/shadows.styles';
+import { whiteishDescription } from 'components/UI/Text.styled';
 
 const StyledHero = styled.section`
   min-height: 90vh;
   padding-inline: 10%;
   width: 100%;
+  margin-bottom: 7.5vh;
   background: url(${landing[0]}) no-repeat center;
   background-size: cover;
 
   @media ${devices.tablet} {
     background: url(${landing[1]}) no-repeat center;
+    background-size: cover;
   }
   @media ${devices.laptop} {
     background: url(${landing[2]}) no-repeat center;
@@ -36,9 +39,7 @@ const StyledHero = styled.section`
     color: rgba(${({ theme }) => theme.colors.white}, 1);
   }
   p {
-    color: rgba(${({ theme }) => theme.colors.white}, 0.75);
-    letter-spacing: 0.25rem;
-    line-height: 1.75;
+    ${whiteishDescription};
   }
   .header-wrapper {
     margin-top: 10vh;
