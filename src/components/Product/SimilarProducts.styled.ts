@@ -7,6 +7,8 @@ import { StyledGallery } from './ProductGallery.styled';
 import { StyledImageCont } from './ProductPreview.styled';
 
 export const StyledSimilar = styled(StyledGallery)`
+  margin-top: 0;
+  margin-bottom: 10vh;
   gap: 3vh;
   a {
     margin-top: 0;
