@@ -5,6 +5,7 @@ import { flexMixin } from 'shared/mixins';
 export const StyledGallery = styled.section`
   height: auto;
   padding-inline: 5%;
+  margin-block: 10vh;
   ${flexMixin('flex-start', 'center', 'column')};
   gap: 1vh;
 
