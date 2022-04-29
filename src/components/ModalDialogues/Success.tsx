@@ -69,7 +69,7 @@ const Success = ({ onDisable }: DialogueProps) => {
           <BigHeading as="h4">$ {aggregateCost.toLocaleString()}</BigHeading>
         </GrandTotal>
       </SuccessSummary>
-      <CtaButton onClick={resetCartHandler} type="button">
+      <CtaButton onClick={resetCartHandler} type="button" role="link">
         Back to Home
       </CtaButton>
     </SuccessContainer>
