@@ -24,7 +24,7 @@ html{
       font-size: 55%;
     }
     @media ${devices.tablet}{
-      font-size: 60%;
+      font-size: 65%;
     }
     @media ${devices.laptopL}{
       font-size: 62.5%;
@@ -68,7 +68,6 @@ main{
     background: #fff;
     overflow-x: hidden;
     ${gridMixin('1fr', 'auto')};
-    gap: 10vh;
     /* TODO add suspense/lazy loading/content-loader */
     &>svg{
       width: 100%;
