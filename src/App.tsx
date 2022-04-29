@@ -18,6 +18,7 @@ import Footer from 'components/Footer/Footer';
 
 function App() {
   const { pathname } = useLocation();
+  const isHome = pathname.slice(1) === 'home';
   const isCheckout = pathname === '/checkout';
   const { totalCost } = useAppSelector((state) => state.cart);
   return (
@@ -37,7 +38,7 @@ function App() {
         </Routes>
         {!isCheckout && (
           <>
-            <Categories />
+            {!isHome && <Categories />}
             <Brand />
           </>
         )}
