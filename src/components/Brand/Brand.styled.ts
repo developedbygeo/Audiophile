@@ -8,11 +8,13 @@ import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledBrand = styled(LargeSimpleContainer)`
   ${flexMixin('flex-start', 'center', 'column')};
+  margin-top: 10vh;
   padding-block: 3vh;
   gap: 5vh;
 
   @media ${devices.tablet} {
     height: 75vh;
+    margin-top: 7.5vh;
   }
   @media ${devices.laptop} {
     height: 70vh;
@@ -63,7 +65,7 @@ export const BrandText = styled.div`
   }
 
   @media ${devices.tablet} {
-    padding-inline: 5vw;
+    padding-inline: 7.075vw;
   }
   @media ${devices.laptop} {
     h1,
