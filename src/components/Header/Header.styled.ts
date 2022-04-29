@@ -41,4 +41,13 @@ export const StyledHeader = styled.header`
   .num {
     font-weight: 800;
   }
+
+  @media ${devices.tablet} {
+    .logo {
+      transform: scale(1.5);
+    }
+    .menu svg {
+      transform: scale(2);
+    }
+  }
 `;
