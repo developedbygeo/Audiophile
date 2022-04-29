@@ -8,10 +8,12 @@ import { grayDescription } from 'components/UI/Text.styled';
 export const FeaturesContainer = styled(LargeSimpleContainer)`
   ${flexMixin('center', 'flex-start', 'column')};
   height: auto;
+  margin-top: 5vh;
   gap: 5vh;
   article {
     ${gridMixin('1fr', 'auto')};
     gap: 3rem;
+    margin-top: 5vh;
   }
   .desc {
     ${grayDescription};
