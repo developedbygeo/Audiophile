@@ -1,15 +1,15 @@
-import { BigHeading } from 'components/UI/Text.styled';
+import { useLocation } from 'react-router-dom';
 
+import { BigHeading } from 'components/UI/Text.styled';
 import { StyledBanner } from './PageBanner.styled';
 
-type PageBannerProps = {
-  page: string;
-};
+const PageBanner = () => {
+  const { pathname } = useLocation();
+  const formattedPath = pathname.slice(1).toUpperCase();
 
-const PageBanner = ({ page }: PageBannerProps) => {
   return (
     <StyledBanner>
-      <BigHeading>{page.toUpperCase()}</BigHeading>
+      <BigHeading>{formattedPath}</BigHeading>
     </StyledBanner>
   );
 };
