@@ -2,16 +2,22 @@ import styled from 'styled-components/macro';
 
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { flexMixin } from 'shared/mixins';
-import { devices } from 'shared/breakpoints';
 import { elevationOne } from 'shared/styles/shadows.styles';
 import { tertiaryColorInteract } from 'shared/styles/interactive.styles';
+import { devices } from 'shared/breakpoints';
 
 import { zx9 as zx9Images, zx7 as zx7Images, yx1 as yx1Images } from 'shared/images';
+import { whiteishDescription } from 'components/UI/Text.styled';
 
 export const BigContainer = styled(LargeSimpleContainer)`
   position: relative;
   background: rgb(${({ theme }) => theme.colors.brand});
   overflow: hidden;
+  margin-top: 10vh;
+
+  @media ${devices.tablet} {
+    margin-top: 7.5vh;
+  }
 
   /* pseudo circle underneath h1 */
   @media screen and (max-width: 768px) {
@@ -35,8 +41,16 @@ export const BigContainer = styled(LargeSimpleContainer)`
   &.featured > div {
     width: 100%;
     height: 100%;
-    padding-block: 5vh;
+    padding: 5rem 10rem;
     ${flexMixin('space-around', 'center', 'column')};
+
+    p {
+      ${whiteishDescription};
+    }
+
+    @media ${devices.tablet} {
+      padding: 5rem 15rem;
+    }
   }
 
   h1 {
@@ -60,6 +74,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
 
   @media ${devices.tablet} {
     height: 40vh;
+    padding-inline: 0;
   }
 
   button {
@@ -81,6 +96,11 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     background-size: cover;
     min-height: 20rem;
     min-width: 20rem;
+
+    @media ${devices.tablet} {
+      height: 35vh;
+      padding-inline: 10vw;
+    }
   }
 
   &.yx1 {
@@ -89,13 +109,16 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     gap: 0vh;
 
     @media ${devices.tablet} {
+      height: 30vh;
+      margin-top: 2vh;
       flex-direction: row;
-      gap: 0rem;
+      gap: 1rem;
     }
     div {
       width: 100%;
       height: 100%;
       border-radius: 2rem;
+      margin-top: 0;
     }
   }
 `;
@@ -160,13 +183,15 @@ export const FeaturedText = styled(SmallerContainer)`
   gap: 3vh;
   padding: 2rem 3rem;
   @media ${devices.tablet} {
-    padding-inline: 2rem;
+    align-items: center;
+    padding-inline: 1vw;
     h1 {
       text-align: left;
+      margin-left: 0;
     }
     h1,
     button {
-      margin-left: 5vw;
+      margin-left: 0;
     }
   }
 `;
