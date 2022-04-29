@@ -26,6 +26,13 @@ const getWeight = (props: FontProps) => {
 export const grayDescription = css`
   color: rgba(${({ theme }) => theme.colors.black}, 0.7);
   line-height: 1.75;
+  letter-spacing: 0.25rem;
+`;
+
+export const whiteishDescription = css`
+  color: rgba(${({ theme }) => theme.colors.white}, 0.75);
+  line-height: 1.75;
+  letter-spacing: 0.25rem;
 `;
 
 export const Description = styled.p`
