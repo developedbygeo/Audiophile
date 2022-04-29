@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
+import { devices } from 'shared/breakpoints';
 import { interactNav } from 'shared/styles/interactive.styles';
 import { UnstyledButton } from 'components/UI/Button.styled';
 
@@ -39,5 +40,11 @@ export const StyledCartButton = styled(UnstyledButton)`
   }
   &:active > svg {
     transform: scale(1.25);
+  }
+
+  @media ${devices.tablet} {
+    svg {
+      transform: scale(2);
+    }
   }
 `;
