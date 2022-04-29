@@ -3,12 +3,24 @@ import styled from 'styled-components/macro';
 import { flexMixin } from 'shared/mixins';
 import { colorInteract, interactAndHover } from 'shared/styles/interactive.styles';
 import { Card } from 'components/UI/Card.styled';
+import { devices } from 'shared/breakpoints';
+import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledCategories = styled.section`
   background: rgb(${({ theme }) => theme.colors.white});
   padding: 11vh 0 5vh 0;
   ${flexMixin('space-between', 'center', 'column')};
   gap: 2rem;
+
+  @media ${devices.tablet} {
+    padding-inline: 5%;
+    flex-direction: row;
+    min-height: 30vh;
+    & > div {
+      width: 30vw;
+      height: 20vh;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -39,7 +51,7 @@ export const CategoryCard = styled(Card)`
     padding: 1rem;
     ${interactAndHover};
     span {
-      color: rgba(${({ theme }) => theme.colors.black}, 0.5);
+      ${grayDescription};
       font-weight: 400;
     }
     @media (hover: hover) {
