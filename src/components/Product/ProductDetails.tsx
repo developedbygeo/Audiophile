@@ -23,7 +23,7 @@ const ProductDetails = ({ product }: DetailsProps) => {
   const width = useWindowWidth();
   const viewport = derivedViewport(width);
   const navigate = useNavigate();
-  const productImage = getImagePath(product!.categoryImage[viewport]);
+  const productImage = getImagePath(product!.image[viewport]);
   const { name, price, id } = product;
 
   const goBackHandler = () => navigate(-1);
@@ -39,17 +39,21 @@ const ProductDetails = ({ product }: DetailsProps) => {
     <>
       <ScrollTop />
       <DetailsContainer as="section">
-        <GoBackButton onClick={goBackHandler}>Go Back</GoBackButton>
-        <ProductImageCont>
+        <GoBackButton onClick={goBackHandler} title="Return to the previous page">
+          Go Back
+        </GoBackButton>
+        <ProductImageCont as="figure">
           <img src={productImage} alt={product.name} />
         </ProductImageCont>
-        <ProductText>
-          {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
-          <MediumHeading as="h2">{product.name}</MediumHeading>
-          <Description className="desc">{product.description}</Description>
-          <PriceTag>{`$ ${Number(product.price).toLocaleString()}`}</PriceTag>
-        </ProductText>
-        <QuantityForm productDetails={{ name, price, id }} />
+        <article>
+          <ProductText>
+            {product.new && <SmallSubheading as="h1">NEW PRODUCT</SmallSubheading>}
+            <MediumHeading as="h2">{product.name}</MediumHeading>
+            <Description className="desc">{product.description}</Description>
+            <PriceTag>{`$ ${Number(product.price).toLocaleString()}`}</PriceTag>
+          </ProductText>
+          <QuantityForm productDetails={{ name, price, id }} />
+        </article>
       </DetailsContainer>
     </>
   );
