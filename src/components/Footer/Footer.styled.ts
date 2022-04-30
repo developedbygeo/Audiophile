@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { Description } from 'components/UI/Text.styled';
 import { flexMixin } from 'shared/mixins';
@@ -8,7 +9,8 @@ import { interactNav, interactAndHover } from 'shared/styles/interactive.styles'
 export const StyledFooter = styled(LargeSimpleContainer)`
   ${flexMixin('space-evenly', 'center', 'column')};
   position: relative;
-  height: 70vh;
+  min-height: 70vh;
+  height: auto;
   width: 100%;
   gap: 2rem;
   border-radius: 0;
@@ -27,6 +29,15 @@ export const StyledFooter = styled(LargeSimpleContainer)`
     height: 0.75rem;
     background: rgb(${({ theme }) => theme.colors.brand});
   }
+
+  @media ${devices.tablet} {
+    min-height: 40vh;
+    padding: 2rem 5vw;
+    align-items: flex-start;
+    &::before {
+      left: 17%;
+    }
+  }
 `;
 
 export const StyledLinks = styled.div`
@@ -38,6 +49,10 @@ export const StyledLinks = styled.div`
     ${interactNav};
     ${interactAndHover};
   }
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+  }
 `;
 
 export const FooterDescription = styled(Description)`
@@ -45,10 +60,26 @@ export const FooterDescription = styled(Description)`
   line-height: 1.5;
   font-size: 1.7rem;
   color: rgba(${({ theme }) => theme.colors.white}, 0.5);
+
+  @media ${devices.tablet} {
+    text-align: left;
+  }
 `;
 
 export const Copyright = styled(FooterDescription)`
   font-weight: 600;
+`;
+
+export const FinePrint = styled.small`
+  width: 100%;
+  height: 100%;
+  ${flexMixin('space-evenly', 'center', 'column')};
+  gap: 3rem;
+
+  @media ${devices.tablet} {
+    ${flexMixin('space-between', 'center', 'row')};
+    height: auto;
+  }
 `;
 
 export const Social = styled(FooterDescription)`
@@ -58,5 +89,9 @@ export const Social = styled(FooterDescription)`
   svg {
     transform: scale(1.6);
     color: rgb(${({ theme }) => theme.colors.white});
+  }
+
+  @media ${devices.tablet} {
+    gap: 5vw;
   }
 `;
