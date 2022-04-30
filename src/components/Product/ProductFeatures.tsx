@@ -11,13 +11,13 @@ type FeatureProps = {
 const ProductFeatures = ({ features, included }: FeatureProps) => {
   return (
     <FeaturesContainer as="article">
-      <article>
+      <article className="features">
         <MediumHeading as="h4" weight="bold">
           Features
         </MediumHeading>
         <Description className="desc">{features}</Description>
       </article>
-      <article>
+      <article className="contained">
         <MediumHeading as="h4" weight="bold">
           IN THE BOX
         </MediumHeading>
