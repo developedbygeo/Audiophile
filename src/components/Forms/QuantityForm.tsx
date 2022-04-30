@@ -19,6 +19,8 @@ const QuantityForm = ({ productDetails }: FormProps) => {
   const [quantity, setQuantity] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const cartButtonClasses = isSubmitted ? 'success' : '';
+
   const decrementHandler = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
@@ -46,7 +48,7 @@ const QuantityForm = ({ productDetails }: FormProps) => {
 
   return (
     <ProductActions as="form" onSubmit={addProductHandler}>
-      <StyledQuantity>
+      <StyledQuantity className="quantity-btn">
         <button onClick={decrementHandler} type="button">
           -
         </button>
@@ -55,7 +57,7 @@ const QuantityForm = ({ productDetails }: FormProps) => {
           +
         </button>
       </StyledQuantity>
-      <AddCartButton type="submit" className={isSubmitted ? 'success' : ''} disabled={isSubmitted}>
+      <AddCartButton type="submit" className={`cart-btn ${cartButtonClasses}`} disabled={isSubmitted}>
         <BsCheckLg />
         <span>ADD TO CART</span>
       </AddCartButton>
