@@ -16,7 +16,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
   margin-top: 10vh;
 
   @media ${devices.tablet} {
-    margin-top: 7.5vh;
+    margin-top: 5vh;
   }
 
   /* pseudo circle underneath h1 */
