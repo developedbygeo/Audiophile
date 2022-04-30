@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 import { CtaButton } from 'components/UI/Button.styled';
 import { fadeOut, fadeIn } from 'shared/animations';
@@ -42,6 +43,14 @@ export const StyledQuantity = styled.div`
     }
     &:active {
       box-shadow: inset 0 0 0.05rem 0.025rem rgba(${({ theme }) => theme.colors.black}, 0.25);
+    }
+  }
+
+  @media ${devices.tablet} {
+    button {
+      height: auto;
+      width: auto;
+      padding: 0.5rem;
     }
   }
 `;
