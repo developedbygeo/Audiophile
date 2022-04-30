@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin, gridMixin } from 'shared/mixins';
-
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { grayDescription } from 'components/UI/Text.styled';
 
@@ -18,6 +18,14 @@ export const FeaturesContainer = styled(LargeSimpleContainer)`
   .desc {
     ${grayDescription};
     text-align: left;
+  }
+
+  @media ${devices.tablet} {
+    .contained {
+      ${flexMixin('space-between', 'flex-start', 'row')};
+      width: 100%;
+      padding-right: 10vw;
+    }
   }
 `;
 
