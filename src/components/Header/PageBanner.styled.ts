@@ -6,7 +6,7 @@ export const StyledBanner = styled.div`
   height: 17.5vh;
   width: 100%;
   background: rgb(${({ theme }) => theme.colors.black});
-  border-top: 0.175rem solid rgba(${({ theme }) => theme.colors.white}, 0.104);
+  border-top: 0.25rem solid rgba(${({ theme }) => theme.colors.white}, 0.104);
   padding-block: 5vh;
   ${flexMixin('center', 'center', 'row')};
 
