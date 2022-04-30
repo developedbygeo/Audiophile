@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
-import { gridMixin } from 'shared/mixins';
+import { devices } from 'shared/breakpoints';
+import { flexMixin, gridMixin } from 'shared/mixins';
 import { grayDescription } from 'components/UI/Text.styled';
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
@@ -8,6 +9,38 @@ import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.sty
 export const DetailsContainer = styled(StyledPreview)`
   .desc {
     ${grayDescription};
+  }
+  article {
+    ${flexMixin('center', 'center', 'column')};
+    gap: 2.5vh;
+  }
+
+  @media ${devices.tablet} {
+    ${gridMixin('auto', '0.05fr auto')};
+    gap: 2.5vw;
+    min-height: initial;
+    height: 65vh;
+    row-gap: 3rem;
+
+    & > button {
+      grid-area: 1/1/3/1;
+      padding: 0;
+      height: auto;
+    }
+
+    & > figure {
+      grid-area: 2/1/2/2;
+      height: 100%;
+      img {
+        height: 100%;
+        max-height: initial;
+        width: 35vw;
+      }
+    }
+
+    & > article {
+      grid-area: 2/2/2/3;
+    }
   }
 `;
 
@@ -28,6 +61,11 @@ export const ProductText = styled(StyledText)`
   h1 {
     letter-spacing: 0.7rem;
   }
+
+  @media ${devices.tablet} {
+    grid-area: 2/3/3/4;
+    padding: 0;
+  }
 `;
 
 export const PriceTag = styled.p`
@@ -46,6 +84,20 @@ export const ProductActions = styled.div`
   button {
     height: 7vh;
     width: 100%;
+  }
+
+  @media ${devices.tablet} {
+    margin-top: 0;
+    ${flexMixin('space-between', 'center', 'row')};
+    gap: 2rem;
+
+    & > .quantity-btn {
+      flex: 0.6;
+      padding: 0 1rem;
+    }
+    & > .cart-btn {
+      flex: 1;
+    }
   }
 `;
 
