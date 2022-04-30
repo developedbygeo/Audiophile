@@ -3,12 +3,13 @@ import { IoChevronForwardSharp } from 'react-icons/io5';
 
 import { thumbnails } from 'shared/images';
 import { MediumHeading } from 'components/UI/Text.styled';
+import { BaseProps } from 'shared/models/props.model';
 
 import { StyledCategories, CategoryCard, ImageWrapper } from './Categories.styled';
 
-const Categories = () => {
+const Categories = ({ className }: BaseProps) => {
   return (
-    <StyledCategories>
+    <StyledCategories className={className || ''}>
       {thumbnails.map(({ path, alt, id }) => (
         <CategoryCard key={id}>
           <ImageWrapper>
