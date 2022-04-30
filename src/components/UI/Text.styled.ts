@@ -42,6 +42,7 @@ export const Description = styled.p`
   line-height: 1.4;
   letter-spacing: 0.2rem;
   font-weight: 300;
+  white-space: pre-wrap;
   ${getWeight};
 `;
 
