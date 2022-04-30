@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { grayDescription } from 'components/UI/Text.styled';
@@ -46,5 +47,9 @@ export const StyledText = styled.div`
 
   .desc {
     ${grayDescription};
+  }
+
+  @media ${devices.tablet} {
+    padding-inline: 10%;
   }
 `;
