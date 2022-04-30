@@ -52,7 +52,7 @@ html{
     }
 }
 body{
-    height: 100vh;
+    height: auto;
     width: 100vw;
     overflow-x: hidden;
     font-family: 'Manrope', sans-serif;    
