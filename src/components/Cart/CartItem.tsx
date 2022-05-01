@@ -1,4 +1,4 @@
-import { getCartImage } from 'utils/utilities';
+import { getCartImage, trimProductName } from 'utils/utilities';
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { CartItem as ICartItem } from 'features/cartSlice';
 import { CartItemContainer, CartImageCont, CartItemText, CartItemQuantity } from './CartItem.styled';
@@ -21,6 +21,7 @@ const CartItem = ({
   className
 }: ItemProps) => {
   const productImage = getCartImage(name);
+  const trimmedName = trimProductName(name);
   const individualProductPrice = +price / +quantity;
   const detailsToDispatch = { name, price: individualProductPrice, id, quantity: 1 };
 
@@ -44,7 +45,7 @@ const CartItem = ({
         <img src={productImage} alt={name} />
       </CartImageCont>
       <CartItemText className="item-text">
-        <h4>{name}</h4>
+        <h4>{trimmedName}</h4>
         <p>$ {price.toLocaleString()}</p>
       </CartItemText>
       <CartItemQuantity className={!isCartView ? 'checkout-quantity' : ''}>
