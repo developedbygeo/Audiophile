@@ -1,11 +1,16 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 
 export const StyledReview = styled.div`
   min-height: 55vh;
   padding: 1rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
+
+  @media ${devices.tablet} {
+    min-height: 40vh;
+  }
 
   & > button {
     height: 6rem;
