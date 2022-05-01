@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 import { StyledImageCont } from 'components/Product/ProductPreview.styled';
 import { grayDescription } from 'components/UI/Text.styled';
@@ -16,6 +17,10 @@ export const CartImageCont = styled(StyledImageCont)`
   img {
     height: 10vh;
     width: 20vw;
+
+    @media ${devices.tablet} {
+      width: 15vw;
+    }
   }
 `;
 
@@ -27,6 +32,7 @@ export const CartItemText = styled.div`
   p {
     font-weight: ${({ theme }) => theme.typography.weights.heading};
     ${grayDescription};
+    color: rgba(${({ theme }) => theme.colors.black}, 0.6);
   }
 `;
 
