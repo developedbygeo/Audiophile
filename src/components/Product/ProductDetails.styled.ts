@@ -17,17 +17,18 @@ export const DetailsContainer = styled(StyledPreview)`
 
   @media ${devices.tablet} {
     ${gridMixin('auto', '0.05fr auto')};
-    gap: 2.5vw;
     min-height: initial;
     height: 65vh;
-    row-gap: 3rem;
 
+    /* go back button */
     & > button {
-      grid-area: 1/1/3/1;
+      grid-area: 1/1/1/1;
       padding: 0;
+      padding-top: 2rem;
       height: auto;
     }
 
+    /* product img */
     & > figure {
       grid-area: 2/1/2/2;
       height: 100%;
@@ -38,6 +39,7 @@ export const DetailsContainer = styled(StyledPreview)`
       }
     }
 
+    /* text */
     & > article {
       grid-area: 2/2/2/3;
     }
