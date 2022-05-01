@@ -25,6 +25,13 @@ const modalStyle = css`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
   min-height: 25vh;
+
+  @media ${devices.tablet} {
+    width: 65%;
+    top: 25%;
+    right: 25%;
+    transform: translate(-27.5%, -22.5%);
+  }
   @media ${devices.laptop} {
     width: 65vw;
   }
