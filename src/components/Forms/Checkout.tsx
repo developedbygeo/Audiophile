@@ -51,12 +51,13 @@ const CheckoutForm = ({ children }: FormProps) => {
             <MediumHeading as="h2">Billing Details</MediumHeading>
             {checkoutData.billing.map(({ field, fieldName, id, type, placeholder, validation }) => {
               const fieldIdentifier = fieldName.toLowerCase();
+              const errorClass = errors[fieldName as FieldNameType] ? 'error' : '';
 
               return (
-                <InputContainer key={id} className={errors[fieldName as FieldNameType] && 'error'}>
+                <InputContainer key={id} className={`${errorClass} ${fieldIdentifier}-cont`}>
                   <LabelContainer>
                     <label htmlFor={id}>{field}</label>
-                    {errors[fieldName as FieldNameType] && <p>Incorrect {fieldIdentifier} field</p>}
+                    {errors[fieldName as FieldNameType] && <p role="alert">Invalid {fieldIdentifier}</p>}
                   </LabelContainer>
                   <InputField
                     {...register(fieldName as FieldNameType, {
@@ -79,12 +80,13 @@ const CheckoutForm = ({ children }: FormProps) => {
             <MediumHeading as="h2">Shipping Info</MediumHeading>
             {checkoutData.shipping.map(({ field, fieldName, id, type, placeholder, validation }) => {
               const fieldIdentifier = fieldName.toLowerCase();
+              const errorClass = errors[fieldName as FieldNameType] ? 'error' : '';
 
               return (
-                <InputContainer key={id} className={errors[fieldName as FieldNameType] && 'error'}>
+                <InputContainer key={id} className={`${errorClass} ${fieldIdentifier}-cont`}>
                   <LabelContainer>
                     <label htmlFor={id}>{field}</label>
-                    {errors[fieldName as FieldNameType] && <p>Incorrect {fieldIdentifier}</p>}
+                    {errors[fieldName as FieldNameType] && <p role="alert">Incorrect {fieldIdentifier}</p>}
                   </LabelContainer>
                   <InputField
                     {...register(fieldName as FieldNameType, {
