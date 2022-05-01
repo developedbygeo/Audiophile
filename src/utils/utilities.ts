@@ -31,6 +31,10 @@ export const getCartImage = (productName: string) => {
   return `/images/cart/image-${formattedName}.jpg`;
 };
 
+export const trimProductName = (name: string) => {
+  return name.replace(/ headphones|speaker|earphones/gi, '');
+};
+
 export const getSpecificItem: SpecificItem = (arr, id) => {
   return arr.filter((item) => item.id === id)[0];
 };
