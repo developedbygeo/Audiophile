@@ -36,7 +36,9 @@ const CartReview = ({ onDisable }: DialogueProps) => {
     <StyledReview>
       <ReviewHeader>
         <BigHeading>Cart ({totalQuantity})</BigHeading>
-        <TextButton onClick={removeAllHandler}>Remove all</TextButton>
+        <TextButton onClick={removeAllHandler} title="Remove all items from your cart">
+          Remove all
+        </TextButton>
       </ReviewHeader>
       <CartList>
         {products.map(({ name, price, id, quantity }) => {
