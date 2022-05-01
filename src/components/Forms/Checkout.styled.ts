@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 
 import { flexMixin, gridMixin } from 'shared/mixins';
 import { BigContainer } from 'components/Landing/Featured.styled';
+import { devices } from 'shared/breakpoints';
 
 export const PageBackground = styled.div`
   background: rgb(${({ theme }) => theme.colors.silver});
@@ -51,6 +52,12 @@ export const StyledCheckout = styled(BigContainer)`
     font-weight: ${({ theme }) => theme.typography.weights.heading};
     letter-spacing: 0.12rem;
   }
+
+  @media ${devices.tablet} {
+    min-height: initial;
+    grid-template-rows: auto minmax(40vh, auto);
+    gap: 0;
+  }
 `;
 
 export const FormSection = styled.div`
@@ -62,6 +69,37 @@ export const FormSection = styled.div`
   &.shipping-section {
     h2 {
       margin-bottom: 2rem;
+    }
+  }
+
+  @media ${devices.tablet} {
+    &.billing-section {
+      ${gridMixin('repeat(2, 1fr)', '0.1fr repeat(2, minmax(10rem, 18rem))')};
+      row-gap: 0;
+      align-items: center;
+      min-height: initial;
+      height: 40vh;
+      padding-bottom: 0;
+      column-gap: 5vw;
+
+      h2 {
+        grid-area: 1/1/1/3;
+        padding-block: 3rem;
+      }
+    }
+    &.shipping-section {
+      ${gridMixin('repeat(2, 1fr)', '0.1fr repeat(3, minmax(10rem, 18rem))')};
+      align-items: center;
+      row-gap: 0;
+      min-height: initial;
+      height: 50vh;
+
+      h2 {
+        grid-area: 1/1/1/3;
+      }
+      .address-cont {
+        grid-area: 2/1/2/3;
+      }
     }
   }
 `;
