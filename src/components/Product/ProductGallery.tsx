@@ -21,7 +21,7 @@ const ProductGallery = ({ gallery, productTitle }: ProductGalleryProps) => {
         const image = getImagePath(gallery[ordinal as keyof GalleryType][viewport]);
 
         return (
-          <ImageContainer key={index}>
+          <ImageContainer className={`cont-${index + 1}`} key={index}>
             <GalleryImage src={image} alt={`${productTitle} depiction #${index + 1}`} />
           </ImageContainer>
         );
