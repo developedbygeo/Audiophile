@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { Container } from 'components/UI/Container.styled';
 import { flexMixin } from 'shared/mixins';
 import { ProductLink } from 'components/UI/Button.styled';
@@ -17,6 +18,22 @@ export const StyledSimilar = styled(StyledGallery)`
   ul {
     ${flexMixin('flex-start', 'center', 'column')};
     gap: 5vh;
+
+    @media ${devices.tablet} {
+      flex-direction: row;
+      gap: 2vw;
+
+      li {
+        gap: 3rem;
+      }
+      h5 {
+        font-size: 2.3rem;
+      }
+    }
+  }
+
+  @media ${devices.tablet} {
+    ${flexMixin('center', 'center', 'column')};
   }
 `;
 
