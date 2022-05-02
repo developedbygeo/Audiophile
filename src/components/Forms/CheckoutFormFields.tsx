@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form';
-import { CheckoutDataKeys, CheckoutDataType, CheckoutFieldNameType } from 'shared/models/product.model';
+import { CheckoutDataKeys, CheckoutDataType, CheckoutFieldNameType } from 'shared/models/checkout.model';
 
 import { MediumHeading } from 'components/UI/Text.styled';
 import { FormSection, InputContainer, LabelContainer, InputField } from './Checkout.styled';
@@ -32,7 +32,7 @@ const CheckoutFormFields = ({ name, data }: PartialProps) => {
             </LabelContainer>
             <InputField
               {...register(fieldName as CheckoutFieldNameType, {
-                required: 'Required',
+                required: true,
                 pattern: {
                   value: new RegExp(validation),
                   message: `Invalid ${fieldIdentifier}`
@@ -42,6 +42,8 @@ const CheckoutFormFields = ({ name, data }: PartialProps) => {
               type={type}
               id={id}
               placeholder={placeholder}
+              aria-invalid={errors[fieldName as CheckoutFieldNameType] ? 'true' : 'false'}
+              required
             />
           </InputContainer>
         );
