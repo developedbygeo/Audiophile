@@ -45,11 +45,19 @@ const checkoutData = {
       id: uuid(),
       validation: '^[0-9]+$'
     },
-    { field: 'City', fieldName: 'city', placeholder: 'New York', id: uuid(), validation: '[a-zA-Z\\s]+' },
+    {
+      field: 'City',
+      fieldName: 'city',
+      placeholder: 'New York',
+      type: 'text',
+      id: uuid(),
+      validation: '[a-zA-Z\\s]+'
+    },
     {
       field: 'Country',
       fieldName: 'country',
       placeholder: 'United States',
+      type: 'text',
       id: uuid(),
       validation: '[a-zA-Z]+'
     }
