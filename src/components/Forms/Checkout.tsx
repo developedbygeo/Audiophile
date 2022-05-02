@@ -4,12 +4,13 @@ import { setCheckout } from 'features/cartSlice';
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 import checkoutData from 'utils/checkoutData';
 
-import { CheckoutDataKeys, CheckoutDataType, CheckoutInputType } from 'shared/models/product.model';
+import { CheckoutDataKeys, CheckoutDataType, CheckoutInputType } from 'shared/models/checkout.model';
 import { BaseProps } from 'shared/models/props.model';
 
 import Modal from 'components/UI/Modal';
 import Success from 'components/ModalDialogues/Success';
 import { BigHeading } from 'components/UI/Text.styled';
+import CheckoutPayment from './CheckoutPayment';
 import { StyledCheckout } from './Checkout.styled';
 
 import FormFieldsCheckout from './CheckoutFormFields';
@@ -39,6 +40,7 @@ const CheckoutForm = ({ children }: BaseProps) => {
               key={key}
             />
           ))}
+          <CheckoutPayment />
         </StyledCheckout>
         {children}
       </form>
