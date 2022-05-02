@@ -64,4 +64,29 @@ const checkoutData = {
   ]
 };
 
+export const paymentData = {
+  paymentMethods: [
+    { name: 'emoney', fieldName: 'e-Money', id: uuid() },
+    { name: 'cod', fieldName: 'Cash on Delivery', id: uuid() }
+  ],
+  paymentDetails: [
+    {
+      field: 'e-Money Number',
+      fieldName: 'number',
+      placeholder: '238521993',
+      type: 'text',
+      id: uuid(),
+      validation: '^[0-9]+$'
+    },
+    {
+      field: 'e-Money PIN',
+      fieldName: 'country',
+      placeholder: '6891',
+      type: 'text',
+      id: uuid(),
+      validation: '^[0-9]{4}$'
+    }
+  ]
+};
+
 export default checkoutData;
