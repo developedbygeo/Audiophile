@@ -33,12 +33,8 @@ const CheckoutForm = ({ children }: BaseProps) => {
       <form onSubmit={methods.handleSubmit(submitHandler)}>
         <StyledCheckout as="section">
           <BigHeading>Checkout</BigHeading>
-          {Object.entries(checkoutData).map(([key]) => (
-            <FormFieldsCheckout
-              name={key as CheckoutDataKeys}
-              data={checkoutData[key as CheckoutDataKeys] as CheckoutDataType}
-              key={key}
-            />
+          {Object.entries(checkoutData).map(([key, value]) => (
+            <FormFieldsCheckout name={key as CheckoutDataKeys} data={value as CheckoutDataType} key={key} />
           ))}
           <CheckoutPayment />
         </StyledCheckout>
