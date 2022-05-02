@@ -1,110 +1,44 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAppDispatch } from 'app/hooks';
 import { setCheckout } from 'features/cartSlice';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
+import checkoutData from 'utils/checkoutData';
+
+import { CheckoutDataKeys, CheckoutDataType, CheckoutInputType } from 'shared/models/product.model';
+import { BaseProps } from 'shared/models/props.model';
 
 import Modal from 'components/UI/Modal';
 import Success from 'components/ModalDialogues/Success';
+import { BigHeading } from 'components/UI/Text.styled';
+import { StyledCheckout } from './Checkout.styled';
 
-import checkoutData from 'utils/checkoutData';
-import { BigHeading, MediumHeading } from 'components/UI/Text.styled';
-import { StyledCheckout, FormSection, InputContainer, LabelContainer, InputField } from './Checkout.styled';
+import FormFieldsCheckout from './CheckoutFormFields';
 
-type FormProps = {
-  children: React.ReactNode;
-};
-
-type FieldNameType = 'address' | 'zip' | 'country' | 'name' | 'email' | 'phone';
-
-interface IFormInputs {
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-  zip: string;
-  country: string;
-}
-
-const CheckoutForm = ({ children }: FormProps) => {
+const CheckoutForm = ({ children }: BaseProps) => {
+  const methods = useForm<CheckoutInputType>();
   const dispatch = useAppDispatch();
   const [isOrderPaid, setIsOrderPaid] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm<IFormInputs>();
 
   const disableViewHandler = () => setIsOrderPaid((prevState) => !prevState);
 
   // toggles success modal view and sets isCheckedOut to true to hide quantity in cart button - success dispatches the cart reset
-  const submitHandler: SubmitHandler<IFormInputs> = () => {
+  const submitHandler: SubmitHandler<CheckoutInputType> = () => {
     setIsOrderPaid(true);
     dispatch(setCheckout(true));
   };
+
   return (
-    <>
-      <form onSubmit={handleSubmit(submitHandler)}>
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(submitHandler)}>
         <StyledCheckout as="section">
           <BigHeading>Checkout</BigHeading>
-          <FormSection className="billing-section">
-            <MediumHeading as="h2">Billing Details</MediumHeading>
-            {checkoutData.billing.map(({ field, fieldName, id, type, placeholder, validation }) => {
-              const fieldIdentifier = fieldName.toLowerCase();
-              const errorClass = errors[fieldName as FieldNameType] ? 'error' : '';
-
-              return (
-                <InputContainer key={id} className={`${errorClass} ${fieldIdentifier}-cont`}>
-                  <LabelContainer>
-                    <label htmlFor={id}>{field}</label>
-                    {errors[fieldName as FieldNameType] && <p role="alert">Invalid {fieldIdentifier}</p>}
-                  </LabelContainer>
-                  <InputField
-                    {...register(fieldName as FieldNameType, {
-                      required: 'Required',
-                      pattern: {
-                        value: new RegExp(validation),
-                        message: `Invalid ${fieldIdentifier}`
-                      },
-                      validate: (value) => new RegExp(validation).test(value)
-                    })}
-                    type={type}
-                    id={id}
-                    placeholder={placeholder}
-                  />
-                </InputContainer>
-              );
-            })}
-          </FormSection>
-          <FormSection className="shipping-section">
-            <MediumHeading as="h2">Shipping Info</MediumHeading>
-            {checkoutData.shipping.map(({ field, fieldName, id, type, placeholder, validation }) => {
-              const fieldIdentifier = fieldName.toLowerCase();
-              const errorClass = errors[fieldName as FieldNameType] ? 'error' : '';
-
-              return (
-                <InputContainer key={id} className={`${errorClass} ${fieldIdentifier}-cont`}>
-                  <LabelContainer>
-                    <label htmlFor={id}>{field}</label>
-                    {errors[fieldName as FieldNameType] && <p role="alert">Incorrect {fieldIdentifier}</p>}
-                  </LabelContainer>
-                  <InputField
-                    {...register(fieldName as FieldNameType, {
-                      required: true,
-                      pattern: {
-                        value: new RegExp(validation),
-                        message: `Invalid ${fieldIdentifier}`
-                      },
-                      validate: (value) => new RegExp(validation).test(value)
-                    })}
-                    type={type}
-                    id={id}
-                    placeholder={placeholder}
-                  />
-                </InputContainer>
-              );
-            })}
-          </FormSection>
+          {Object.entries(checkoutData).map(([key]) => (
+            <FormFieldsCheckout
+              name={key as CheckoutDataKeys}
+              data={checkoutData[key as CheckoutDataKeys] as CheckoutDataType}
+              key={key}
+            />
+          ))}
         </StyledCheckout>
         {children}
       </form>
@@ -113,7 +47,7 @@ const CheckoutForm = ({ children }: FormProps) => {
           <Success onDisable={disableViewHandler} />
         </Modal>
       )}
-    </>
+    </FormProvider>
   );
 };
 
