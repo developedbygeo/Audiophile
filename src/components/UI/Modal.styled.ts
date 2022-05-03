@@ -31,6 +31,14 @@ const modalStyle = css`
     top: 25%;
     right: 25%;
     transform: translate(-27.5%, -22.5%);
+
+    &.success {
+      height: 60vh;
+      top: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+    }
   }
   @media ${devices.laptop} {
     width: 65vw;
