@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
-import { flexMixin } from 'shared/mixins';
+import { devices } from 'shared/breakpoints';
+import { flexMixin, gridMixin } from 'shared/mixins';
 import { CartItemText } from 'components/Cart/CartItem.styled';
 import { Description, grayDescription } from 'components/UI/Text.styled';
 import { StyledImageCont } from 'components/Product/ProductPreview.styled';
@@ -9,6 +10,10 @@ import { StyledReview } from './CartReview.styled';
 
 export const SuccessContainer = styled(StyledReview)`
   gap: 1.5rem;
+
+  @media ${devices.tablet} {
+    height: 100%;
+  }
 `;
 
 export const Checkmark = styled.div`
@@ -39,11 +44,16 @@ export const SuccessText = styled.article`
 `;
 
 export const SuccessSummary = styled.article`
+  width: 100%;
   ${flexMixin('center', 'center', 'column')};
   background: rgb(${({ theme }) => theme.colors.silver});
   .price {
     background: rgb(${({ theme }) => theme.colors.black});
     flex: 0.5;
+  }
+  @media ${devices.tablet} {
+    ${gridMixin('repeat(2, 1fr)', '1fr')};
+    border-radius: 1rem 0rem 0rem 1rem;
   }
 `;
 
@@ -58,8 +68,9 @@ export const SuccessQuantity = styled.div`
 
 export const SuccessItem = styled.div`
   position: relative;
-  padding: 5rem 2rem;
+  padding: 5rem 0rem;
   flex: 1;
+  width: 100%;
   ${flexMixin('space-between', 'center', 'row')};
 
   & > div {
@@ -77,15 +88,30 @@ export const SuccessItem = styled.div`
     width: 90%;
     background: rgba(${({ theme }) => theme.colors.black}, 0.15);
   }
+
+  @media ${devices.tablet} {
+    ${flexMixin('flex-start', 'center', 'row')};
+    padding: 5rem 0rem;
+    overflow: hidden;
+  }
 `;
 
 export const SuccessItemImageCont = styled(StyledImageCont)`
+  flex: 0.3;
   img {
     width: 20vw;
+  }
+  @media ${devices.tablet} {
+    ${flexMixin('flex-start', 'center', 'row')};
+    img {
+      width: 12.5vw;
+    }
   }
 `;
 
 export const SuccessItemText = styled(CartItemText)`
+  width: 100%;
+  flex: 0.4 !important;
   h4 {
     font-size: 2rem;
     margin: 0;
@@ -94,6 +120,10 @@ export const SuccessItemText = styled(CartItemText)`
   p {
     text-align: left;
     align-self: flex-start;
+  }
+  @media ${devices.tablet} {
+    flex: 0.85;
+    gap: 0;
   }
 `;
 
@@ -119,5 +149,12 @@ export const GrandTotal = styled.article`
   h4 {
     font-size: 2.8rem;
     color: rgb(${({ theme }) => theme.colors.white});
+  }
+  @media ${devices.tablet} {
+    grid-area: 1/2/3/3;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 0;
+    border-radius: 0rem 1rem 1rem 0rem;
   }
 `;
