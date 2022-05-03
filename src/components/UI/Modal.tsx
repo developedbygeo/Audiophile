@@ -9,15 +9,15 @@ const Backdrop = ({ onDisable }: ModalBackdropProps) => {
   return <DynamicDiv onClick={onDisable} backdrop />;
 };
 
-const ModalOverlay = ({ children }: ModalOverlayProps) => {
-  return <DynamicDiv>{children}</DynamicDiv>;
+const ModalOverlay = ({ children, className }: ModalOverlayProps) => {
+  return <DynamicDiv className={className}>{children}</DynamicDiv>;
 };
 
-const Modal = ({ onDisable, children }: ModalProps) => {
+const Modal = ({ onDisable, className, children }: ModalProps) => {
   return (
     <>
       {reactDom.createPortal(<Backdrop onDisable={onDisable} />, modalContainer)}
-      {reactDom.createPortal(<ModalOverlay>{children}</ModalOverlay>, modalContainer)}
+      {reactDom.createPortal(<ModalOverlay className={className}>{children}</ModalOverlay>, modalContainer)}
     </>
   );
 };
