@@ -1,15 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ChangeEvent, useState } from 'react';
 
 import { paymentData } from 'utils/checkoutData';
 import Radio from 'components/UI/Radio';
+import { MediumHeading } from 'components/UI/Text.styled';
 
-import { PaymentFieldType } from 'shared/models/payment.model';
-
-import { FormSection, InputContainer, LabelContainer } from './Checkout.styled';
+import CheckoutFormFields from './CheckoutFormFields';
+import { FormSection } from './Checkout.styled';
 
 const CheckoutPayment = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [payment, setPayment] = useState('cod');
 
   const paymentHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,16 +16,25 @@ const CheckoutPayment = () => {
 
   return (
     <FormSection className="payment-section">
-      {Object.entries(paymentData.paymentMethods).map(([key, value]) => (
-        <Radio
-          name={value.name}
-          fieldName={value.fieldName}
-          id={value.id}
-          changeHandler={paymentHandler}
-          selected={payment}
-        />
-      ))}
-      {/* {payment === 'emoney' && <InputContainer></InputContainer>} */}
+      <MediumHeading as="h2">Payment Details</MediumHeading>
+      <MediumHeading as="h3">Payment Method</MediumHeading>
+      <article className="radio-group">
+        {Object.entries(paymentData.paymentMethods).map(([key, value]) => (
+          <Radio
+            key={key}
+            name={value.name}
+            fieldName={value.fieldName}
+            id={value.id}
+            changeHandler={paymentHandler}
+            selected={payment}
+          />
+        ))}
+      </article>
+      {payment === 'emoney' && (
+        <div className="payment-details">
+          <CheckoutFormFields data={paymentData.paymentDetails} isPayment />
+        </div>
+      )}
     </FormSection>
   );
 };
