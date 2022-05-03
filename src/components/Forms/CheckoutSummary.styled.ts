@@ -30,6 +30,9 @@ export const SummaryList = styled(StyledCheckout)`
 
   @media ${devices.tablet} {
     grid-template-rows: auto minmax(10vh, auto);
+    .item-text {
+      flex: 0.95;
+    }
   }
 `;
 
