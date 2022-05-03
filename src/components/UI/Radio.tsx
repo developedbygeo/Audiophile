@@ -13,8 +13,9 @@ type RadioProps = {
 };
 
 const Radio = ({ name, fieldName, id, changeHandler, selected }: RadioProps) => {
+  const radioClass = `radio ${selected === name ? 'active' : ''}`;
   return (
-    <RadioContainer className={selected === name ? 'active' : ''}>
+    <RadioContainer className={radioClass} title={`Pay with ${fieldName}`}>
       <label htmlFor={id}>{fieldName}</label>
       <input
         type="radio"
