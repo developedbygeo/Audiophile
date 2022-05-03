@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
+import { elevationFour, elevationOne } from 'shared/styles/shadows.styles';
 
 export const RadioContainer = styled.div`
   width: 100%;
@@ -10,9 +11,18 @@ export const RadioContainer = styled.div`
   ${flexMixin('flex-end', 'center', 'row-reverse')};
   gap: 1.5rem;
   padding-inline: 5%;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgb(${({ theme }) => theme.colors.brand});
+      ${elevationOne};
+    }
+  }
 
   &.active {
     border-color: rgb(${({ theme }) => theme.colors.brand});
+    ${elevationFour}
   }
 
   label {
@@ -21,6 +31,7 @@ export const RadioContainer = styled.div`
     font-weight: ${({ theme }) => theme.typography.weights.heading};
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   input {
