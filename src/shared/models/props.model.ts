@@ -12,6 +12,7 @@ export type LinkProps = BaseProps & {
 
 export type ModalOverlayProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 export type ModalBackdropProps = {
@@ -20,6 +21,7 @@ export type ModalBackdropProps = {
 
 export type ModalDivProps = {
   backdrop?: boolean;
+  className?: string;
 };
 
 export type ModalProps = ModalOverlayProps & ModalBackdropProps;
