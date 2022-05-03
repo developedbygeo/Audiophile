@@ -80,7 +80,7 @@ export const paymentData = {
     },
     {
       field: 'e-Money PIN',
-      fieldName: 'country',
+      fieldName: 'pin',
       placeholder: '6891',
       type: 'text',
       id: uuid(),
