@@ -60,7 +60,7 @@ export const StyledCheckout = styled(BigContainer)`
   }
 `;
 
-export const FormSection = styled.div`
+export const FormSection = styled.article`
   ${flexMixin('space-evenly', 'flex-start', 'column')};
   min-height: 60vh;
   gap: 2rem;
@@ -69,6 +69,27 @@ export const FormSection = styled.div`
   &.shipping-section {
     h2 {
       margin-bottom: 2rem;
+    }
+  }
+
+  &.payment-section {
+    ${gridMixin('1fr', 'auto')};
+    h3 {
+      margin-block: 2rem;
+      font-size: 1.8rem;
+      font-weight: ${({ theme }) => theme.typography.weights.heading};
+    }
+    .radio {
+      height: 10rem;
+    }
+    .radio-group {
+      height: 30vh;
+      ${flexMixin('space-evenly', 'flex-start', 'column')};
+    }
+    .payment-details {
+      ${flexMixin('space-evenly', 'flex-start', 'column')};
+      gap: 1.5rem;
+      margin-block: 2.5rem;
     }
   }
 
