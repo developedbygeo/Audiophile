@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { resetCart } from 'features/cartSlice';
 import useWindowWidth from 'hooks/useWindow';
-import { getSpecificItem, derivedViewport, getImagePath } from 'utils/utilities';
+import { getSpecificItem, derivedViewport, getImagePath, trimProductName } from 'utils/utilities';
 
 import { ModalBackdropProps as DialogueProps } from 'shared/models/props.model';
 
@@ -27,6 +27,7 @@ const Success = ({ onDisable }: DialogueProps) => {
   const aggregateCost = totalCost + shipping;
   const allProducts = useAppSelector((state) => state.products);
   const topProductInCart = products[0];
+  const trimmedProductName = trimProductName(topProductInCart.name);
   const extraProductsInCart = products.length - 1;
   const productData = getSpecificItem(allProducts, topProductInCart.id);
   const dispatch = useAppDispatch();
@@ -54,7 +55,7 @@ const Success = ({ onDisable }: DialogueProps) => {
             <img src={productImage} alt={topProductInCart.name} />
           </SuccessItemImageCont>
           <SuccessItemText>
-            <BigHeading as="h4">{topProductInCart.name}</BigHeading>
+            <BigHeading as="h4">{trimmedProductName}</BigHeading>
             <Description>$ {topProductInCart.price.toLocaleString()}</Description>
           </SuccessItemText>
           <SuccessQuantity>
