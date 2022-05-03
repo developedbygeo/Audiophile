@@ -12,7 +12,6 @@ import Success from 'components/ModalDialogues/Success';
 import { BigHeading } from 'components/UI/Text.styled';
 import CheckoutPayment from './CheckoutPayment';
 import { StyledCheckout } from './Checkout.styled';
-
 import FormFieldsCheckout from './CheckoutFormFields';
 
 const CheckoutForm = ({ children }: BaseProps) => {
