@@ -51,4 +51,7 @@ export const CartItemQuantity = styled.div`
       }
     }
   }
+  @media ${devices.tablet} {
+    font-size: 2.1rem;
+  }
 `;
