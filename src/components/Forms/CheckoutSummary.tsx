@@ -19,7 +19,7 @@ const CheckoutSummary = () => {
   const grandTotal = totalCost + +vatValue;
 
   useEffect(() => {
-    dispatch(setShipping(+shippingValue));
+    dispatch(setShipping(+shippingValue.replace(',', '')));
   }, [dispatch, shippingValue]);
 
   return (
