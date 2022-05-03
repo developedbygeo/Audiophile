@@ -40,7 +40,7 @@ const CheckoutForm = ({ children }: BaseProps) => {
         {children}
       </form>
       {isOrderPaid && (
-        <Modal>
+        <Modal className="success">
           <Success onDisable={disableViewHandler} />
         </Modal>
       )}
