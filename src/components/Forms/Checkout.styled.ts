@@ -123,6 +123,20 @@ export const FormSection = styled.article`
       }
     }
   }
+  &.payment-section {
+    min-height: 40vh;
+    ${gridMixin('repeat(2, 1fr)', '.05fr auto')};
+    h3 {
+      grid-area: 2/1/2/1;
+    }
+    .radio-group {
+      grid-area: 2/2/3/2;
+    }
+    .payment-details {
+      grid-area: 3/1/3/3;
+      ${flexMixin('space-between', 'center', 'row')};
+    }
+  }
 `;
 
 export const InputContainer = styled.div`
