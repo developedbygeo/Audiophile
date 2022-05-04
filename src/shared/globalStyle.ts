@@ -26,11 +26,14 @@ html{
     @media ${devices.tablet}{
       font-size: 65%;
     }
+    @media ${devices.laptopM}{
+      font-size: 58.5%;
+    }
     @media ${devices.laptopL}{
-      font-size: 62.5%;
+      font-size: 60.5%;
     }
     @media ${devices.laptopXL}{
-      font-size: 69%;
+      font-size: 75%;
     }
     @media ${devices.desktop}{
       font-size: 100%;
@@ -66,7 +69,7 @@ main{
     min-height: 90vh;
     width: 100vw;
     background: #fff;
-    overflow-x: hidden;
+    overflow: hidden;
     ${gridMixin('1fr', 'auto')};
     /* TODO add suspense/lazy loading/content-loader */
     &>svg{
