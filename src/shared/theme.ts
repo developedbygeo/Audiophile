@@ -17,6 +17,7 @@ const myTheme: DefaultTheme = {
     accent: '250, 150, 97' || '#fa9661',
     black: '0, 0, 0' || '#000000',
     smokeyBlack: '16, 16, 16' || '#101010',
+    headerDark: '20, 20, 20' || '#141414',
     davysGray: '76, 76, 76' || '#4c4c4c',
     spanishGray: '151, 151, 151' || '#979797',
     inputGray: '207, 207, 207' || '#cfcfcf',
