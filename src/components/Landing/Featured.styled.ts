@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
-import { flexMixin } from 'shared/mixins';
+import { flexMixin, gridMixin } from 'shared/mixins';
 import { elevationOne } from 'shared/styles/shadows.styles';
 import { tertiaryColorInteract } from 'shared/styles/interactive.styles';
 import { devices } from 'shared/breakpoints';
@@ -17,6 +17,13 @@ export const BigContainer = styled(LargeSimpleContainer)`
 
   @media ${devices.tablet} {
     margin-top: 5vh;
+  }
+
+  @media ${devices.laptop} {
+    width: 80%;
+    h1 {
+      font-size: 3rem;
+    }
   }
 
   /* pseudo circle underneath h1 */
@@ -38,6 +45,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
     ${tertiaryColorInteract};
   }
 
+  /* zx9 container */
   &.featured > div {
     width: 100%;
     height: 100%;
@@ -63,6 +71,26 @@ export const BigContainer = styled(LargeSimpleContainer)`
   @media ${devices.tablet} {
     height: 80vh;
   }
+  @media ${devices.laptop} {
+    height: 80vh;
+
+    &.featured > div {
+      ${gridMixin('repeat(2, 1fr)', '0.5fr 0.1fr 0.5fr .5fr')};
+      row-gap: 2rem;
+      align-items: flex-start;
+      padding: 0rem 10rem;
+      h1 {
+        grid-area: 2/2/2/3;
+      }
+      p {
+        grid-area: 3/2/3/3;
+      }
+      a {
+        grid-area: 4/2/4/3;
+        justify-self: center;
+      }
+    }
+  }
 `;
 
 export const SmallerContainer = styled(LargeSimpleContainer)`
@@ -70,11 +98,14 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
   width: 90%;
   border-radius: 2rem;
   padding-inline: 4vw;
-  margin-top: 3vh;
+  margin-top: 4vh;
 
   @media ${devices.tablet} {
     height: 40vh;
     padding-inline: 0;
+  }
+  @media ${devices.laptop} {
+    width: 80%;
   }
 
   button {
@@ -98,8 +129,18 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     min-width: 20rem;
 
     @media ${devices.tablet} {
+      background: url(${zx7Images[1]}) no-repeat center;
+      background-size: cover;
       height: 35vh;
-      padding-inline: 10vw;
+      padding-inline: 10rem;
+    }
+    @media ${devices.laptop} {
+      background: url(${zx7Images[2]}) no-repeat center;
+      background-size: cover;
+      height: 45vh;
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 
@@ -110,7 +151,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
 
     @media ${devices.tablet} {
       height: 30vh;
-      margin-top: 2vh;
+      margin-top: 4vh;
       flex-direction: row;
       gap: 1rem;
     }
@@ -119,6 +160,12 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
       height: 100%;
       border-radius: 2rem;
       margin-top: 0;
+    }
+  }
+  @media ${devices.laptop} {
+    padding-inline: 10rem;
+    h1 {
+      font-size: 3rem;
     }
   }
 `;
@@ -161,6 +208,9 @@ export const Zx9Image = styled.div`
   @media ${devices.laptop} {
     background: url(${zx9Images[2]}) no-repeat center;
     background-size: contain;
+    height: 100%;
+    margin-top: 1rem;
+    grid-area: 2/1/5/1;
   }
 `;
 
