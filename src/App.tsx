@@ -21,10 +21,11 @@ function App() {
   const isHome = pathname.slice(1) === 'home';
   const isCheckout = pathname === '/checkout';
   const { totalCost } = useAppSelector((state) => state.cart);
+  const headerClass = isHome ? 'home-header' : '';
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <Header className={headerClass} />
       <main>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
