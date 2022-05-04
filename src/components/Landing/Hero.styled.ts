@@ -14,15 +14,6 @@ const StyledHero = styled.section`
   background: url(${landing[0]}) no-repeat center;
   background-size: cover;
 
-  @media ${devices.tablet} {
-    background: url(${landing[1]}) no-repeat center;
-    background-size: cover;
-  }
-  @media ${devices.laptop} {
-    background: url(${landing[2]}) no-repeat center;
-    background-size: cover;
-  }
-
   ${flexMixin('center', 'center', 'column')};
   gap: 1rem;
 
@@ -49,6 +40,29 @@ const StyledHero = styled.section`
     margin-top: 3vh;
     button {
       ${elevationThree};
+    }
+  }
+
+  @media ${devices.tablet} {
+    background: url(${landing[1]}) no-repeat center;
+    background-size: cover;
+  }
+  @media ${devices.laptop} {
+    background: url(${landing[2]}) no-repeat center;
+    background-size: cover;
+    align-items: flex-start;
+
+    .header-wrapper {
+      margin-top: 0;
+    }
+
+    div {
+      width: 40vw;
+      h1,
+      h2,
+      p {
+        text-align: left;
+      }
     }
   }
 `;
