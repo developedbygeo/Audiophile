@@ -2,23 +2,24 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { BaseProps } from 'shared/models/props.model';
-import StyledNav from './Nav.styled';
+import { StyledDesktopNav } from './Nav.styled';
 
 const Nav = ({ className }: BaseProps) => {
   return (
-    <StyledNav className={className}>
-      <div className="link-wrapper">
-        <NavLink to="/headphones" className={({ isActive }) => (isActive ? 'active' : '')}>
-          HEADPHONES
-        </NavLink>
-        <NavLink to="/speakers" className={({ isActive }) => (isActive ? 'active' : '')}>
-          SPEAKERS
-        </NavLink>
-        <NavLink to="/earphones" className={({ isActive }) => (isActive ? 'active' : '')}>
-          EARPHONES
-        </NavLink>
-      </div>
-    </StyledNav>
+    <StyledDesktopNav className={className}>
+      <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}>
+        HOME
+      </NavLink>
+      <NavLink to="/headphones" className={({ isActive }) => (isActive ? 'active' : '')}>
+        HEADPHONES
+      </NavLink>
+      <NavLink to="/speakers" className={({ isActive }) => (isActive ? 'active' : '')}>
+        SPEAKERS
+      </NavLink>
+      <NavLink to="/earphones" className={({ isActive }) => (isActive ? 'active' : '')}>
+        EARPHONES
+      </NavLink>
+    </StyledDesktopNav>
   );
 };
 
