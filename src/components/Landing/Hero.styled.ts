@@ -20,6 +20,7 @@ const StyledHero = styled.section`
   }
   @media ${devices.laptop} {
     background: url(${landing[2]}) no-repeat center;
+    background-size: cover;
   }
 
   ${flexMixin('center', 'center', 'column')};
