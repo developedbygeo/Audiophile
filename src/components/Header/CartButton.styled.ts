@@ -43,8 +43,25 @@ export const StyledCartButton = styled(UnstyledButton)`
   }
 
   @media ${devices.tablet} {
+    span {
+      width: 2.5rem;
+      height: 2.5rem;
+      right: -0.75rem;
+    }
     svg {
       transform: scale(2);
     }
+  }
+  @media ${devices.laptop} {
+    width: 3rem;
+    height: auto;
+    svg {
+      transform: scale(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media ${devices.laptopXL} {
   }
 `;
