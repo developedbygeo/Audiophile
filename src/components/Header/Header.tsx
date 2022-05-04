@@ -5,13 +5,14 @@ import useWindow from 'hooks/useWindow';
 import { GoThreeBars, GoX } from 'react-icons/go';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 
+import { BaseProps } from 'shared/models/props.model';
 import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledHeader } from './Header.styled';
 import MobileNav from './MobileNav';
 import Nav from './Nav';
 import CartButton from './CartButton';
 
-const Header = () => {
+const Header = ({ className }: BaseProps) => {
   const width = useWindow();
   const { pathname } = useLocation();
   const [navIsEnabled, setNavIsEnabled] = useState(false);
@@ -37,7 +38,7 @@ const Header = () => {
   );
 
   return (
-    <StyledHeader>
+    <StyledHeader className={className}>
       {shouldButtonRender}
       <Link className="logo-wrapper" to="/home" aria-label="Return to home">
         <Logo className="logo" role="img" aria-label="logo" />
