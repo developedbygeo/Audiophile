@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { devices } from 'shared/breakpoints';
+import { landing } from 'shared/images';
 import { flexMixin } from 'shared/mixins';
 import { interactNav } from 'shared/styles/interactive.styles';
 
@@ -10,6 +11,11 @@ export const StyledHeader = styled.header`
   padding-inline: 6%;
   ${flexMixin('space-between', 'center', 'row')};
   background: rgb(${({ theme }) => theme.colors.black});
+
+  &.home-header {
+    background: url(${landing[0]}) no-repeat top;
+    background-size: cover;
+  }
 
   .menu {
     color: rgb(${({ theme }) => theme.colors.white});
@@ -43,11 +49,60 @@ export const StyledHeader = styled.header`
   }
 
   @media ${devices.tablet} {
+    padding-inline: 4%;
+    .logo-wrapper {
+      flex: 0.7;
+      justify-content: flex-start;
+    }
     .logo {
       transform: scale(1.5);
     }
-    .menu svg {
-      transform: scale(2);
+    .menu {
+      justify-content: center;
+      svg {
+        transform: scale(2);
+      }
+    }
+  }
+  @media ${devices.laptop} {
+    padding-inline: 10%;
+    justify-content: space-between;
+
+    &.home-header {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0%;
+        width: 80vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 0.1rem;
+        background: rgba(${({ theme }) => theme.colors.white}, 0.25);
+      }
+    }
+    .logo-wrapper {
+      justify-content: flex-start;
+      order: 1;
+      flex: initial;
+    }
+    .logo {
+      transform: scale(1);
+    }
+    nav {
+      order: 2;
+    }
+    button {
+      order: 3;
+    }
+  }
+  @media ${devices.laptopXL} {
+    padding-inline: 15%;
+    &.home-header::before {
+      width: 72.5%;
+    }
+    .logo {
+      transform: scale(1.25);
     }
   }
 `;
