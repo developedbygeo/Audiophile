@@ -29,6 +29,12 @@ export const StyledCategories = styled.section`
       height: 20vh;
     }
   }
+  @media ${devices.laptop} {
+    padding-inline: 10%;
+    & > div {
+      height: 25vh;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -58,6 +64,7 @@ export const CategoryCard = styled(Card)`
     gap: 1rem;
     padding: 1rem;
     ${interactAndHover};
+
     span {
       ${grayDescription};
       font-weight: 400;
@@ -65,7 +72,7 @@ export const CategoryCard = styled(Card)`
     @media (hover: hover) {
       &:hover {
         span {
-          color: rgba(${({ theme }) => theme.colors.black}, 1);
+          font-weight: ${({ theme }) => theme.typography.weights.heading};
         }
       }
     }
