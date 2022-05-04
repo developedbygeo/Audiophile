@@ -26,6 +26,9 @@ export const DetailsContainer = styled(StyledPreview)`
       padding: 0;
       padding-top: 2rem;
       height: auto;
+      @media ${devices.tablet} {
+        padding-right: 1%;
+      }
     }
 
     /* product img */
