@@ -18,6 +18,7 @@ declare module 'styled-components' {
       white: string;
       black: string;
       smokeyBlack: string;
+      headerDark: string;
       davysGray: string;
       spanishGray: string;
       inputGray: string;
