@@ -12,4 +12,20 @@ export const StyledProducts = styled.section`
   @media ${devices.tablet} {
     margin-block: 10vh;
   }
+  @media ${devices.laptop} {
+    padding-inline: 5%;
+
+    /* reversing the order of the second product in preview */
+    & > :nth-child(2) {
+      & > :nth-child(1) {
+        grid-area: 1/2/3/3;
+      }
+      & > :nth-child(2) {
+        grid-area: 1/1/2/1;
+      }
+      & > a {
+        grid-area: 1/1/2/1;
+      }
+    }
+  }
 `;
