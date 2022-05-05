@@ -47,6 +47,14 @@ export const DetailsContainer = styled(StyledPreview)`
       grid-area: 2/2/2/3;
     }
   }
+  @media ${devices.laptop} {
+    margin-top: 3vh;
+    padding-inline: 10%;
+    height: auto;
+    article {
+      align-items: flex-start;
+    }
+  }
 `;
 
 export const ProductImageCont = styled(StyledImageCont)`
@@ -104,6 +112,13 @@ export const ProductActions = styled.div`
       flex: 1;
     }
   }
+  @media ${devices.laptop} {
+    width: 80%;
+    & > .quantity-btn,
+    & > .cart-btn {
+      height: 8.5vh;
+    }
+  }
 `;
 
 export const GoBackButton = styled(UnstyledButton)`
@@ -125,4 +140,11 @@ export const GoBackButton = styled(UnstyledButton)`
   &:active {
     transform: scale(0.98);
   }
+`;
+
+// TODO create product not found component
+export const NotFoundProduct = styled.div`
+  height: 100%;
+  width: 100%;
+  ${flexMixin('center', 'center', 'column')};
 `;
