@@ -39,7 +39,7 @@ const ProductDetails = ({ product }: DetailsProps) => {
     <>
       <ScrollTop />
       <DetailsContainer as="section">
-        <GoBackButton onClick={goBackHandler} title="Return to the previous page">
+        <GoBackButton onClick={goBackHandler} title="Return to the previous section">
           Go Back
         </GoBackButton>
         <ProductImageCont as="figure">
