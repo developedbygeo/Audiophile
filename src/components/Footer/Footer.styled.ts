@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 import { devices } from 'shared/breakpoints';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
 import { Description } from 'components/UI/Text.styled';
-import { flexMixin } from 'shared/mixins';
+import { flexMixin, gridMixin } from 'shared/mixins';
 import { interactNav, interactAndHover } from 'shared/styles/interactive.styles';
 
 export const StyledFooter = styled(LargeSimpleContainer)`
@@ -38,6 +38,26 @@ export const StyledFooter = styled(LargeSimpleContainer)`
       left: 17%;
     }
   }
+  @media ${devices.laptop} {
+    min-height: 50vh;
+    padding: 2.5% 10%;
+    ${gridMixin('1fr 0.7fr', ' 0.1fr 1fr repeat(2, 0.8fr)')};
+
+    & > small {
+      grid-area: 4/1/4/3;
+      align-self: center;
+      padding-right: 2.5%;
+    }
+    & > p {
+      grid-area: 2/1/4/1;
+      align-self: center;
+      padding-right: 2.5%;
+    }
+
+    &::before {
+      transform: translateX(-30%);
+    }
+  }
 `;
 
 export const StyledLinks = styled.div`
@@ -52,6 +72,7 @@ export const StyledLinks = styled.div`
 
   @media ${devices.tablet} {
     flex-direction: row;
+    gap: 1vw;
   }
 `;
 
@@ -93,5 +114,8 @@ export const Social = styled(FooterDescription)`
 
   @media ${devices.tablet} {
     gap: 5vw;
+  }
+  @media ${devices.laptop} {
+    gap: 3.5vw;
   }
 `;
