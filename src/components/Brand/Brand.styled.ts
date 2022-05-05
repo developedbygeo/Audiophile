@@ -17,8 +17,10 @@ export const StyledBrand = styled(LargeSimpleContainer)`
     margin-top: 7.5vh;
   }
   @media ${devices.laptop} {
-    height: 70vh;
+    height: 75vh;
+    padding-inline: 5%;
     ${flexMixin('flex-start', 'center', 'row-reverse')};
+    gap: 5vw;
     div {
       flex: 1;
     }
@@ -68,9 +70,14 @@ export const BrandText = styled.div`
     padding-inline: 7.075vw;
   }
   @media ${devices.laptop} {
+    padding-inline: 0;
+    gap: 0;
     h1,
     p {
       text-align: left;
+    }
+    p {
+      padding-right: 5%;
     }
   }
 `;
