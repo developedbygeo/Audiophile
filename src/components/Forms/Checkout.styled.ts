@@ -58,6 +58,11 @@ export const StyledCheckout = styled(BigContainer)`
     grid-template-rows: auto minmax(40vh, auto);
     gap: 0;
   }
+
+  @media ${devices.laptop} {
+    width: 80%;
+    padding: 2.5% 5%;
+  }
 `;
 
 export const FormSection = styled.article`
@@ -135,6 +140,18 @@ export const FormSection = styled.article`
     .payment-details {
       grid-area: 3/1/3/3;
       ${flexMixin('space-between', 'center', 'row')};
+    }
+  }
+  @media ${devices.laptop} {
+    &.billing-section,
+    &.shipping-section {
+      height: auto;
+    }
+    &.billing-section {
+      grid-template-rows: 0.1fr repeat(2, minmax(10rem, 15rem));
+    }
+    &.shipping-section {
+      grid-template-rows: 0.1fr repeat(3, minmax(10rem, 15rem));
     }
   }
 `;
