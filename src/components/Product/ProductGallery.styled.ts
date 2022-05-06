@@ -19,7 +19,7 @@ export const StyledGallery = styled.section`
       grid-area: 1/2/3/2;
     }
   }
-
+  /* specific for the third child to be bigger */
   & > div:nth-child(3) {
     img {
       height: 50vh;
@@ -28,6 +28,10 @@ export const StyledGallery = styled.section`
         object-fit: contain;
       }
     }
+  }
+  @media ${devices.laptop} {
+    gap: 0.75vw;
+    padding-inline: 10%;
   }
 `;
 
