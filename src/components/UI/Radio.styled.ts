@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { flexMixin } from 'shared/mixins';
-import { elevationFour, elevationOne } from 'shared/styles/shadows.styles';
+import { elevationFour, elevationLight } from 'shared/styles/shadows.styles';
 
 export const RadioContainer = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ export const RadioContainer = styled.div`
   @media (hover: hover) {
     &:hover {
       border-color: rgb(${({ theme }) => theme.colors.brand});
-      ${elevationOne};
+      ${elevationLight};
     }
   }
 
