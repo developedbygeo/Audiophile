@@ -18,8 +18,11 @@ export const StyledSimilar = styled(StyledGallery)`
   ul {
     ${flexMixin('flex-start', 'center', 'column')};
     gap: 5vh;
+  }
 
-    @media ${devices.tablet} {
+  @media ${devices.tablet} {
+    ${flexMixin('center', 'center', 'column')};
+    ul {
       flex-direction: row;
       gap: 2vw;
 
@@ -31,9 +34,11 @@ export const StyledSimilar = styled(StyledGallery)`
       }
     }
   }
-
-  @media ${devices.tablet} {
-    ${flexMixin('center', 'center', 'column')};
+  @media ${devices.laptop} {
+    padding-inline: 10%;
+    ul {
+      margin-bottom: 5vh;
+    }
   }
 `;
 
