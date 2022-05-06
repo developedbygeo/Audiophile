@@ -32,7 +32,7 @@ export const StyledCategories = styled.section`
   @media ${devices.laptop} {
     padding-inline: 10%;
     & > div {
-      height: 25vh;
+      height: 22.5vh;
     }
   }
 `;
