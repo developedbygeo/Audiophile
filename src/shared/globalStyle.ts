@@ -33,7 +33,7 @@ html{
       font-size: 60.5%;
     }
     @media ${devices.laptopXL}{
-      font-size: 75%;
+      font-size: 65%;
     }
     @media ${devices.desktop}{
       font-size: 100%;
