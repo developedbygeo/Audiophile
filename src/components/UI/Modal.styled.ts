@@ -41,7 +41,8 @@ const modalStyle = css`
     }
   }
   @media ${devices.laptop} {
-    width: 65vw;
+    width: 32.5vw;
+    left: 67.5%;
   }
 `;
 
