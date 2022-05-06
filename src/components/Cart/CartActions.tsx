@@ -19,7 +19,7 @@ const CartActions = ({ children, cost, onCheckout, isPay }: ActionProps) => {
         </BigHeading>
       </CartPrice>
       {children}
-      <CtaButton onClick={onCheckout} role="link">
+      <CtaButton onClick={onCheckout} role="link" title="Proceed to checkout">
         {isPay ? 'CONTINUE & PAY' : 'CHECKOUT'}
       </CtaButton>
     </>
