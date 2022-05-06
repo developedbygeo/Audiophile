@@ -27,6 +27,22 @@ export const FeaturesContainer = styled(LargeSimpleContainer)`
       padding-right: 10vw;
     }
   }
+  @media ${devices.laptop} {
+    padding-inline: 5%;
+    flex-direction: row;
+    gap: 2.5vw;
+
+    .features {
+      flex: 0.6;
+    }
+
+    .contained {
+      flex: 0.4;
+      padding-left: 5vw;
+      padding-right: 0;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const StyledList = styled.ul`
