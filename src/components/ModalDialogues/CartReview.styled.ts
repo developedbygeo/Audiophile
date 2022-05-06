@@ -8,6 +8,14 @@ export const StyledReview = styled.div`
   padding: 1rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
 
+  h2 {
+    font-size: 1.9rem;
+    font-weight: ${({ theme }) => theme.typography.weights.subheading};
+  }
+  h3 {
+    font-size: 2.25rem;
+  }
+
   @media ${devices.tablet} {
     min-height: 40vh;
   }
@@ -15,6 +23,11 @@ export const StyledReview = styled.div`
   & > button {
     height: 6rem;
     width: 100%;
+  }
+  @media ${devices.laptop} {
+    min-height: 50vh;
+    gap: 1rem;
+    padding: 0 3%;
   }
 `;
 
@@ -29,7 +42,7 @@ export const ReviewHeader = styled.div`
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin: 0;
   }
   button {
@@ -48,4 +61,9 @@ export const CartList = styled.ul`
   overflow-y: auto;
   ${flexMixin('flex-start', 'center', 'column')};
   gap: 2rem;
+
+  @media ${devices.laptop} {
+    max-height: 55vh;
+    gap: 3.5rem;
+  }
 `;
