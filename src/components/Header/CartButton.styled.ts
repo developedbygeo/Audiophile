@@ -44,8 +44,10 @@ export const StyledCartButton = styled(UnstyledButton)`
 
   @media ${devices.tablet} {
     span {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: auto;
+      height: auto;
+      padding: 0.25rem;
+      bottom: -1vh;
       right: -0.75rem;
     }
     svg {
@@ -55,6 +57,9 @@ export const StyledCartButton = styled(UnstyledButton)`
   @media ${devices.laptop} {
     width: 3rem;
     height: auto;
+    span {
+      right: -1vw;
+    }
     svg {
       transform: scale(1);
       width: 100%;
