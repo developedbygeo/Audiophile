@@ -8,6 +8,10 @@ import { grayDescription } from 'components/UI/Text.styled';
 export const CartItemContainer = styled.li`
   width: 100%;
   ${flexMixin('space-between', 'center', 'row')};
+
+  @media ${devices.tablet} {
+    gap: 1vw;
+  }
 `;
 
 export const CartImageCont = styled(StyledImageCont)`
@@ -21,6 +25,9 @@ export const CartImageCont = styled(StyledImageCont)`
     @media ${devices.tablet} {
       width: 15vw;
     }
+    @media ${devices.laptop} {
+      width: 7.5vw;
+    }
   }
 `;
 
@@ -33,6 +40,11 @@ export const CartItemText = styled.div`
     font-weight: ${({ theme }) => theme.typography.weights.heading};
     ${grayDescription};
     color: rgba(${({ theme }) => theme.colors.black}, 0.6);
+  }
+
+  @media ${devices.tablet} {
+    width: 100%;
+    flex: initial;
   }
 `;
 
