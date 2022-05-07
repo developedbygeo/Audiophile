@@ -54,6 +54,14 @@ export const PriceBreakdown = styled.article`
       width: 100%;
     }
   }
+  @media ${devices.laptop} {
+    h2 {
+      font-size: 1.8rem;
+    }
+    h3 {
+      font-size: 1.9rem;
+    }
+  }
 `;
 
 export const GrandTotal = styled(CartPrice)`
