@@ -11,8 +11,18 @@ import { StyledReview } from './CartReview.styled';
 export const SuccessContainer = styled(StyledReview)`
   gap: 1.5rem;
 
+  button {
+    text-transform: uppercase;
+    font-weight: ${({ theme }) => theme.typography.weights.subheading};
+    letter-spacing: 0.175rem;
+  }
+
   @media ${devices.tablet} {
     height: 100%;
+  }
+
+  @media ${devices.laptop} {
+    gap: 3rem;
   }
 `;
 
@@ -27,6 +37,11 @@ export const Checkmark = styled.div`
     color: rgb(${({ theme }) => theme.colors.white});
     height: 100%;
     width: 100%;
+  }
+  @media ${devices.laptop} {
+    svg {
+      transform: scale(1.25);
+    }
   }
 `;
 
@@ -78,7 +93,7 @@ export const SuccessItem = styled.div`
     flex: 0.2;
   }
 
-  &::before {
+  &.extra::before {
     position: absolute;
     content: '';
     bottom: 2rem;
@@ -94,6 +109,15 @@ export const SuccessItem = styled.div`
     padding: 5rem 0rem;
     overflow: hidden;
   }
+
+  @media ${devices.laptop} {
+    justify-content: space-around;
+    padding: 1rem 0rem;
+
+    &.extra {
+      padding: 2rem 0rem;
+    }
+  }
 `;
 
 export const SuccessItemImageCont = styled(StyledImageCont)`
@@ -105,6 +129,11 @@ export const SuccessItemImageCont = styled(StyledImageCont)`
     ${flexMixin('flex-start', 'center', 'row')};
     img {
       width: 12.5vw;
+    }
+  }
+  @media ${devices.laptop} {
+    img {
+      width: 7.5vw;
     }
   }
 `;
@@ -131,6 +160,7 @@ export const AdditionalItemsText = styled(Description)`
   padding: 0.5rem 1rem 2rem 1rem;
   font-size: 1.6rem;
   font-weight: ${({ theme }) => theme.typography.weights.heading};
+  letter-spacing: 0.19rem;
   ${grayDescription};
 `;
 
@@ -156,5 +186,10 @@ export const GrandTotal = styled.article`
     height: 100%;
     margin-bottom: 0;
     border-radius: 0rem 1rem 1rem 0rem;
+  }
+  @media ${devices.laptop} {
+    h4 {
+      padding-block: 0;
+    }
   }
 `;
