@@ -25,7 +25,7 @@ export const StyledReview = styled.div`
     width: 100%;
   }
   @media ${devices.laptop} {
-    min-height: 50vh;
+    min-height: 35vh;
     gap: 1rem;
     padding: 0 3%;
   }
