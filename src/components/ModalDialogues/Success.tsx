@@ -28,7 +28,9 @@ const Success = ({ onDisable }: DialogueProps) => {
   const allProducts = useAppSelector((state) => state.products);
   const topProductInCart = products[0];
   const trimmedProductName = trimProductName(topProductInCart.name);
-  const extraProductsInCart = products.length - 1;
+  const extraProductsExist = products.length > 1;
+  const extraProductsLength = products.length - 1;
+
   const productData = getSpecificItem(allProducts, topProductInCart.id);
   const dispatch = useAppDispatch();
   const width = useWindowWidth();
@@ -50,7 +52,7 @@ const Success = ({ onDisable }: DialogueProps) => {
         <Description>You will receive an email confirmation shortly.</Description>
       </SuccessText>
       <SuccessSummary>
-        <SuccessItem>
+        <SuccessItem className={extraProductsExist ? 'extra' : ''}>
           <SuccessItemImageCont>
             <img src={productImage} alt={topProductInCart.name} />
           </SuccessItemImageCont>
@@ -62,8 +64,8 @@ const Success = ({ onDisable }: DialogueProps) => {
             <Description>x{topProductInCart.quantity}</Description>
           </SuccessQuantity>
         </SuccessItem>
-        {products.length > 1 && (
-          <AdditionalItemsText>{`and ${extraProductsInCart} other item(s)`}</AdditionalItemsText>
+        {extraProductsExist && (
+          <AdditionalItemsText>{`and ${extraProductsLength} other item(s)`}</AdditionalItemsText>
         )}
         <GrandTotal>
           <BigHeading as="h3">Grand Total</BigHeading>
