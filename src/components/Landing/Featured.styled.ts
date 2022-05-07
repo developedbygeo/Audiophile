@@ -14,6 +14,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
   background: rgb(${({ theme }) => theme.colors.brand});
   overflow: hidden;
   margin-top: 10vh;
+  height: 80vh;
 
   @media ${devices.tablet} {
     margin-top: 5vh;
@@ -33,7 +34,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
       position: absolute;
       top: 0%;
       transform: translate(-15%, -50%) skew(-6deg);
-      height: 135%;
+      height: 155%;
       width: 175%;
       border-bottom: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
       border-radius: 50%;
@@ -72,22 +73,25 @@ export const BigContainer = styled(LargeSimpleContainer)`
     height: 80vh;
   }
   @media ${devices.laptop} {
-    height: 80vh;
+    height: 60vh;
 
     &.featured > div {
       ${gridMixin('repeat(2, 1fr)', '0.5fr 0.1fr 0.5fr .5fr')};
       row-gap: 2rem;
+      column-gap: 8vw;
       align-items: flex-start;
       padding: 0rem 10rem;
       h1 {
         grid-area: 2/2/2/3;
+        text-align: left;
       }
       p {
         grid-area: 3/2/3/3;
+        text-align: left;
       }
       a {
         grid-area: 4/2/4/3;
-        justify-self: center;
+        justify-self: flex-start;
       }
     }
   }
@@ -103,21 +107,17 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
   @media ${devices.tablet} {
     height: 40vh;
     padding-inline: 0;
+    a {
+      box-shadow: none;
+      width: 20rem;
+    }
   }
   @media ${devices.laptop} {
     width: 80%;
   }
-
-  button {
-    ${elevationOne};
-    background: transparent;
-    border: 0.2rem solid rgb(${({ theme }) => theme.colors.black});
-    color: rgb(${({ theme }) => theme.colors.black});
-    width: 25rem;
-  }
   h1 {
     color: rgb(${({ theme }) => theme.colors.black});
-    font-size: 3.75rem;
+    font-size: 3rem;
   }
 
   &.zx7-home {
@@ -129,12 +129,13 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     min-width: 20rem;
 
     @media ${devices.tablet} {
+      padding-left: 3vw;
       background: url(${zx7Images[1]}) no-repeat center;
       background-size: cover;
       height: 35vh;
-      padding-inline: 10rem;
     }
     @media ${devices.laptop} {
+      padding: 0 3rem 0 10vw;
       background: url(${zx7Images[2]}) no-repeat center;
       background-size: cover;
       height: 45vh;
@@ -147,7 +148,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
   &.yx1 {
     padding: 0;
     ${flexMixin('center', 'center', 'column')};
-    gap: 0vh;
+    gap: 2vh;
 
     @media ${devices.tablet} {
       height: 30vh;
@@ -164,6 +165,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
   }
   @media ${devices.laptop} {
     padding-inline: 10rem;
+    gap: 0;
     h1 {
       font-size: 3rem;
     }
@@ -181,11 +183,12 @@ export const Zx9Image = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200%;
-    height: 200%;
+    width: 225%;
+    height: 210%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
+    pointer-events: none;
   }
   &::after {
     content: '';
@@ -197,6 +200,7 @@ export const Zx9Image = styled.div`
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
+    pointer-events: none;
   }
 
   @media ${devices.tablet} {
@@ -211,6 +215,14 @@ export const Zx9Image = styled.div`
     height: 100%;
     margin-top: 1rem;
     grid-area: 2/1/5/1;
+    &::before {
+      height: 160%;
+      width: 125%;
+    }
+    &::after {
+      height: 190%;
+      width: 150%;
+    }
   }
 `;
 
@@ -236,12 +248,20 @@ export const FeaturedText = styled(SmallerContainer)`
     align-items: center;
     padding-inline: 1vw;
     h1 {
+      padding-inline: 1vw;
       text-align: left;
       margin-left: 0;
     }
     h1,
     button {
       margin-left: 0;
+    }
+  }
+  @media ${devices.laptop} {
+    padding-left: 3vw;
+    h1,
+    a {
+      align-self: flex-start;
     }
   }
 `;
