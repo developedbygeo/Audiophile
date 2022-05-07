@@ -27,10 +27,12 @@ const modalStyle = css`
   min-height: 25vh;
 
   @media ${devices.tablet} {
-    width: 65%;
-    top: 25%;
-    right: 25%;
-    transform: translate(-27.5%, -22.5%);
+    &:not(.success) {
+      width: 65%;
+      top: 25%;
+      right: 25%;
+      transform: translate(-27.5%, -22.5%);
+    }
 
     &.success {
       height: 60vh;
@@ -41,8 +43,16 @@ const modalStyle = css`
     }
   }
   @media ${devices.laptop} {
-    width: 32.5vw;
-    left: 67.5%;
+    &:not(.success) {
+      width: 32.5vw;
+      left: 67.5%;
+    }
+    &.success {
+      width: 40%;
+      top: 55%;
+      height: auto;
+      padding: 5rem 3rem;
+    }
   }
 `;
 
