@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 import { interactCta, secondaryColorInteract } from './interactive.styles';
-import { elevationOne } from './shadows.styles';
 
 const commonStyling = css`
   letter-spacing: 0.125rem;
@@ -11,7 +10,6 @@ export const ctaStyling = css`
   color: rgb(${({ theme }) => theme.colors.white});
   background: rgb(${({ theme }) => theme.colors.brand});
   ${commonStyling};
-  ${elevationOne};
   ${interactCta};
 `;
 
@@ -21,7 +19,6 @@ export const secondaryStyling = css`
   color: rgb(${({ theme }) => theme.colors.black});
   ${commonStyling};
   ${secondaryColorInteract};
-  ${elevationOne};
 `;
 
 export const baseCtaButtonStyling = css`
