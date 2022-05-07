@@ -36,7 +36,7 @@ export const StyledMobileNav = styled.nav`
     flex-direction: column;
     justify-content: space-evenly;
     gap: 10rem;
-    box-shadow: 0px 12px 14px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 12px 14px 4px rgba(0, 0, 0, 0.15);
     padding-block: 10vh;
 
     & > div {
