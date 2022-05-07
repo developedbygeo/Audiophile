@@ -11,6 +11,23 @@ export const PageBackground = styled.div`
   min-height: 100vh;
   ${gridMixin('1fr', 'auto')};
   gap: 4rem;
+
+  /* desktop form layout */
+  @media ${devices.laptop} {
+    & > form {
+      width: 82.5%;
+      margin: auto;
+      ${gridMixin('1fr 0.5fr', 'auto')};
+      gap: 2rem;
+      margin-top: 5vh;
+
+      section,
+      ul {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export const StyledCheckout = styled(BigContainer)`
