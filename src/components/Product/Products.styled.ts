@@ -9,11 +9,11 @@ export const StyledProducts = styled.section`
   gap: 10vh;
   margin: 2vh 0 10vh 0;
 
-  @media ${devices.tablet} {
-    margin-block: 10vh;
-  }
   @media ${devices.laptop} {
+    min-height: initial;
     padding-inline: 5%;
+    margin-block: 0;
+    margin: 5vh 0 12.5vh 0;
 
     /* reversing the order of the second product in preview */
     & > :nth-child(2) {
