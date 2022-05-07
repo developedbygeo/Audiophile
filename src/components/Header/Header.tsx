@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import useWindow from 'hooks/useWindow';
 
+import { disableScroll } from 'utils/utilitiesUI';
+
 import { GoThreeBars, GoX } from 'react-icons/go';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 
@@ -26,7 +28,10 @@ const Header = ({ className }: BaseProps) => {
   }, [pathname]);
 
   const navToggleHandler = () => {
-    setNavIsEnabled((prevState) => !prevState);
+    setNavIsEnabled((prevState) => {
+      if (width < 768) disableScroll(!prevState);
+      return !prevState;
+    });
   };
 
   const buttonContent = !navIsEnabled ? <GoThreeBars /> : <GoX />;
