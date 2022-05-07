@@ -19,6 +19,7 @@ export const StyledPreview = styled(LargeSimpleContainer)`
 
   @media ${devices.laptop} {
     ${gridMixin('repeat(2, 1fr)', '1fr 0.1fr')};
+    height: 60vh;
     column-gap: 5vw;
     row-gap: 3vh;
     padding-top: 0;
@@ -42,6 +43,7 @@ export const StyledImageCont = styled.div`
   }
   @media ${devices.laptop} {
     grid-area: 1/1/3/1;
+    height: 100%;
   }
 `;
 
@@ -66,7 +68,7 @@ export const StyledText = styled.div`
   }
 
   @media ${devices.tablet} {
-    padding-inline: 10%;
+    padding-inline: 1%;
   }
   @media ${devices.laptop} {
     padding: 0;
