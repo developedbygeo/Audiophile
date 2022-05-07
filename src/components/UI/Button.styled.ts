@@ -5,7 +5,6 @@ import { resetDefaults, flexMixin } from 'shared/mixins';
 import { baseCtaButtonStyling, ctaStyling, secondaryStyling } from 'shared/styles/button.styles';
 import { BaseProps, LinkProps } from 'shared/models/props.model';
 import { interactCta } from 'shared/styles/interactive.styles';
-import { elevationOne } from 'shared/styles/shadows.styles';
 
 export const UnstyledButton = styled.button<BaseProps>`
   ${resetDefaults};
@@ -24,7 +23,6 @@ export const CtaButton = styled.button<BaseProps>`
   font-weight: ${({ theme }) => theme.typography.weights.heading};
   letter-spacing: 0.125rem;
   ${interactCta}
-  ${elevationOne}
 `;
 
 const getLinkStyling = (props: LinkProps) => {
