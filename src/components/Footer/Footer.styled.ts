@@ -39,7 +39,7 @@ export const StyledFooter = styled(LargeSimpleContainer)`
     }
   }
   @media ${devices.laptop} {
-    min-height: 50vh;
+    min-height: 30vh;
     padding: 2.5% 10%;
     ${gridMixin('1fr 0.7fr', ' 0.1fr 1fr repeat(2, 0.8fr)')};
 
@@ -72,7 +72,7 @@ export const StyledLinks = styled.div`
 
   @media ${devices.tablet} {
     flex-direction: row;
-    gap: 1vw;
+    gap: 3vw;
   }
 `;
 
