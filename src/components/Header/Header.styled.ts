@@ -96,13 +96,4 @@ export const StyledHeader = styled.header`
       order: 3;
     }
   }
-  @media ${devices.laptopXL} {
-    padding-inline: 15%;
-    &.home-header::before {
-      width: 72.5%;
-    }
-    .logo {
-      transform: scale(1.25);
-    }
-  }
 `;
