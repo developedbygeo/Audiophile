@@ -30,6 +30,7 @@ export const StyledCategories = styled.section`
     }
   }
   @media ${devices.laptop} {
+    margin-top: 5vh;
     padding-inline: 10%;
     & > div {
       height: 22.5vh;
