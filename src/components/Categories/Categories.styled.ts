@@ -20,7 +20,7 @@ export const StyledCategories = styled.section`
     }
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     padding-inline: 5%;
     flex-direction: row;
     min-height: 30vh;
@@ -34,6 +34,11 @@ export const StyledCategories = styled.section`
     padding-inline: 10%;
     & > div {
       height: 22.5vh;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    & > div {
+      height: 25vh;
     }
   }
 `;
