@@ -5,8 +5,6 @@ import { landing } from 'shared/images';
 import { flexMixin } from 'shared/mixins';
 import { interactNav } from 'shared/styles/interactive.styles';
 
-// TODO add active mixin
-
 export const StyledHeader = styled.header`
   padding-inline: 6%;
   ${flexMixin('space-between', 'center', 'row')};
@@ -64,7 +62,7 @@ export const StyledHeader = styled.header`
       }
     }
   }
-  @media ${devices.laptop} {
+  @media (min-width: 1025px) {
     padding-inline: 10%;
     justify-content: space-between;
 
