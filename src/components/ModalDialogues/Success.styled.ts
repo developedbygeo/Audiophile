@@ -17,7 +17,7 @@ export const SuccessContainer = styled(StyledReview)`
     letter-spacing: 0.175rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     height: 100%;
   }
 
@@ -38,10 +38,13 @@ export const Checkmark = styled.div`
     height: 100%;
     width: 100%;
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     svg {
       transform: scale(1.25);
     }
+  }
+  @media ${devices.landscapeMobileSS} {
+    padding: 2vw;
   }
 `;
 
@@ -66,7 +69,7 @@ export const SuccessSummary = styled.article`
     background: rgb(${({ theme }) => theme.colors.black});
     flex: 0.5;
   }
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${gridMixin('repeat(2, 1fr)', '1fr')};
     border-radius: 1rem 0rem 0rem 1rem;
   }
@@ -104,7 +107,7 @@ export const SuccessItem = styled.div`
     background: rgba(${({ theme }) => theme.colors.black}, 0.15);
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${flexMixin('flex-start', 'center', 'row')};
     padding: 5rem 0rem;
     overflow: hidden;
@@ -125,7 +128,7 @@ export const SuccessItemImageCont = styled(StyledImageCont)`
   img {
     width: 20vw;
   }
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${flexMixin('flex-start', 'center', 'row')};
     img {
       width: 12.5vw;
@@ -150,7 +153,7 @@ export const SuccessItemText = styled(CartItemText)`
     text-align: left;
     align-self: flex-start;
   }
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     flex: 0.85;
     gap: 0;
   }
@@ -180,7 +183,7 @@ export const GrandTotal = styled.article`
     font-size: 2.8rem;
     color: rgb(${({ theme }) => theme.colors.white});
   }
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     grid-area: 1/2/3/3;
     justify-content: center;
     height: 100%;
