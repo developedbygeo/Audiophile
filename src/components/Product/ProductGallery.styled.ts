@@ -10,7 +10,7 @@ export const StyledGallery = styled.section`
   ${flexMixin('flex-start', 'center', 'column')};
   gap: 1vh;
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${gridMixin('0.5fr 1fr', 'auto')};
     min-height: initial;
     height: auto;
@@ -32,6 +32,13 @@ export const StyledGallery = styled.section`
   @media ${devices.laptop} {
     gap: 0.75vw;
     padding-inline: 10%;
+  }
+  @media ${devices.landscapeMobileSS} {
+    & > div:nth-child(3) {
+      img {
+        height: 61vh;
+      }
+    }
   }
 `;
 
