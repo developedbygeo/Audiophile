@@ -47,7 +47,7 @@ const StyledHero = styled.section`
     background: url(${landing[1]}) no-repeat center;
     background-size: cover;
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     background: url(${landing[2]}) no-repeat center;
     background-size: cover;
     align-items: flex-start;
@@ -64,6 +64,10 @@ const StyledHero = styled.section`
         text-align: left;
       }
     }
+  }
+  @media ${devices.landscapeMobileSS} {
+    background: url(${landing[2]}) no-repeat center;
+    background-size: cover;
   }
 `;
 
