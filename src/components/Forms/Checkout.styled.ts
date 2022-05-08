@@ -70,7 +70,7 @@ export const StyledCheckout = styled(BigContainer)`
     letter-spacing: 0.12rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     min-height: initial;
     grid-template-rows: auto minmax(40vh, auto);
     gap: 0;
@@ -78,6 +78,9 @@ export const StyledCheckout = styled(BigContainer)`
 
   @media ${devices.laptop} {
     width: 80%;
+    padding: 2.5% 5%;
+  }
+  @media ${devices.landscapeMobileSS} {
     padding: 2.5% 5%;
   }
 `;
@@ -115,7 +118,7 @@ export const FormSection = styled.article`
     }
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     &.billing-section {
       ${gridMixin('repeat(2, 1fr)', '0.1fr repeat(2, minmax(10rem, 18rem))')};
       row-gap: 0;
@@ -159,7 +162,7 @@ export const FormSection = styled.article`
       ${flexMixin('space-between', 'center', 'row')};
     }
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     &.billing-section,
     &.shipping-section {
       height: auto;
@@ -169,6 +172,11 @@ export const FormSection = styled.article`
     }
     &.shipping-section {
       grid-template-rows: 0.1fr repeat(3, minmax(10rem, 15rem));
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    .radio-group {
+      gap: 4vh;
     }
   }
 `;
