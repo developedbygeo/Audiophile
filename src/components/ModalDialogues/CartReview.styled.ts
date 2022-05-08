@@ -4,7 +4,7 @@ import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 
 export const StyledReview = styled.div`
-  min-height: 55vh;
+  min-height: 40vh;
   padding: 1rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
 
@@ -16,7 +16,7 @@ export const StyledReview = styled.div`
     font-size: 2.25rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     min-height: 40vh;
   }
 
