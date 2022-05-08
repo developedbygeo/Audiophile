@@ -5,7 +5,6 @@ import { flexMixin, opacityMixin } from 'shared/mixins';
 import { interactAndHover } from 'shared/styles/interactive.styles';
 import { devices } from 'shared/breakpoints';
 
-// TODO implement StyledNav for desktop/tablet
 export const StyledDesktopNav = styled.nav`
   ${flexMixin('space-between', 'center', 'row')};
   gap: 4rem;
@@ -52,7 +51,7 @@ export const StyledMobileNav = styled.nav`
     width: 15rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     section {
       flex-direction: row;
       gap: 1rem;
@@ -61,6 +60,19 @@ export const StyledMobileNav = styled.nav`
 
       & > div {
         width: 30vw;
+      }
+    }
+  }
+  @media (min-width: 1022px) and (max-width: 1100px) {
+    section > div {
+      height: 15vh;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    section {
+      height: 40vh;
+      & > div {
+        height: 22.5vh;
       }
     }
   }
