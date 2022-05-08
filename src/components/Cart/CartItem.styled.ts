@@ -9,7 +9,7 @@ export const CartItemContainer = styled.li`
   width: 100%;
   ${flexMixin('space-between', 'center', 'row')};
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     gap: 1vw;
   }
 `;
@@ -22,11 +22,15 @@ export const CartImageCont = styled(StyledImageCont)`
     height: 10vh;
     width: 20vw;
 
-    @media ${devices.tablet} {
+    @media ${devices.tablet}, ${devices.landscapeMobileSS} {
       width: 15vw;
     }
     @media ${devices.laptop} {
       width: 7.5vw;
+    }
+    @media ${devices.landscapeMobileSS} {
+      object-fit: contain;
+      width: auto;
     }
   }
 `;
@@ -42,7 +46,7 @@ export const CartItemText = styled.div`
     color: rgba(${({ theme }) => theme.colors.black}, 0.6);
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     width: 100%;
     flex: initial;
   }
