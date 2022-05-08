@@ -28,10 +28,15 @@ export const SummaryList = styled(StyledCheckout)`
     flex: 0.6;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     grid-template-rows: auto minmax(10vh, auto);
     .item-text {
       flex: 0.95;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    img {
+      height: 15vh;
     }
   }
 `;
@@ -47,7 +52,7 @@ export const PriceBreakdown = styled.article`
     letter-spacing: 0.195rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     min-height: 35vh;
 
     button {
@@ -70,7 +75,7 @@ export const GrandTotal = styled(CartPrice)`
     color: rgb(${({ theme }) => theme.colors.brand});
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     margin-block: 2.5rem;
   }
 `;
