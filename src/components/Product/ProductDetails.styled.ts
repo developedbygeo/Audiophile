@@ -15,7 +15,7 @@ export const DetailsContainer = styled(StyledPreview)`
     gap: 2.5vh;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${gridMixin('auto', '0.05fr auto')};
     min-height: initial;
     height: 65vh;
@@ -55,6 +55,9 @@ export const DetailsContainer = styled(StyledPreview)`
       align-items: flex-start;
     }
   }
+  @media ${devices.landscapeMobileSS} {
+    column-gap: 3vw;
+  }
 `;
 
 export const ProductImageCont = styled(StyledImageCont)`
@@ -75,7 +78,7 @@ export const ProductText = styled(StyledText)`
     letter-spacing: 0.7rem;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     grid-area: 2/3/3/4;
     padding: 0;
   }
@@ -99,7 +102,7 @@ export const ProductActions = styled.div`
     width: 100%;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     margin-top: 0;
     ${flexMixin('space-between', 'center', 'row')};
     gap: 2rem;
@@ -117,6 +120,12 @@ export const ProductActions = styled.div`
     & > .quantity-btn,
     & > .cart-btn {
       height: 8.5vh;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    & > .quantity-btn,
+    & > .cart-btn {
+      height: 10vh;
     }
   }
 `;
