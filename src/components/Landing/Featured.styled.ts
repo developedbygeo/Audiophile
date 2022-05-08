@@ -28,7 +28,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
   }
 
   /* pseudo circle underneath h1 */
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     &::before {
       content: '';
       position: absolute;
@@ -38,6 +38,11 @@ export const BigContainer = styled(LargeSimpleContainer)`
       width: 175%;
       border-bottom: 0.2rem solid rgba(${({ theme }) => theme.colors.extraGrayish}, 0.35);
       border-radius: 50%;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    &::before {
+      height: 195%;
     }
   }
 
@@ -69,7 +74,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
     }
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     height: 80vh;
   }
   @media ${devices.laptop} {
@@ -128,7 +133,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     min-height: 20rem;
     min-width: 20rem;
 
-    @media ${devices.tablet} {
+    @media ${devices.tablet}, ${devices.landscapeMobileSS} {
       padding-left: 3vw;
       background: url(${zx7Images[1]}) no-repeat center;
       background-size: cover;
@@ -150,7 +155,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     ${flexMixin('center', 'center', 'column')};
     gap: 2vh;
 
-    @media ${devices.tablet} {
+    @media ${devices.tablet}, ${devices.landscapeMobileSS} {
       height: 30vh;
       margin-top: 4vh;
       flex-direction: row;
@@ -222,6 +227,16 @@ export const Zx9Image = styled.div`
     &::after {
       height: 190%;
       width: 150%;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    &::before {
+      width: 220%;
+      height: 185%;
+    }
+    &::after {
+      width: 170%;
+      height: 160%;
     }
   }
 `;
