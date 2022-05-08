@@ -18,7 +18,7 @@ html{
       font-size: 40%;
     }
     @media ${devices.mobileM}{
-      font-size: 45%;
+      font-size: 47.5%;
     }
     @media ${devices.mobileL}{
       font-size: 55%;
