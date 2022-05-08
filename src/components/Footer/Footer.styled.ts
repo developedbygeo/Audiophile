@@ -58,6 +58,9 @@ export const StyledFooter = styled(LargeSimpleContainer)`
       transform: translateX(-30%);
     }
   }
+  @media ${devices.landscapeMobileSS} {
+    min-height: 50vh;
+  }
 `;
 
 export const StyledLinks = styled.div`
@@ -70,19 +73,19 @@ export const StyledLinks = styled.div`
     ${interactAndHover};
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     flex-direction: row;
     gap: 3vw;
   }
 `;
 
 export const FooterDescription = styled(Description)`
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
   font-size: 1.7rem;
   color: rgba(${({ theme }) => theme.colors.white}, 0.5);
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     text-align: left;
   }
 `;
@@ -97,7 +100,7 @@ export const FinePrint = styled.small`
   ${flexMixin('space-evenly', 'center', 'column')};
   gap: 3rem;
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${flexMixin('space-between', 'center', 'row')};
     height: auto;
   }
@@ -112,7 +115,7 @@ export const Social = styled(FooterDescription)`
     color: rgb(${({ theme }) => theme.colors.white});
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     gap: 5vw;
   }
   @media ${devices.laptop} {
