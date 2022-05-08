@@ -11,8 +11,9 @@ export const StyledBrand = styled(LargeSimpleContainer)`
   margin-top: 10vh;
   padding-block: 3vh;
   gap: 5vh;
+  height: auto;
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     height: 75vh;
     margin-top: 7.5vh;
   }
@@ -28,18 +29,19 @@ export const StyledBrand = styled(LargeSimpleContainer)`
 `;
 
 export const BrandImage = styled.div`
-  height: 100%;
+  min-height: 30vh;
   width: 100%;
   max-height: 30vh;
   background: url(${bestGear[0]}) no-repeat center;
   background-size: cover;
   border-radius: 2rem;
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     background: url(${bestGear[1]}) no-repeat center;
     background-size: cover;
   }
   @media ${devices.laptop} {
+    min-height: 60vh;
     max-height: initial;
     background: url(${bestGear[2]}) no-repeat center;
     background-size: cover;
