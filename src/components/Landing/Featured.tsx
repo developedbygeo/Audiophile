@@ -25,18 +25,18 @@ const Featured = () => {
               Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
             </Description>
           )}
-          <ProductLink to="/products/zx9-speaker" className="zx9-btn">
+          <ProductLink to="/products/zx9-speaker" className="zx9-btn" title="Find out more about ZX9">
             SEE PRODUCT
           </ProductLink>
         </div>
       </BigContainer>
       <SmallerContainer as="article" className="zx7-home">
         <BigHeading>ZX7 SPEAKER</BigHeading>
-        <ProductLink to="/products/zx7-speaker" look="secondary">
+        <ProductLink to="/products/zx7-speaker" look="secondary" title="Find out more about ZX7">
           SEE PRODUCT
         </ProductLink>
       </SmallerContainer>
-      <SmallerContainer as="article" className="yx1">
+      <SmallerContainer as="article" className="yx1" title="Find out more about YX1">
         <EarphonesContainer />
         <FeaturedText>
           <BigHeading>YX1 EARPHONES</BigHeading>
