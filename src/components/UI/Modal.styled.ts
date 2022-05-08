@@ -42,7 +42,7 @@ const modalStyle = css`
       width: 90%;
     }
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     &:not(.success) {
       width: 32.5vw;
       left: 67.5%;
@@ -52,6 +52,20 @@ const modalStyle = css`
       top: 55%;
       height: auto;
       padding: 5rem 3rem;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    &:not(.success) {
+      top: 40%;
+      left: 80%;
+    }
+    &.success {
+      height: auto;
+      width: 65vw;
+      top: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2%;
     }
   }
 `;
