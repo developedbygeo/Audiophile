@@ -20,7 +20,7 @@ export const StyledSimilar = styled(StyledGallery)`
     gap: 5vh;
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${flexMixin('center', 'center', 'column')};
     ul {
       flex-direction: row;
@@ -39,6 +39,9 @@ export const StyledSimilar = styled(StyledGallery)`
     ul {
       margin-bottom: 5vh;
     }
+  }
+  @media ${devices.landscapeMobileSS} {
+    margin-bottom: 15vh;
   }
 `;
 
