@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 
 export const StyledNoItems = styled.div`
@@ -21,5 +22,16 @@ export const StyledNoItems = styled.div`
   }
   h3 {
     color: rgb(${({ theme }) => theme.colors.smokeyBlack});
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    gap: 1rem;
+    padding-inline: 15%;
+    h2 {
+      margin-block: 0;
+    }
+    div {
+      gap: 2.5rem;
+    }
   }
 `;
