@@ -24,7 +24,7 @@ export const StyledProducts = styled.section`
         grid-area: 1/1/2/1;
       }
       & > a {
-        grid-area: 1/1/2/1;
+        grid-area: 2/1/2/1;
       }
     }
   }
