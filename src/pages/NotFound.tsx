@@ -1,11 +1,15 @@
 import { NotFoundLayout } from 'components/UI/Container.styled';
-import { BigHeading } from 'components/UI/Text.styled';
+import { BigHeading, Description } from 'components/UI/Text.styled';
+import { ProductLink } from 'components/UI/Button.styled';
 
 const NotFound = () => {
   return (
     <NotFoundLayout>
-      <BigHeading>Oops, there is nothing here!</BigHeading>
-      <div className="placeholder" role="img" />
+      <article>
+        <BigHeading>Oops, there is nothing here!</BigHeading>
+        <Description>Let&apos;s get you back</Description>
+        <ProductLink to="/">Home</ProductLink>
+      </article>
     </NotFoundLayout>
   );
 };
