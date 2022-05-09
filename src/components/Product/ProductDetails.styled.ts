@@ -7,6 +7,7 @@ import { UnstyledButton } from 'components/UI/Button.styled';
 import { StyledPreview, StyledImageCont, StyledText } from './ProductPreview.styled';
 
 export const DetailsContainer = styled(StyledPreview)`
+  height: auto;
   .desc {
     ${grayDescription};
   }
@@ -18,7 +19,6 @@ export const DetailsContainer = styled(StyledPreview)`
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${gridMixin('auto', '0.05fr auto')};
     min-height: initial;
-    height: 65vh;
 
     /* go back button */
     & > button {
