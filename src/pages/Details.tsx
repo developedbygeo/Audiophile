@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useAppSelector } from 'app/hooks';
 
 import ProductDetails from 'components/Product/ProductDetails';
+import ProductNotFound from 'components/Product/Product404';
 import ProductFeatures from 'components/Product/ProductFeatures';
 import ProductGallery from 'components/Product/ProductGallery';
 import SimilarProducts from 'components/Product/SimilarProducts';
@@ -12,7 +13,7 @@ const Details = () => {
   const productSlug = pathname.split('/')[2];
   const product = products.find((p) => p.slug === productSlug);
 
-  if (!product) return <p>Product not found!</p>;
+  if (!product) return <ProductNotFound />;
 
   return (
     <>
