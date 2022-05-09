@@ -17,45 +17,51 @@ export const StyledGallery = styled.section`
 
     .cont-3 {
       grid-area: 1/2/3/2;
+      max-height: 100%;
     }
   }
-  /* specific for the third child to be bigger */
-  & > div:nth-child(3) {
-    img {
-      height: 50vh;
-      @media ${devices.tablet} {
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-  }
+
   @media ${devices.laptop} {
     gap: 0.75vw;
     padding-inline: 10%;
-  }
-  @media ${devices.landscapeMobileSS} {
-    & > div:nth-child(3) {
-      img {
-        height: 61vh;
-      }
-    }
   }
 `;
 
 export const ImageContainer = styled.div`
   height: auto;
+  max-height: 80vh;
   width: 100%;
   margin: auto;
 
   @media ${devices.tablet} {
     height: 100%;
     object-fit: contain;
+    &.cont-3 img {
+      object-fit: cover;
+      max-height: 85vh;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    &.cont-3 {
+      height: 100%;
+      img {
+        object-fit: cover;
+        max-height: 90vh;
+        height: 100%;
+      }
+    }
+    &:not(.cont-3) {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
   }
 `;
 
 export const GalleryImage = styled.img`
   width: 100%;
-  height: 30vh;
+  height: auto;
   object-fit: cover;
   border-radius: 1rem;
 
