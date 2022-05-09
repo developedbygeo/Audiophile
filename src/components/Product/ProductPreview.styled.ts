@@ -25,9 +25,10 @@ export const StyledPreview = styled(LargeSimpleContainer)`
     padding-top: 0;
 
     & > a {
-      grid-area: 1/2/1/3;
+      grid-area: 2/2/2/3;
       align-self: flex-end;
       justify-self: flex-start;
+      margin: 0 0 3vh 0;
     }
   }
 `;
@@ -73,7 +74,7 @@ export const StyledText = styled.div`
   @media ${devices.laptop} {
     padding: 0;
     grid-area: 1/2/1/3;
-    margin-bottom: 7.5vh;
+    align-self: center;
     justify-content: flex-start;
 
     h1,
