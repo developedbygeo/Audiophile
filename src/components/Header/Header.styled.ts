@@ -62,7 +62,7 @@ export const StyledHeader = styled.header`
       }
     }
   }
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     padding-inline: 10%;
     justify-content: space-between;
 
@@ -92,6 +92,11 @@ export const StyledHeader = styled.header`
     }
     button {
       order: 3;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    .logo {
+      transform: scale(1);
     }
   }
 `;
