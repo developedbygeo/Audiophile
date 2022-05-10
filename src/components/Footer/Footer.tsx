@@ -28,13 +28,13 @@ const Footer = () => {
           <Copyright>Copyright 2021. All Rights Reserved</Copyright>
         </div>
         <Social as="div">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <a className="fb-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
             <ImFacebook2 />
           </a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+          <a className="tw-link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
             <ImTwitter />
           </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <a className="ig-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
             <BsInstagram />
           </a>
         </Social>
