@@ -43,7 +43,7 @@ export const responsiveBaseFont = css`
     font-size: 40%;
   }
   @media ${devices.mobileM} {
-    font-size: 47.5%;
+    font-size: 48.5%;
   }
   @media ${devices.mobileL} {
     font-size: 55%;
@@ -52,13 +52,13 @@ export const responsiveBaseFont = css`
     font-size: 60%;
   }
   @media ${devices.laptopM} {
-    font-size: 58.5%;
+    font-size: 59.5%;
   }
   @media ${devices.laptopL} {
-    font-size: 60.5%;
+    font-size: 61%;
   }
   @media ${devices.laptopXL} {
-    font-size: 65%;
+    font-size: 65.5%;
   }
   @media ${devices.desktop} {
     font-size: 100%;
@@ -70,7 +70,7 @@ export const responsiveBaseFont = css`
     font-size: 32.5%;
   }
   @media ${devices.landscapeMobileM} {
-    font-size: 40%;
+    font-size: 45%;
   }
   @media ${devices.landscapeMobileL} {
     font-size: 45%;
