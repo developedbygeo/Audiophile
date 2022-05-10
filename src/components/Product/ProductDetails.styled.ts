@@ -58,6 +58,10 @@ export const DetailsContainer = styled(StyledPreview)`
   @media ${devices.landscapeMobileSS} {
     column-gap: 3vw;
   }
+  @media ${devices.landscapeMobileM} {
+    margin-top: 5vh;
+    grid-template-rows: minmax(10px, 8vh) minmax(250px, 70vh);
+  }
 `;
 
 export const ProductImageCont = styled(StyledImageCont)`
@@ -126,6 +130,12 @@ export const ProductActions = styled.div`
     & > .quantity-btn,
     & > .cart-btn {
       height: 10vh;
+    }
+  }
+  @media ${devices.landscapeMobileM} {
+    & > .quantity-btn,
+    & > .cart-btn {
+      height: 12vh;
     }
   }
 `;
