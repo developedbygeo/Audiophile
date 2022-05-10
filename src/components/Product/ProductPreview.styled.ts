@@ -17,7 +17,7 @@ export const StyledPreview = styled(LargeSimpleContainer)`
     margin-top: 3vh;
   }
 
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileM} {
     ${gridMixin('repeat(2, 1fr)', '1fr 0.1fr')};
     height: 60vh;
     column-gap: 5vw;
@@ -31,6 +31,9 @@ export const StyledPreview = styled(LargeSimpleContainer)`
       margin: 0 0 3vh 0;
     }
   }
+  @media ${devices.landscapeMobileM} {
+    height: auto;
+  }
 `;
 
 export const StyledImageCont = styled.div`
@@ -42,7 +45,7 @@ export const StyledImageCont = styled.div`
     object-fit: cover;
     border-radius: 1rem;
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileM} {
     grid-area: 1/1/3/1;
     height: 100%;
   }
@@ -71,7 +74,7 @@ export const StyledText = styled.div`
   @media ${devices.tablet} {
     padding-inline: 1%;
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileM} {
     padding: 0;
     grid-area: 1/2/1/3;
     align-self: center;
