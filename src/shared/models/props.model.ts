@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type BaseProps = {
   children?: React.ReactNode;
   className?: string;
@@ -16,7 +18,7 @@ export type ModalOverlayProps = {
 };
 
 export type ModalBackdropProps = {
-  onDisable?: () => void;
+  onDisable?: () => void | React.DispatchWithoutAction;
 };
 
 export type ModalDivProps = {
