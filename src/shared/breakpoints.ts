@@ -22,7 +22,7 @@ export const devices = {
   mobileM: `(min-width: ${sizes.mobileM})`,
   mobileL: `(min-width: ${sizes.mobileL})`,
 
-  landscapeMobileSS: `(min-width: ${sizes.landscapeMobileSS}) and (orientation: landscape) and (max-height: 450px)`,
+  landscapeMobileSS: `(min-width: ${sizes.landscapeMobileSS}) and (max-height: 450px) and (orientation: landscape)`,
   landscapeMobileS: `(min-width: ${sizes.landscapeMobileS}) and (max-height: 450px) and (orientation: landscape)`,
   landscapeMobileM: `(min-width: ${sizes.landscapeMobileM}) and (max-height: 450px) and (orientation: landscape)`,
   landscapeMobileL: `(min-width: ${sizes.landscapeMobileL}) and (max-height: 450px) and (orientation: landscape)`,
