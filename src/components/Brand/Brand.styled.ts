@@ -26,6 +26,9 @@ export const StyledBrand = styled(LargeSimpleContainer)`
       flex: 1;
     }
   }
+  @media ${devices.landscapeMobileS} {
+    height: auto;
+  }
 `;
 
 export const BrandImage = styled.div`
@@ -45,6 +48,9 @@ export const BrandImage = styled.div`
     max-height: initial;
     background: url(${bestGear[2]}) no-repeat center;
     background-size: cover;
+  }
+  @media ${devices.landscapeMobileS} {
+    min-height: 50vh;
   }
 `;
 
