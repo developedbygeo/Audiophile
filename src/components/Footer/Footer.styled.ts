@@ -115,6 +115,16 @@ export const Social = styled(FooterDescription)`
     color: rgb(${({ theme }) => theme.colors.white});
   }
 
+  .fb-link:hover svg {
+    color: rgb(66, 103, 178);
+  }
+  .tw-link:hover svg {
+    color: rgb(29, 161, 242);
+  }
+  .ig-link:hover svg {
+    color: rgb(138, 58, 185);
+  }
+
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     gap: 5vw;
   }
