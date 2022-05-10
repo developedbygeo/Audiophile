@@ -150,7 +150,7 @@ export const FormSection = styled.article`
   }
   &.payment-section {
     min-height: 40vh;
-    ${gridMixin('repeat(2, 1fr)', '.05fr auto')};
+    ${gridMixin('repeat(2, 1fr)', '0.05fr auto')};
     h3 {
       grid-area: 2/1/2/1;
     }
@@ -177,6 +177,11 @@ export const FormSection = styled.article`
   @media ${devices.landscapeMobileSS} {
     .radio-group {
       gap: 4vh;
+    }
+  }
+  @media ${devices.mobileM} {
+    h2 {
+      grid-area: 1/1/1/3;
     }
   }
 `;
@@ -218,6 +223,7 @@ export const InputField = styled.input`
     opacity: 1;
     font-weight: ${({ theme }) => theme.typography.weights.body};
     color: rgba(${({ theme }) => theme.colors.black}, 0.45);
+    letter-spacing: 0.125rem;
   }
 
   &:focus {
