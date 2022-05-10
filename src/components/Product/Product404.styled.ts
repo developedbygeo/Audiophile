@@ -48,4 +48,13 @@ export const StyledNotFound = styled(DetailsContainer)`
       align-self: center;
     }
   }
+  @media ${devices.landscapeMobileS} {
+    ${flexMixin('center', 'center', 'column')};
+    a {
+      align-self: center;
+    }
+    p {
+      display: none;
+    }
+  }
 `;
