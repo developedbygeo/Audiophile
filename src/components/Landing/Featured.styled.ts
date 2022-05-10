@@ -77,6 +77,9 @@ export const BigContainer = styled(LargeSimpleContainer)`
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     height: 80vh;
   }
+  @media ${devices.landscapeMobileM} {
+    height: 85vh;
+  }
   @media ${devices.laptop} {
     height: 60vh;
 
@@ -98,6 +101,11 @@ export const BigContainer = styled(LargeSimpleContainer)`
         grid-area: 4/2/4/3;
         justify-self: flex-start;
       }
+    }
+  }
+  @media ${devices.landscapeMobileM} {
+    &.featured > div {
+      padding: 1rem 15rem;
     }
   }
 `;
@@ -148,6 +156,9 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
         font-size: 3rem;
       }
     }
+    @media ${devices.landscapeMobileM} {
+      height: 40vh;
+    }
   }
 
   &.yx1 {
@@ -174,6 +185,9 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
     h1 {
       font-size: 3rem;
     }
+  }
+  @media ${devices.landscapeMobileM} {
+    height: 35vh;
   }
 `;
 
@@ -238,6 +252,9 @@ export const Zx9Image = styled.div`
       width: 170%;
       height: 160%;
     }
+  }
+  @media ${devices.landscapeMobileM} {
+    min-height: 30vh;
   }
 `;
 
