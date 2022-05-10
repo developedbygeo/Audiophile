@@ -44,11 +44,11 @@ const modalStyle = css`
   }
   @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     &:not(.success) {
-      width: 32.5vw;
+      width: 36.5vw;
       left: 67.5%;
     }
     &.success {
-      width: 40%;
+      width: 55vw;
       top: 55%;
       height: auto;
       padding: 5rem 3rem;
