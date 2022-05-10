@@ -26,7 +26,7 @@ export const StyledCategories = styled.section`
     min-height: 30vh;
     & > div {
       width: 30vw;
-      height: 20vh;
+      height: 15vh;
     }
   }
   @media ${devices.laptop} {
@@ -39,6 +39,11 @@ export const StyledCategories = styled.section`
   @media ${devices.landscapeMobileSS} {
     & > div {
       height: 25vh;
+    }
+  }
+  @media ${devices.landscapeMobileM} {
+    & > div {
+      height: 30vh;
     }
   }
 `;
