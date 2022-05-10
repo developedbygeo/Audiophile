@@ -94,7 +94,20 @@ export const StyledHeader = styled.header`
       order: 3;
     }
   }
+  @media ${devices.laptop} {
+    .logo {
+      transform: scale(1.3);
+    }
+  }
+  @media ${devices.desktop4K} {
+    .logo {
+      transform: scale(2);
+    }
+  }
   @media ${devices.landscapeMobileSS} {
+    .logo-wrapper {
+      ${flexMixin('center', 'center', 'row')};
+    }
     .logo {
       transform: scale(1);
     }
