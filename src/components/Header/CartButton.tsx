@@ -1,5 +1,5 @@
 import { useAppSelector } from 'app/hooks';
-import { useState } from 'react';
+import { useReducer } from 'react';
 
 import Modal from 'components/UI/Modal';
 import NoItems from 'components/ModalDialogues/NoItems';
@@ -10,27 +10,23 @@ import { StyledCartButton } from './CartButton.styled';
 
 const CartButton = () => {
   const { totalQuantity, isCheckedOut } = useAppSelector((state) => state.cart);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useReducer((state: boolean) => !state, false);
 
   const shouldQuantityRender = totalQuantity > 0 && !isCheckedOut && <span>{totalQuantity}</span>;
 
-  const cartHandler = () => {
-    setIsCartOpen((prevState) => !prevState);
-  };
-
   const ModalDialogue = !totalQuantity ? (
-    <NoItems onDisable={cartHandler} />
+    <NoItems onDisable={setIsCartOpen} />
   ) : (
-    <CartReview onDisable={cartHandler} />
+    <CartReview onDisable={setIsCartOpen} />
   );
 
   return (
     <>
-      <StyledCartButton onClick={cartHandler}>
+      <StyledCartButton onClick={setIsCartOpen}>
         <AiOutlineShoppingCart />
         {shouldQuantityRender}
       </StyledCartButton>
-      {isCartOpen && <Modal onDisable={cartHandler}>{ModalDialogue}</Modal>}
+      {isCartOpen && <Modal onDisable={setIsCartOpen}>{ModalDialogue}</Modal>}
     </>
   );
 };
