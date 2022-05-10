@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from 'styled-components/macro';
 
-import { flexMixin, opacityMixin } from 'shared/mixins';
+import { flexMixin } from 'shared/mixins';
 import { interactAndHover } from 'shared/styles/interactive.styles';
 import { devices } from 'shared/breakpoints';
 
 export const StyledDesktopNav = styled.nav`
   ${flexMixin('space-between', 'center', 'row')};
   gap: 4rem;
+  height: auto;
 
   a {
     color: rgb(${({ theme }) => theme.colors.white});
@@ -70,10 +70,18 @@ export const StyledMobileNav = styled.nav`
   }
   @media ${devices.landscapeMobileSS} {
     section {
-      height: 40vh;
-      & > div {
-        height: 22.5vh;
-      }
+      height: 50vh;
+    }
+    .tablet-nav > div {
+      height: 25vh;
+    }
+  }
+  @media ${devices.landscapeMobileM} {
+    section {
+      height: 55vh;
+    }
+    .tablet-nav > div {
+      height: 28vh;
     }
   }
 `;
