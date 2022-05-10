@@ -53,6 +53,9 @@ export const StyledQuantity = styled.div`
       padding: 0.5rem;
     }
   }
+  @media ${devices.landscapeMobileM} {
+    max-width: 25vh;
+  }
 `;
 
 export const AddCartButton = styled(CtaButton)`
