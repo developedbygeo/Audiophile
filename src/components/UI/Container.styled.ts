@@ -53,7 +53,7 @@ export const NotFoundLayout = styled.section`
   }
 
   @media ${devices.tablet} {
-    align-items: center;
+    align-items: flex-end;
     & > article {
       background: rgba(${({ theme }) => theme.colors.smokeyBlack}, 0.75);
     }
