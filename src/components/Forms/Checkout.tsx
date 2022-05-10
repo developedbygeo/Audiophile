@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useAppDispatch } from 'app/hooks';
 import { setCheckout } from 'features/cartSlice';
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
@@ -19,7 +19,7 @@ const CheckoutForm = ({ children }: BaseProps) => {
   const dispatch = useAppDispatch();
   const [isOrderPaid, setIsOrderPaid] = useState(false);
 
-  const disableViewHandler = () => setIsOrderPaid((prevState) => !prevState);
+  const disableViewHandler = useCallback(() => setIsOrderPaid((prevState) => !prevState), []);
 
   // toggles success modal view and sets isCheckedOut to true to hide quantity in cart button - success dispatches the cart reset
   const submitHandler: SubmitHandler<CheckoutInputType> = () => {
