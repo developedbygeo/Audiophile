@@ -28,4 +28,7 @@ export const StyledProducts = styled.section`
       }
     }
   }
+  @media ${devices.landscapeMobileM} {
+    margin: 5vh 0 15vh 0;
+  }
 `;
