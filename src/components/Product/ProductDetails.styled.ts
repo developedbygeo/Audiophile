@@ -161,7 +161,6 @@ export const GoBackButton = styled(UnstyledButton)`
   }
 `;
 
-// TODO create product not found component
 export const NotFoundProduct = styled.div`
   height: 100%;
   width: 100%;
