@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-// import { devices } from './breakpoints';
-import { gridMixin, responsiveBaseFont } from './mixins';
+import { flexMixin, gridMixin, responsiveBaseFont } from './mixins';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -18,12 +17,29 @@ body{
     height: auto;
     width: 100vw;
     overflow-x: hidden;
-    font-family: 'Manrope', sans-serif;    
+    font-family: 'Manrope', sans-serif;   
+    scrollbar-width: thin;
+    scrollbar-color: rgba(241, 245, 249, 0.2) transparent;
+    scrollbar-track-color: transparent;
+
+    ::-webkit-scrollbar {
+        width: 7.5px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(${({ theme }) => theme.colors.brand});
+        border-radius: 20px;
+        border: transparent;
+    }
 }
+
 header{
     height: 10vh;
     width: 100%;
 }
+
 main{
     position: relative;
     min-height: 90vh;
@@ -31,18 +47,23 @@ main{
     background: #fff;
     overflow: hidden;
     ${gridMixin('1fr', 'auto')};
-    /* TODO add suspense/lazy loading/content-loader */
-    &>svg{
-      width: 100%;
-      height: 100%;
+
+    .loading{
+      position: relative;
+      ${flexMixin('center', 'center', 'column')};
+      svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
+
     &>section{
       min-height: 90vh;
       padding-inline: 10%;
       width: 100%;
     }
-
-
 }
 #root{
   background: rgb(${({ theme }) => theme.colors.mainBg});
