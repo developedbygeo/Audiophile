@@ -28,7 +28,7 @@ export const getImagePath = (partialPath: string, sliceCount: number = 8) => {
 
 export const getCartImage = (productName: string) => {
   const formattedName = productName.toLowerCase().replace(/\s+/g, '-');
-  return `/images/cart/image-${formattedName}.jpg`;
+  return `images/cart/image-${formattedName}.jpg`;
 };
 
 export const trimProductName = (name: string) => {
