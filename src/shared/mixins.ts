@@ -64,7 +64,7 @@ export const responsiveBaseFont = css`
     font-size: 100%;
   }
   @media ${devices.landscapeMobileSS} {
-    font-size: 22%;
+    font-size: 29%;
   }
   @media ${devices.landscapeMobileS} {
     font-size: 32.5%;
