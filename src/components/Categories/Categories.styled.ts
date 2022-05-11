@@ -20,6 +20,22 @@ export const StyledCategories = styled.section`
     }
   }
 
+  @media (max-width: 330px) {
+    &.mobile-nav {
+      gap: 10vh;
+      & > div {
+        height: 19.5vh;
+      }
+    }
+    &:not(.mobile-nav) {
+      min-height: 100vh;
+
+      & > div {
+        height: 20.5vh;
+      }
+    }
+  }
+
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     padding-inline: 5%;
     flex-direction: row;
