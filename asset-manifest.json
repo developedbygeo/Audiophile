@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.js": "/Audiophile/static/js/main.0e1aa4dc.js",
+    "static/js/100.e6c340d0.chunk.js": "/Audiophile/static/js/100.e6c340d0.chunk.js",
+    "static/js/760.96f8f759.chunk.js": "/Audiophile/static/js/760.96f8f759.chunk.js",
+    "static/js/430.0e2cdc1e.chunk.js": "/Audiophile/static/js/430.0e2cdc1e.chunk.js",
+    "static/js/29.7222f722.chunk.js": "/Audiophile/static/js/29.7222f722.chunk.js",
+    "static/js/250.6e43aa30.chunk.js": "/Audiophile/static/js/250.6e43aa30.chunk.js",
+    "static/js/949.b97c3b50.chunk.js": "/Audiophile/static/js/949.b97c3b50.chunk.js",
+    "static/js/868.bb1b6fb2.chunk.js": "/Audiophile/static/js/868.bb1b6fb2.chunk.js",
+    "static/media/404-cover.jpg": "/Audiophile/static/media/404-cover.3f5191857c7f68ee055a.jpg",
+    "static/media/image-speaker-zx9.png": "/Audiophile/static/media/image-speaker-zx9.97769f2fb291eaed1868.png",
+    "static/media/image-best-gear.jpg": "/Audiophile/static/media/image-best-gear.4d4a28e9e7c9ab158dd8.jpg",
+    "static/media/product404.svg": "/Audiophile/static/media/product404.8d106523bcb70fdf63e354d328fe030c.svg",
+    "static/media/image-hero.jpg": "/Audiophile/static/media/image-hero.55c18e980adf7658ae26.jpg",
+    "static/media/image-category-thumbnail-headphones.png": "/Audiophile/static/media/image-category-thumbnail-headphones.fbd401d9c735a217286f.png",
+    "static/media/image-category-thumbnail-speakers.png": "/Audiophile/static/media/image-category-thumbnail-speakers.bbb1a70b6ebc42d18df7.png",
+    "static/media/image-category-thumbnail-earphones.png": "/Audiophile/static/media/image-category-thumbnail-earphones.6e8830d475e04b7b9627.png",
+    "static/media/image-speaker-zx7.jpg": "/Audiophile/static/media/image-speaker-zx7.173a4cb5c7acfc7f300c.jpg",
+    "static/media/image-earphones-yx1.jpg": "/Audiophile/static/media/image-earphones-yx1.48e16a44bd58ed3be41e.jpg",
+    "static/media/logo.svg": "/Audiophile/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
+    "index.html": "/Audiophile/index.html",
+    "main.0e1aa4dc.js.map": "/Audiophile/static/js/main.0e1aa4dc.js.map",
+    "100.e6c340d0.chunk.js.map": "/Audiophile/static/js/100.e6c340d0.chunk.js.map",
+    "760.96f8f759.chunk.js.map": "/Audiophile/static/js/760.96f8f759.chunk.js.map",
+    "430.0e2cdc1e.chunk.js.map": "/Audiophile/static/js/430.0e2cdc1e.chunk.js.map",
+    "29.7222f722.chunk.js.map": "/Audiophile/static/js/29.7222f722.chunk.js.map",
+    "250.6e43aa30.chunk.js.map": "/Audiophile/static/js/250.6e43aa30.chunk.js.map",
+    "949.b97c3b50.chunk.js.map": "/Audiophile/static/js/949.b97c3b50.chunk.js.map",
+    "868.bb1b6fb2.chunk.js.map": "/Audiophile/static/js/868.bb1b6fb2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.0e1aa4dc.js"
+  ]
+}
