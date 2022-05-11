@@ -56,7 +56,7 @@ export const StyledCheckout = styled(BigContainer)`
     display: none;
   }
 
-  h2 {
+  article > h2 {
     font-size: 2rem;
     color: rgb(${({ theme }) => theme.colors.brand});
     letter-spacing: 0.1rem;
