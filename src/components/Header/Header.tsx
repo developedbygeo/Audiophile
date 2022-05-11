@@ -28,7 +28,7 @@ const Header = ({ className }: BaseProps) => {
   }, [pathname]);
 
   useEffect(() => {
-    if (width < 768) disableScroll(navIsEnabled);
+    if (width < 450) disableScroll(navIsEnabled);
   }, [width, navIsEnabled]);
 
   const navToggleHandler = useCallback(() => setNavIsEnabled((prevState) => !prevState), []);
