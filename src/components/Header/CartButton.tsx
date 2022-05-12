@@ -22,7 +22,7 @@ const CartButton = () => {
 
   return (
     <>
-      <StyledCartButton onClick={setIsCartOpen}>
+      <StyledCartButton onClick={setIsCartOpen} aria-label="Toggle cart">
         <AiOutlineShoppingCart />
         {shouldQuantityRender}
       </StyledCartButton>
