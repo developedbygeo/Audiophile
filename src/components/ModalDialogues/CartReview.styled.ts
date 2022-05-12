@@ -18,7 +18,7 @@ export const StyledReview = styled.div`
   }
 
   @media ${devices.tablet} {
-    min-height: 35vh;
+    min-height: 30vh;
   }
 
   & > button {
