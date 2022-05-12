@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Audiophile/static/js/main.50e6154e.js",
+    "main.js": "/Audiophile/static/js/main.a3044d6b.js",
     "static/js/100.161445df.chunk.js": "/Audiophile/static/js/100.161445df.chunk.js",
     "static/js/760.585fd223.chunk.js": "/Audiophile/static/js/760.585fd223.chunk.js",
-    "static/js/430.2e13b11e.chunk.js": "/Audiophile/static/js/430.2e13b11e.chunk.js",
+    "static/js/430.83c06cfd.chunk.js": "/Audiophile/static/js/430.83c06cfd.chunk.js",
     "static/js/29.1c3e2a02.chunk.js": "/Audiophile/static/js/29.1c3e2a02.chunk.js",
     "static/js/250.5a23c2ee.chunk.js": "/Audiophile/static/js/250.5a23c2ee.chunk.js",
-    "static/js/949.b97c3b50.chunk.js": "/Audiophile/static/js/949.b97c3b50.chunk.js",
+    "static/js/949.578a52ca.chunk.js": "/Audiophile/static/js/949.578a52ca.chunk.js",
     "static/js/868.bb1b6fb2.chunk.js": "/Audiophile/static/js/868.bb1b6fb2.chunk.js",
     "static/media/404-cover.jpg": "/Audiophile/static/media/404-cover.3f5191857c7f68ee055a.jpg",
     "static/media/image-speaker-zx9.png": "/Audiophile/static/media/image-speaker-zx9.97769f2fb291eaed1868.png",
@@ -20,16 +20,16 @@
     "static/media/image-earphones-yx1.jpg": "/Audiophile/static/media/image-earphones-yx1.48e16a44bd58ed3be41e.jpg",
     "static/media/logo.svg": "/Audiophile/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
     "index.html": "/Audiophile/index.html",
-    "main.50e6154e.js.map": "/Audiophile/static/js/main.50e6154e.js.map",
+    "main.a3044d6b.js.map": "/Audiophile/static/js/main.a3044d6b.js.map",
     "100.161445df.chunk.js.map": "/Audiophile/static/js/100.161445df.chunk.js.map",
     "760.585fd223.chunk.js.map": "/Audiophile/static/js/760.585fd223.chunk.js.map",
-    "430.2e13b11e.chunk.js.map": "/Audiophile/static/js/430.2e13b11e.chunk.js.map",
+    "430.83c06cfd.chunk.js.map": "/Audiophile/static/js/430.83c06cfd.chunk.js.map",
     "29.1c3e2a02.chunk.js.map": "/Audiophile/static/js/29.1c3e2a02.chunk.js.map",
     "250.5a23c2ee.chunk.js.map": "/Audiophile/static/js/250.5a23c2ee.chunk.js.map",
-    "949.b97c3b50.chunk.js.map": "/Audiophile/static/js/949.b97c3b50.chunk.js.map",
+    "949.578a52ca.chunk.js.map": "/Audiophile/static/js/949.578a52ca.chunk.js.map",
     "868.bb1b6fb2.chunk.js.map": "/Audiophile/static/js/868.bb1b6fb2.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.50e6154e.js"
+    "static/js/main.a3044d6b.js"
   ]
 }
