@@ -67,6 +67,9 @@ export const StyledCartButton = styled(UnstyledButton)`
       object-fit: cover;
     }
   }
-  @media ${devices.laptopXL} {
+  @media ${devices.landscapeMobileSS} {
+    span {
+      bottom: 0;
+    }
   }
 `;
