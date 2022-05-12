@@ -41,6 +41,11 @@ export const ImageContainer = styled.div`
       max-height: 85vh;
     }
   }
+  @media ${devices.laptop} {
+    &.cont-3 img {
+      max-height: 70vh;
+    }
+  }
   @media ${devices.landscapeMobileSS} {
     &.cont-3 {
       height: 100%;
