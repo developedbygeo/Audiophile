@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { devices } from 'shared/breakpoints';
 import { Container } from 'components/UI/Container.styled';

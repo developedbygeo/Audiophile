@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import placeholderImage from 'assets/shared/404-cover.jpg';
 import { flexMixin } from 'shared/mixins';

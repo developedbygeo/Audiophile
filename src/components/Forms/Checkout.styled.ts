@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { flexMixin, gridMixin } from 'shared/mixins';
 import { BigContainer } from 'components/Landing/Featured.styled';
