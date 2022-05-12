@@ -31,7 +31,7 @@ const modalStyle = css`
       width: 65%;
       top: 25%;
       right: 25%;
-      transform: translate(-27.5%, -22.5%);
+      transform: translate(-27.5%, -35.5%);
     }
 
     &.success {
