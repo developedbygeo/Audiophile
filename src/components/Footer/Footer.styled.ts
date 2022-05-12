@@ -43,7 +43,7 @@ export const StyledFooter = styled(LargeSimpleContainer)`
     padding: 2.5% 10%;
     ${gridMixin('1fr 0.7fr', ' 0.1fr 1fr repeat(2, 0.8fr)')};
 
-    & > small {
+    & > .copy {
       grid-area: 4/1/4/3;
       align-self: center;
       padding-right: 2.5%;
@@ -94,12 +94,11 @@ export const Copyright = styled(FooterDescription)`
   font-weight: 600;
 `;
 
-export const FinePrint = styled.small`
+export const CopyAndLinks = styled.div`
   width: 100%;
   height: 100%;
   ${flexMixin('space-evenly', 'center', 'column')};
   gap: 3rem;
-
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     ${flexMixin('space-between', 'center', 'row')};
     height: auto;
