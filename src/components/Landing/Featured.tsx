@@ -18,7 +18,7 @@ const Featured = () => {
     <>
       <BigContainer className="featured" as="article">
         <div>
-          <Zx9Image role="img" />
+          <Zx9Image role="img" aria-label="ZX9 Speaker" />
           <BigHeading>ZX9 SPEAKER</BigHeading>
           {isNotMobile && (
             <Description>
