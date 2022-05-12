@@ -58,7 +58,7 @@ export const responsiveBaseFont = css`
     font-size: 61%;
   }
   @media ${devices.laptopXL} {
-    font-size: 65.5%;
+    font-size: 62.5%;
   }
   @media ${devices.desktop} {
     font-size: 100%;
