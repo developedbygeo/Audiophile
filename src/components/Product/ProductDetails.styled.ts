@@ -84,6 +84,9 @@ export const ProductText = styled(StyledText)`
   h1 {
     letter-spacing: 0.7rem;
   }
+  p {
+    font-size: 2rem;
+  }
 
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     grid-area: 2/3/3/4;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { devices } from 'shared/breakpoints';
 import { flexMixin, gridMixin } from 'shared/mixins';
@@ -18,6 +18,7 @@ export const FeaturesContainer = styled(LargeSimpleContainer)`
   .desc {
     ${grayDescription};
     text-align: left;
+    font-size: 2rem;
   }
 
   @media ${devices.tablet} {

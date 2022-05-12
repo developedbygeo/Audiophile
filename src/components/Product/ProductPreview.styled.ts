@@ -69,6 +69,7 @@ export const StyledText = styled.div`
 
   .desc {
     ${grayDescription};
+    font-size: 1.9rem;
   }
 
   @media ${devices.tablet} {
