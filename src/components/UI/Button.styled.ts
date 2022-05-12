@@ -25,13 +25,13 @@ export const CtaButton = styled.button<BaseProps>`
   ${interactCta}
 `;
 
-const getLinkStyling = (props: LinkProps) => {
-  if (props.look === 'secondary') return secondaryStyling;
-  return ctaStyling;
-};
-
-export const ProductLink = styled(NavLink)`
+export const ProductLink = styled(NavLink)<LinkProps>`
   ${baseCtaButtonStyling};
-  ${getLinkStyling};
   ${flexMixin('center', 'center', 'row')};
+  &.sec {
+    ${secondaryStyling};
+  }
+  &:not(.sec) {
+    ${ctaStyling};
+  }
 `;
