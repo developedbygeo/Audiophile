@@ -7,6 +7,7 @@ export const StyledReview = styled.div`
   min-height: 40vh;
   padding: 1rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
+  gap: 2rem;
 
   h2 {
     font-size: 1.9rem;
@@ -17,7 +18,7 @@ export const StyledReview = styled.div`
   }
 
   @media ${devices.tablet} {
-    min-height: 40vh;
+    min-height: 35vh;
   }
 
   & > button {
