@@ -16,7 +16,7 @@ export const StyledReview = styled.div`
     font-size: 2.25rem;
   }
 
-  @media ${devices.tablet}, ${devices.landscapeMobileSS} {
+  @media ${devices.tablet} {
     min-height: 40vh;
   }
 
@@ -28,6 +28,9 @@ export const StyledReview = styled.div`
     min-height: 35vh;
     gap: 1rem;
     padding: 0 3%;
+  }
+  @media ${devices.landscapeMobileSS} {
+    min-height: 60vh;
   }
 `;
 
