@@ -54,6 +54,9 @@ export const DetailsContainer = styled(StyledPreview)`
     article {
       align-items: flex-start;
     }
+    figure img {
+      width: 30vw;
+    }
   }
   @media ${devices.landscapeMobileSS} {
     column-gap: 3vw;
@@ -121,9 +124,14 @@ export const ProductActions = styled.div`
   }
   @media ${devices.laptop} {
     width: 80%;
+    justify-content: flex-start;
+
     & > .quantity-btn,
     & > .cart-btn {
       height: 8.5vh;
+    }
+    & > .cart-btn {
+      max-width: 30rem;
     }
   }
   @media ${devices.landscapeMobileSS} {
