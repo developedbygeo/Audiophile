@@ -32,7 +32,7 @@ const Featured = () => {
       </BigContainer>
       <SmallerContainer as="article" className="zx7-home">
         <BigHeading>ZX7 SPEAKER</BigHeading>
-        <ProductLink to="/products/zx7-speaker" look="secondary" title="Find out more about ZX7">
+        <ProductLink to="/products/zx7-speaker" title="Find out more about ZX7" className="sec">
           SEE PRODUCT
         </ProductLink>
       </SmallerContainer>
@@ -40,7 +40,7 @@ const Featured = () => {
         <EarphonesContainer />
         <FeaturedText>
           <BigHeading>YX1 EARPHONES</BigHeading>
-          <ProductLink to="/products/yx1-earphones" look="secondary">
+          <ProductLink to="/products/yx1-earphones" className="sec">
             SEE PRODUCT
           </ProductLink>
         </FeaturedText>
