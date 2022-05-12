@@ -9,7 +9,7 @@ export type BaseProps = {
 };
 
 export type ImageCont = {
-  alt: string;
+  alt?: string;
 };
 
 export type LinkProps = BaseProps & {
