@@ -84,6 +84,7 @@ export const BrandText = styled.div`
     h1,
     p {
       text-align: left;
+      width: 100%;
     }
     p {
       padding-right: 5%;
