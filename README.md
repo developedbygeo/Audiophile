@@ -1,7 +1,7 @@
 # Audiophile
 
 <div style="display: flex">
-<img src='./public/sample-v.png' height='450px' width='200px' alt='mobile viewport - portrait mode'/>
+<img src='./public/sample-v.png' height='450px' width='200px' alt='mobile viewport - portrait mode'/>&nbsp;&nbsp;
 &nbsp;&nbsp;<img style="align-self: center" src='./public/sample-h.png' height='350px' width='500px'alt='tablet viewport - landscape mode'/>
 </div>
 
