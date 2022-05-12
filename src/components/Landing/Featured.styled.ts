@@ -81,15 +81,16 @@ export const BigContainer = styled(LargeSimpleContainer)`
     height: 85vh;
   }
   @media ${devices.laptop} {
-    height: 60vh;
+    height: 50vh;
 
     &.featured > div {
-      ${gridMixin('repeat(2, 1fr)', '0.5fr 0.1fr 0.5fr .5fr')};
+      ${gridMixin('repeat(2, 1fr)', 'auto')};
       row-gap: 2rem;
       column-gap: 8vw;
-      align-items: flex-start;
+      align-items: center;
       padding: 0rem 10rem;
       h1 {
+        align-self: flex-end;
         grid-area: 2/2/2/3;
         text-align: left;
       }
@@ -100,6 +101,7 @@ export const BigContainer = styled(LargeSimpleContainer)`
       a {
         grid-area: 4/2/4/3;
         justify-self: flex-start;
+        margin-bottom: 2rem;
       }
     }
   }
@@ -151,7 +153,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
       padding: 0 3rem 0 10vw;
       background: url(${zx7Images[2]}) no-repeat center;
       background-size: cover;
-      height: 45vh;
+      height: 30vh;
       h1 {
         font-size: 3rem;
       }
@@ -181,6 +183,7 @@ export const SmallerContainer = styled(LargeSimpleContainer)`
   }
   @media ${devices.laptop} {
     padding-inline: 10rem;
+    height: 25vh;
     gap: 0;
     h1 {
       font-size: 3rem;
