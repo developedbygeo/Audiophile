@@ -31,9 +31,7 @@ const Footer = () => {
         visit our demo facility - we&apos;re open 7 days a week.
       </FooterDescription>
       <CopyAndLinks className="copy">
-        <small>
-          <Copyright>Copyright 2021. All Rights Reserved</Copyright>
-        </small>
+        <Copyright as="small">Copyright 2021. All Rights Reserved</Copyright>
         <Social as="ul">
           <li>
             <a
