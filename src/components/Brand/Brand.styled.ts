@@ -4,6 +4,7 @@ import { bestGear } from 'shared/images';
 import { devices } from 'shared/breakpoints';
 import { flexMixin } from 'shared/mixins';
 import { LargeSimpleContainer } from 'components/UI/Container.styled';
+import { ImageCont } from 'shared/models/props.model';
 import { grayDescription } from 'components/UI/Text.styled';
 
 export const StyledBrand = styled(LargeSimpleContainer)`
@@ -31,7 +32,7 @@ export const StyledBrand = styled(LargeSimpleContainer)`
   }
 `;
 
-export const BrandImage = styled.div`
+export const BrandImage = styled.div<ImageCont>`
   min-height: 30vh;
   width: 100%;
   max-height: 30vh;
