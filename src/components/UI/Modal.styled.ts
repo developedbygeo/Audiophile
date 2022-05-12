@@ -58,6 +58,7 @@ const modalStyle = css`
     &:not(.success) {
       top: 30%;
       left: 70%;
+      transform: translate(-30%, -30%);
     }
     &.success {
       height: auto;
