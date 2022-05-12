@@ -56,8 +56,8 @@ const modalStyle = css`
   }
   @media ${devices.landscapeMobileSS} {
     &:not(.success) {
-      top: 40%;
-      left: 80%;
+      top: 30%;
+      left: 70%;
     }
     &.success {
       height: auto;
