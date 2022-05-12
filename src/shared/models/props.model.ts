@@ -8,8 +8,12 @@ export type BaseProps = {
   onBlur?: () => void;
 };
 
+export type ImageCont = {
+  alt: string;
+};
+
 export type LinkProps = BaseProps & {
-  look?: string;
+  $isSecondary?: boolean;
 };
 
 export type ModalOverlayProps = {
