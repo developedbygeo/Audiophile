@@ -4,7 +4,7 @@ import { StyledBrand, BrandImage, BrandText } from './Brand.styled';
 const Brand = () => {
   return (
     <StyledBrand as="article">
-      <BrandImage className="image-cont" role="img" alt="Brand model" />
+      <BrandImage className="image-cont" role="img" aria-label="Brand model" />
       <BrandText>
         <BigHeading>
           BRINGING YOU THE<span> BEST</span> AUDIO GEAR
