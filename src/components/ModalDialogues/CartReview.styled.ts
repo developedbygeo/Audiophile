@@ -40,13 +40,13 @@ export const ReviewHeader = styled.div`
   ${flexMixin('space-between', 'center', 'row')};
   height: 7vh;
 
-  h1,
   button {
     height: 100%;
   }
 
   h1 {
     font-size: 2.25rem;
+    height: auto;
     margin: 0;
   }
   button {
