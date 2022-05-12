@@ -4,12 +4,19 @@ import { BsInstagram } from 'react-icons/bs';
 import { ImFacebook2, ImTwitter } from 'react-icons/im';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 
-import { StyledFooter, StyledLinks, FooterDescription, FinePrint, Copyright, Social } from './Footer.styled';
+import {
+  StyledFooter,
+  StyledLinks,
+  FooterDescription,
+  CopyAndLinks,
+  Copyright,
+  Social
+} from './Footer.styled';
 
 const Footer = () => {
   return (
     <StyledFooter as="footer">
-      <Link to="/">
+      <Link to="/" aria-label="Return to Home">
         <Logo />
       </Link>
       <StyledLinks>
@@ -23,22 +30,46 @@ const Footer = () => {
         and sound specialists who are devoted to helping you get the most out of personal audio. Come and
         visit our demo facility - we&apos;re open 7 days a week.
       </FooterDescription>
-      <FinePrint>
-        <div>
+      <CopyAndLinks className="copy">
+        <small>
           <Copyright>Copyright 2021. All Rights Reserved</Copyright>
-        </div>
-        <Social as="div">
-          <a className="fb-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-            <ImFacebook2 />
-          </a>
-          <a className="tw-link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-            <ImTwitter />
-          </a>
-          <a className="ig-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-            <BsInstagram />
-          </a>
+        </small>
+        <Social as="ul">
+          <li>
+            <a
+              className="fb-link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook Page"
+            >
+              <ImFacebook2 />
+            </a>
+          </li>
+          <li>
+            <a
+              className="tw-link"
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter Page"
+            >
+              <ImTwitter />
+            </a>
+          </li>
+          <li>
+            <a
+              className="ig-link"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Page"
+            >
+              <BsInstagram />
+            </a>
+          </li>
         </Social>
-      </FinePrint>
+      </CopyAndLinks>
     </StyledFooter>
   );
 };
