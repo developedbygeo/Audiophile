@@ -30,7 +30,7 @@ export const StyledReview = styled.div`
     padding: 0 3%;
   }
   @media ${devices.landscapeMobileSS} {
-    min-height: 60vh;
+    min-height: 50vh;
   }
 `;
 
