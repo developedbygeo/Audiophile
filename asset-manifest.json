@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/Audiophile/static/js/main.ca982e1a.js",
+    "main.js": "/Audiophile/static/js/main.b612ead4.js",
     "static/js/100.e6c340d0.chunk.js": "/Audiophile/static/js/100.e6c340d0.chunk.js",
     "static/js/760.96f8f759.chunk.js": "/Audiophile/static/js/760.96f8f759.chunk.js",
-    "static/js/430.0e2cdc1e.chunk.js": "/Audiophile/static/js/430.0e2cdc1e.chunk.js",
+    "static/js/430.40716994.chunk.js": "/Audiophile/static/js/430.40716994.chunk.js",
     "static/js/29.7222f722.chunk.js": "/Audiophile/static/js/29.7222f722.chunk.js",
     "static/js/250.6e43aa30.chunk.js": "/Audiophile/static/js/250.6e43aa30.chunk.js",
     "static/js/949.b97c3b50.chunk.js": "/Audiophile/static/js/949.b97c3b50.chunk.js",
@@ -20,16 +20,16 @@
     "static/media/image-earphones-yx1.jpg": "/Audiophile/static/media/image-earphones-yx1.48e16a44bd58ed3be41e.jpg",
     "static/media/logo.svg": "/Audiophile/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
     "index.html": "/Audiophile/index.html",
-    "main.ca982e1a.js.map": "/Audiophile/static/js/main.ca982e1a.js.map",
+    "main.b612ead4.js.map": "/Audiophile/static/js/main.b612ead4.js.map",
     "100.e6c340d0.chunk.js.map": "/Audiophile/static/js/100.e6c340d0.chunk.js.map",
     "760.96f8f759.chunk.js.map": "/Audiophile/static/js/760.96f8f759.chunk.js.map",
-    "430.0e2cdc1e.chunk.js.map": "/Audiophile/static/js/430.0e2cdc1e.chunk.js.map",
+    "430.40716994.chunk.js.map": "/Audiophile/static/js/430.40716994.chunk.js.map",
     "29.7222f722.chunk.js.map": "/Audiophile/static/js/29.7222f722.chunk.js.map",
     "250.6e43aa30.chunk.js.map": "/Audiophile/static/js/250.6e43aa30.chunk.js.map",
     "949.b97c3b50.chunk.js.map": "/Audiophile/static/js/949.b97c3b50.chunk.js.map",
     "868.bb1b6fb2.chunk.js.map": "/Audiophile/static/js/868.bb1b6fb2.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ca982e1a.js"
+    "static/js/main.b612ead4.js"
   ]
 }
