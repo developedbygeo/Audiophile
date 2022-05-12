@@ -36,7 +36,7 @@ const Header = ({ className }: BaseProps) => {
   const buttonContent = !navIsEnabled ? <GoThreeBars /> : <GoX />;
 
   const shouldButtonRender = width < 1024 && (
-    <UnstyledButton onClick={navToggleHandler} title="Toggle Menu" className="menu">
+    <UnstyledButton onClick={navToggleHandler} title="Toggle Menu" className="menu" aria-label="Toggle menu">
       {buttonContent}
     </UnstyledButton>
   );
@@ -45,7 +45,7 @@ const Header = ({ className }: BaseProps) => {
     <StyledHeader className={className}>
       {shouldButtonRender}
       <Link className="logo-wrapper" to="/home" aria-label="Return to home">
-        <Logo className="logo" role="img" aria-label="logo" />
+        <Logo className="logo" aria-label="logo" />
       </Link>
       <CartButton />
       {width < 1024 ? navIsEnabled && <MobileNav /> : <Nav className={navClass} />}
