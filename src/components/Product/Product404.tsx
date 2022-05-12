@@ -11,7 +11,9 @@ const ProductNotFound = () => {
         <SVG404 />
       </div>
       <Description>Let&apos;s get you back home</Description>
-      <ProductLink to="/">Home</ProductLink>
+      <ProductLink to="/" aria-label="Return to Home">
+        Home
+      </ProductLink>
     </StyledNotFound>
   );
 };
