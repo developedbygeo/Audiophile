@@ -8,7 +8,9 @@ const NotFound = () => {
       <article>
         <BigHeading>Oops, there is nothing here!</BigHeading>
         <Description>Let&apos;s get you back</Description>
-        <ProductLink to="/">Home</ProductLink>
+        <ProductLink to="/" aria-label="Return to Home">
+          Home
+        </ProductLink>
       </article>
     </NotFoundLayout>
   );
