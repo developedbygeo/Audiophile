@@ -48,7 +48,7 @@ main{
     overflow: hidden;
     ${gridMixin('1fr', 'auto')};
 
-    .loading{
+    .loading-container{
       position: relative;
       ${flexMixin('center', 'center', 'column')};
       svg{
