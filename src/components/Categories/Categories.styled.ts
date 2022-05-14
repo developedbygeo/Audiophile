@@ -35,6 +35,14 @@ export const StyledCategories = styled.section`
       }
     }
   }
+  @media (min-width: 240px) and (max-width: 767px) and (min-height: 900px) {
+    &.mobile-nav {
+      height: 100vh;
+    }
+    & > div {
+      height: 15.5vh;
+    }
+  }
 
   @media ${devices.tablet}, ${devices.landscapeMobileSS} {
     padding-inline: 5%;
@@ -45,6 +53,7 @@ export const StyledCategories = styled.section`
       height: 15vh;
     }
   }
+
   @media ${devices.laptop} {
     margin-top: 5vh;
     padding-inline: 10%;
@@ -60,6 +69,14 @@ export const StyledCategories = styled.section`
   @media ${devices.landscapeMobileM} {
     & > div {
       height: 30vh;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) and (min-height: 451px) and (max-height: 680px) {
+    & > div {
+      height: 25vh;
+    }
+    &.tablet-nav > div {
+      height: 25vh;
     }
   }
 `;
