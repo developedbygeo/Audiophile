@@ -39,6 +39,9 @@ export const responsiveBaseFont = css`
   @media ${devices.mobileSS} {
     font-size: 27%;
   }
+  @media (min-width: 260px) and (max-width: 319px) {
+    font-size: 39%;
+  }
   @media ${devices.mobileS} {
     font-size: 40%;
   }
