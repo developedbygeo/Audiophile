@@ -12,6 +12,10 @@ export const StyledCategories = styled.section`
   ${flexMixin('space-between', 'center', 'column')};
   gap: 2rem;
 
+  &.mobile-nav {
+    height: 100vh;
+  }
+
   /* when it is being used a custom nav */
   &.tablet-nav {
     padding: 12.5vh 0 5vh 0;
