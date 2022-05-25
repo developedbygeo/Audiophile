@@ -59,7 +59,7 @@ export const StyledFooter = styled(LargeSimpleContainer)`
     }
   }
   @media ${devices.landscapeMobileSS} {
-    min-height: 50vh;
+    min-height: 60vh;
   }
 `;
 
